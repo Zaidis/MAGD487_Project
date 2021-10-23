@@ -1335,7 +1335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2117296694}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: UseItem
+        m_MethodName: UseItemContext
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Health Potion
   stackable: 1
   maxStack: 3
+  type: 2

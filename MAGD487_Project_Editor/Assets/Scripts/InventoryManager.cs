@@ -65,7 +65,8 @@ public class InventoryManager : MonoBehaviour
     /// Removes the item from the selected slot.
     /// </summary>
     public void RemoveItem() {
-        m_slots[(int)m_currentItem].DeleteItemFromSlot();
+        Slot slot = m_slots[(int)m_currentItem];
+        slot.DeleteItemFromSlot();
         UpdateSlotUI();
     }
 
@@ -118,11 +119,24 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void UseItem(InputAction.CallbackContext context) {
+    public void UseItemContext(InputAction.CallbackContext context) {
         if (context.performed) {
-            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
+            UseItem();
         }
+    }
 
+    private void UseItem() {
+        Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
+        Slot slot = m_slots[(int)m_currentItem];
+
+        //first we check to see if the item is a consumable
+        if (slot.m_item.type == itemType.consumable) {
+            print("Test");
+            slot.currentStack--;
+            if(slot.currentStack <= 0) {
+                RemoveItem();
+            }
+        }
     }
 
     /// <summary>
