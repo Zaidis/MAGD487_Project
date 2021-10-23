@@ -27,15 +27,15 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// If there is an empty slot, then add an item to that specific slot. 
+    /// If there is an empty slot, then add an item to that specific slot.  
     /// </summary>
     /// <param name="item"></param>
 
     public void AddItem(Item item) {
-        if (item.stackable) {
+        if (item.stackable) { //first it will check if the item is stackable or not
             for (int i = 0; i < m_slots.Count; i++) {
-                if(m_slots[i].m_item != null) {
-                    if(m_slots[i].m_item == item) {
+                if(m_slots[i].m_item != null) { //if there is an item here
+                    if(m_slots[i].m_item == item) { //if this item is the same as the one you are adding
                         //you have the item
                         if(m_slots[i].currentStack < m_slots[i].m_item.maxStack) {
                             //you have the item and you can carry more of that item in this slot
@@ -47,6 +47,7 @@ public class InventoryManager : MonoBehaviour
                 }
             }                       
         }
+        //if its not stackable or you have too many, just add to another slot
         for(int i = 0; i < m_slots.Count; i++) {
             if(m_slots[i].m_item == null) {
                 //if this slot does not have an item in it yet
