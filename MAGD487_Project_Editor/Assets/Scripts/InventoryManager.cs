@@ -33,6 +33,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void UseItem(InputAction.CallbackContext context) {
+        if (context.performed) {
+            Debug.Log("I used " + context.ReadValue<float>());
+        }
+    }
+
     private void ValidateValues() {
         if(m_currentItem < 0) {
             m_currentItem = m_slots.Count - 1;
