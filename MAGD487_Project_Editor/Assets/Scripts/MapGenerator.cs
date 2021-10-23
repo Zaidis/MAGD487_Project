@@ -11,7 +11,7 @@ public class MapGenerator : MonoBehaviour
     [Header("Minimum Y = 3")]
     [SerializeField] int blocksInY = 3;
     [SerializeField] int blockOffset;
-    public List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
+    public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     [SerializeField] Transform player;
     [SerializeField] GameObject mapBlockTemplate;
     // Start is called before the first frame update

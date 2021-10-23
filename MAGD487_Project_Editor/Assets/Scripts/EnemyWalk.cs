@@ -22,6 +22,7 @@ public class EnemyWalk : MonoBehaviour
     {
         unFlippedScale = transform.localScale;
         flippedScale = new Vector2(-unFlippedScale.x, unFlippedScale.y);
+        //TODO OPTIMISE THIS TO FIND GAME MANAGER INSTEAD
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
