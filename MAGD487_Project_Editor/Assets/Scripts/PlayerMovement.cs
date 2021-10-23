@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour{
     Rigidbody2D rb;
-    Vector2 movement;
+    public Vector2 movement;
     [SerializeField]
     float speed;
     void Awake()

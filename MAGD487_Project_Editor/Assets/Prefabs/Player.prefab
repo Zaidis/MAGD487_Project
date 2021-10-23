@@ -434,6 +434,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4960092050756392009}
   - component: {fileID: 4960092050756392008}
+  - component: {fileID: 8726388997300076519}
+  - component: {fileID: 3751598515230049089}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -506,6 +508,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8726388997300076519
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960092050756392010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3953a5edc7ff9ac40ae916190e01ce91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3751598515230049089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960092050756392010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81524ac246b7c04cbd31d1d319fea2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4960092051601091835
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +686,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4780f4fa-1232-40cb-88ac-91de8af71af1
     m_ActionName: Player/Slot[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8890ca5e-165b-483a-afb8-0007d819717f
+    m_ActionName: Player/Select Item[/Keyboard/2,/Keyboard/4,/Keyboard/1,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 245b59a9-138f-4881-8420-da5edceb612e
+    m_ActionName: Player/Use Item
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a912370c-4433-492c-b190-1d7fe17242a2
+    m_ActionName: Player/Scroll[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
