@@ -4,25 +4,37 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1182142611270319787
-    second: BaseBackgroundWall
+    second: Cave_Tiles-Sheet_0
   - first:
       213: -4397928025466194649
-    second: left
+    second: Cave_Tiles-Sheet_1
   - first:
       213: -2257863241339129804
-    second: Top
+    second: Cave_Tiles-Sheet_2
   - first:
       213: -1576065608187073558
-    second: RIght
+    second: Cave_Tiles-Sheet_3
   - first:
       213: 4125449188258710789
-    second: floor
+    second: Cave_Tiles-Sheet_4
   - first:
       213: -8763824409199056912
-    second: ledge left
+    second: Cave_Tiles-Sheet_5
   - first:
       213: 4817310215732944442
-    second: ledge right
+    second: Cave_Tiles-Sheet_6
+  - first:
+      213: 606509149722435747
+    second: Cave_Tiles-Sheet_7
+  - first:
+      213: -238010970349324842
+    second: Cave_Tiles-Sheet_8
+  - first:
+      213: -392030197566010390
+    second: Cave_Tiles-Sheet_9
+  - first:
+      213: -3031140820653092
+    second: Cave_Tiles-Sheet_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BaseBackgroundWall
+      name: Cave_Tiles-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,7 +156,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: left
+      name: Cave_Tiles-Sheet_1
       rect:
         serializedVersion: 2
         x: 35
@@ -165,7 +177,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Top
+      name: Cave_Tiles-Sheet_2
       rect:
         serializedVersion: 2
         x: 70
@@ -186,7 +198,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RIght
+      name: Cave_Tiles-Sheet_3
       rect:
         serializedVersion: 2
         x: 105
@@ -207,7 +219,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor
+      name: Cave_Tiles-Sheet_4
       rect:
         serializedVersion: 2
         x: 140
@@ -228,7 +240,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ledge left
+      name: Cave_Tiles-Sheet_5
       rect:
         serializedVersion: 2
         x: 175
@@ -249,7 +261,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,7 +274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ledge right
+      name: Cave_Tiles-Sheet_6
       rect:
         serializedVersion: 2
         x: 210
@@ -270,7 +282,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,6 +290,90 @@ TextureImporter:
       bones: []
       spriteID: a3e5f953e168ad240800000000000000
       internalID: 4817310215732944442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0ea36bbd0ca6800800000000000000
+      internalID: 606509149722435747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5bea3984a62bcf0800000000000000
+      internalID: -238010970349324842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb0ad4cc9a3f8af0800000000000000
+      internalID: -392030197566010390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbee18813b35fff0800000000000000
+      internalID: -3031140820653092
       vertices: []
       indices: 
       edges: []
