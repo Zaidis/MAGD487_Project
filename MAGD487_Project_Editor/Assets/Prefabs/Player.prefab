@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 483866071}
   - component: {fileID: 483866070}
   - component: {fileID: 483866069}
+  - component: {fileID: 304384318}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -61,7 +62,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.9
+  orthographic size: 6.6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -151,6 +152,26 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &304384318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483866068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 32
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
+  m_UpscaleRT: 0
+  m_PixelSnapping: 1
+  m_CropFrameX: 1
+  m_CropFrameY: 1
+  m_StretchFill: 1
 --- !u!1 &591137142
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +228,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4960092051601091834}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8.9
+    OrthographicSize: 6.6
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -643,6 +664,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e45088af-0b4a-4c92-91ee-88ed63ef238a
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4780f4fa-1232-40cb-88ac-91de8af71af1
+    m_ActionName: Player/Slot[/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

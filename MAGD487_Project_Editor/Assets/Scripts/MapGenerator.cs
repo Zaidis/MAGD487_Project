@@ -37,6 +37,7 @@ public class MapGenerator : MonoBehaviour
     void SpawnPlayer()
     {
         int rand = Random.Range(0, blocksInX);
+        //Picks a random room at the top level of the dungeon to spawn the player
         player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
     }
     private GameObject PickRandomMapBlock()
