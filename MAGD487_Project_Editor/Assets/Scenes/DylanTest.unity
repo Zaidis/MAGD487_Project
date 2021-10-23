@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 217980958}
     - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: blockOffset
-      value: 60
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
