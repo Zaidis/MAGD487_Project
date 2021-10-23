@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204f42ae3c54c24d966684ee66246b4, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  icon: {fileID: 1182142611270319787, guid: 098963ec2009f474798192cb5c10ee57, type: 3}
+  name: Bow
