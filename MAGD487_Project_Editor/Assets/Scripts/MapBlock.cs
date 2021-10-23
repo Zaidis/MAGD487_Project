@@ -21,4 +21,10 @@ public class MapBlock : MonoBehaviour
             list.Add(parent.GetChild(i));
         }
     }
+
+    public Vector2 GetRandomEnemySpawn()
+    {
+        int rand = Random.Range(0, enemySpawns.Count);
+        return enemySpawns[rand].position;
+    }
 }

@@ -4,8 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
-
+    public Item m_item;
     public Image m_icon;
+    public string m_name;
+    public int currentStack;
+    private void Awake() {
+        m_icon = GetComponent<Image>();
+    }
 
+    public void AddItemToSlot(Item item) {
+        m_item = item;
+        m_icon.sprite = m_item.icon;
+        m_name = m_item.name;
 
+        
+    }
+
+    public void DeleteItemFromSlot() {
+        m_item = null;
+        m_icon.sprite = null;
+        m_name = "";
+        currentStack = 0;
+    }
 }
