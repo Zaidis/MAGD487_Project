@@ -33,6 +33,19 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void UseItem(InputAction.CallbackContext context) {
+        if(context.performed) {
+            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
+        }
+            
+    }
+
+
+    /// <summary>
+    /// Selects a slot rather than having to shuffle through them one by one. 
+    /// </summary>
+    /// <param name="context"></param>
+
     public void SelectItem(InputAction.CallbackContext context) {
         if (context.performed) {
             Vector2 ctx = context.ReadValue<Vector2>();

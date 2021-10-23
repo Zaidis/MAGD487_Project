@@ -46,10 +46,18 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Use Item",
+                    "name": "Select Item",
                     "type": "Value",
                     "id": "8890ca5e-165b-483a-afb8-0007d819717f",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Use Item",
+                    "type": "Button",
+                    "id": "245b59a9-138f-4881-8420-da5edceb612e",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -370,7 +378,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use Item",
+                    "action": "Select Item",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -381,7 +389,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use Item",
+                    "action": "Select Item",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -392,7 +400,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use Item",
+                    "action": "Select Item",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -403,7 +411,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use Item",
+                    "action": "Select Item",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -414,9 +422,20 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use Item",
+                    "action": "Select Item",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8081d691-96d3-4e88-a762-9478e47be1d2",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Use Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

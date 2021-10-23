@@ -6,6 +6,7 @@ public class Slot : MonoBehaviour
 {
 
     public Image m_icon;
+    public string m_name;
 
 
 }
