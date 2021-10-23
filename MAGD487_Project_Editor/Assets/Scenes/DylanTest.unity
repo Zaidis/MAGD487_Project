@@ -392,6 +392,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: rollForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: groundDetector
+      value: 
+      objectReference: {fileID: 781996713}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -454,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
@@ -475,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4960092050075864073}
+      objectReference: {fileID: 4960092050075864077}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -498,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Roll, Assembly-CSharp
+      value: PlayerMovement, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -527,7 +535,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93272439a311c240885069e98a13490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundDetector: {fileID: 781996713}
-  isGrounded: 0
-  rollForce: 200
-  maxSpeed: 10
+--- !u!114 &4960092050075864077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+  m_PrefabInstance: {fileID: 4960092050075864071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960092050075864072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc081bf64f29724ea9a004cb5203823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
