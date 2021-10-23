@@ -27,15 +27,32 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// If there is an empty slot, then add an item to that specific slot. 
+    /// If there is an empty slot, then add an item to that specific slot.  
     /// </summary>
     /// <param name="item"></param>
 
     public void AddItem(Item item) {
+        if (item.stackable) { //first it will check if the item is stackable or not
+            for (int i = 0; i < m_slots.Count; i++) {
+                if(m_slots[i].m_item != null) { //if there is an item here
+                    if(m_slots[i].m_item == item) { //if this item is the same as the one you are adding
+                        //you have the item
+                        if(m_slots[i].currentStack < m_slots[i].m_item.maxStack) {
+                            //you have the item and you can carry more of that item in this slot
+                            m_slots[i].currentStack++;
+                            UpdateSlotUI();
+                            return;
+                        }
+                    }
+                }
+            }                       
+        }
+        //if its not stackable or you have too many, just add to another slot
         for(int i = 0; i < m_slots.Count; i++) {
             if(m_slots[i].m_item == null) {
                 //if this slot does not have an item in it yet
                 m_slots[i].AddItemToSlot(item);
+                m_slots[i].currentStack = 1;
                 UpdateSlotUI();
                 return; 
             } else {
@@ -52,13 +69,20 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
     }
 
+    /// <summary>
+    /// Allows the user to shuffle through the slots with either mouse or keyboard.
+    /// </summary>
+    /// <param name="context"></param>
     public void SetCurrentItem(InputAction.CallbackContext context) {
         if (context.performed) {
             m_currentItem += context.ReadValue<float>();
             ValidateValues();
         }
     }
-
+    /// <summary>
+    /// Allows the user to scroll through the slots with their mouse. 
+    /// </summary>
+    /// <param name="context"></param>
     public void ScrollThroughSlots(InputAction.CallbackContext context) {
         if (context.performed) {
             m_currentItem += context.ReadValue<Vector2>().normalized.y;
@@ -66,15 +90,6 @@ public class InventoryManager : MonoBehaviour
         }
         
     }
-
-    public void UseItem(InputAction.CallbackContext context) {
-        if(context.performed) {
-            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
-        }
-            
-    }
-
-
     /// <summary>
     /// Selects a slot rather than having to shuffle through them one by one. 
     /// </summary>
@@ -101,6 +116,13 @@ public class InventoryManager : MonoBehaviour
 
             ValidateValues();
         }
+    }
+
+    public void UseItem(InputAction.CallbackContext context) {
+        if (context.performed) {
+            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
+        }
+
     }
 
     /// <summary>

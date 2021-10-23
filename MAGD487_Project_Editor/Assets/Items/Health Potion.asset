@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c204f42ae3c54c24d966684ee66246b4, type: 3}
-  m_Name: Bow
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
-  icon: {fileID: 1182142611270319787, guid: 098963ec2009f474798192cb5c10ee57, type: 3}
-  name: Bow
-  stackable: 0
-  maxStack: 1
+  icon: {fileID: 21300000, guid: 0cacb173a8477814bb45eba5bf21901d, type: 3}
+  name: Health Potion
+  stackable: 1
+  maxStack: 3
