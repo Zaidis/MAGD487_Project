@@ -69,13 +69,20 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
     }
 
+    /// <summary>
+    /// Allows the user to shuffle through the slots with either mouse or keyboard.
+    /// </summary>
+    /// <param name="context"></param>
     public void SetCurrentItem(InputAction.CallbackContext context) {
         if (context.performed) {
             m_currentItem += context.ReadValue<float>();
             ValidateValues();
         }
     }
-
+    /// <summary>
+    /// Allows the user to scroll through the slots with their mouse. 
+    /// </summary>
+    /// <param name="context"></param>
     public void ScrollThroughSlots(InputAction.CallbackContext context) {
         if (context.performed) {
             m_currentItem += context.ReadValue<Vector2>().normalized.y;
@@ -83,15 +90,6 @@ public class InventoryManager : MonoBehaviour
         }
         
     }
-
-    public void UseItem(InputAction.CallbackContext context) {
-        if(context.performed) {
-            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
-        }
-            
-    }
-
-
     /// <summary>
     /// Selects a slot rather than having to shuffle through them one by one. 
     /// </summary>
@@ -118,6 +116,13 @@ public class InventoryManager : MonoBehaviour
 
             ValidateValues();
         }
+    }
+
+    public void UseItem(InputAction.CallbackContext context) {
+        if (context.performed) {
+            Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
+        }
+
     }
 
     /// <summary>
