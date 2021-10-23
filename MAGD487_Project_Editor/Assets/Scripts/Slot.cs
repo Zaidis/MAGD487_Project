@@ -7,7 +7,7 @@ public class Slot : MonoBehaviour
     public Item m_item;
     public Image m_icon;
     public string m_name;
-
+    public int currentStack;
     private void Awake() {
         m_icon = GetComponent<Image>();
     }
@@ -24,5 +24,6 @@ public class Slot : MonoBehaviour
         m_item = null;
         m_icon.sprite = null;
         m_name = "";
+        currentStack = 0;
     }
 }

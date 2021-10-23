@@ -32,10 +32,26 @@ public class InventoryManager : MonoBehaviour
     /// <param name="item"></param>
 
     public void AddItem(Item item) {
+        if (item.stackable) {
+            for (int i = 0; i < m_slots.Count; i++) {
+                if(m_slots[i].m_item != null) {
+                    if(m_slots[i].m_item == item) {
+                        //you have the item
+                        if(m_slots[i].currentStack < m_slots[i].m_item.maxStack) {
+                            //you have the item and you can carry more of that item in this slot
+                            m_slots[i].currentStack++;
+                            UpdateSlotUI();
+                            return;
+                        }
+                    }
+                }
+            }                       
+        }
         for(int i = 0; i < m_slots.Count; i++) {
             if(m_slots[i].m_item == null) {
                 //if this slot does not have an item in it yet
                 m_slots[i].AddItemToSlot(item);
+                m_slots[i].currentStack = 1;
                 UpdateSlotUI();
                 return; 
             } else {
