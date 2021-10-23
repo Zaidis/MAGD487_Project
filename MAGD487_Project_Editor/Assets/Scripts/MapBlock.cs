@@ -6,7 +6,7 @@ public class MapBlock : MonoBehaviour
 {
     [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent;
     public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns;
-
+    public bool isEndRoom = false;
     private void Awake()
     {
         AddToList(playerSpawnParent, playerSpawns);
@@ -14,12 +14,7 @@ public class MapBlock : MonoBehaviour
         AddToList(enemySpawnParent, enemySpawns);
         AddToList(treasureSpawnParent, treasureSpawns);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     void AddToList(Transform parent, List<Transform> list)
     {
         for (int i = 0; i < parent.childCount; i++)
