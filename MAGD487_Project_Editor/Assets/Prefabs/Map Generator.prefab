@@ -52,7 +52,7 @@ MonoBehaviour:
   mapBlocksUp:
   - {fileID: 6372139619522699429, guid: bd9d68bd66a352743871ae0dbb5b6419, type: 3}
   blocksInX: 8
-  blocksInY: 5
+  blocksInY: 4
   blockOffset: 50
   mapBlocksSpawned: []
   player: {fileID: 0}
