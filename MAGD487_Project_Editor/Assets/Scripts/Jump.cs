@@ -54,7 +54,7 @@ public class Jump : MonoBehaviour
         if (jumping)
         {
             wasGrounded = false;
-            timer += Time.deltaTime;
+            timer += Time.fixedDeltaTime;
             if (timer < jumpLength)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -69,7 +69,7 @@ public class Jump : MonoBehaviour
 
         if(!jumping || !wantToJump)
         {
-            rb.AddForce(Physics.gravity * gravityMultiplier);
+            rb.AddForce(Physics2D.gravity * gravityMultiplier);
             jumping = false;
             timer = 0;
         }

@@ -38,12 +38,15 @@
                     "interactions": ""
                 },
                 {
+<<<<<<< HEAD
                     "name": "Roll",
                     "type": "Button",
                     "id": "aae9ab91-7a42-4305-aa2f-3095d517d078",
+=======
                     "name": "Slot",
                     "type": "Value",
                     "id": "4780f4fa-1232-40cb-88ac-91de8af71af1",
+>>>>>>> main
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -293,6 +296,7 @@
                     "isPartOfComposite": false
                 },
                 {
+<<<<<<< HEAD
                     "name": "",
                     "id": "b03c1bbb-058f-4f1f-b393-2f1a59e1774b",
                     "path": "<Keyboard>/ctrl",
@@ -306,6 +310,7 @@
                 {
                     "name": "",
                     "id": "5d1874d2-e53f-496f-a231-ac17c56d65ce",
+=======
                     "name": "1D Axis",
                     "id": "ebef72ce-2ef7-4214-b2ea-370c6a2ae5b5",
                     "path": "1DAxis",
@@ -363,16 +368,20 @@
                 {
                     "name": "positive",
                     "id": "4879ebe9-3781-49be-ba01-8d955a0461b2",
+>>>>>>> main
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+<<<<<<< HEAD
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
+=======
                     "action": "Slot",
                     "isComposite": false,
                     "isPartOfComposite": true
+>>>>>>> main
                 }
             ]
         },
