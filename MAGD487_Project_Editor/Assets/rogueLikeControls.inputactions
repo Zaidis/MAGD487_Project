@@ -38,9 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Roll",
-                    "type": "Button",
-                    "id": "aae9ab91-7a42-4305-aa2f-3095d517d078",
                     "name": "Slot",
                     "type": "Value",
                     "id": "4780f4fa-1232-40cb-88ac-91de8af71af1",
@@ -303,9 +300,7 @@
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
-                {
-                    "name": "",
-                    "id": "5d1874d2-e53f-496f-a231-ac17c56d65ce",
+                {                    
                     "name": "1D Axis",
                     "id": "ebef72ce-2ef7-4214-b2ea-370c6a2ae5b5",
                     "path": "1DAxis",
@@ -367,9 +362,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                     "action": "Slot",
                     "isComposite": false,
                     "isPartOfComposite": true
