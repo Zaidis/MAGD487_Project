@@ -320,38 +320,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 217980958}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: blocksInX
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: blocksInY
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: blockOffset
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: mapBlockTemplate
-      value: 
-      objectReference: {fileID: 6372139619522699429, guid: 40b552936d0d21e49a9ea206daa786bf, type: 3}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: mapBlocksUpDown.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: mapBlocksUpDown.Array.data[0]
-      value: 
-      objectReference: {fileID: 6372139619522699429, guid: 8d431dcec744e4541b5f2bc3b873d5c9, type: 3}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: mapBlocksMidSection.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: mapBlocksMidSection.Array.data[0]
-      value: 
-      objectReference: {fileID: 6372139619522699429, guid: 2e9fb68df1fd8c7498801c460a584a1d, type: 3}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
       value: Map Generator
