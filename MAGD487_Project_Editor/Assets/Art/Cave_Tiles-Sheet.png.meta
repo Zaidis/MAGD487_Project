@@ -4,37 +4,37 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1182142611270319787
-    second: Cave_Tiles-Sheet_0
+    second: Base
   - first:
       213: -4397928025466194649
-    second: Cave_Tiles-Sheet_1
+    second: Left Rock
   - first:
       213: -2257863241339129804
-    second: Cave_Tiles-Sheet_2
+    second: LeftCornerStart
   - first:
       213: -1576065608187073558
-    second: Cave_Tiles-Sheet_3
+    second: Ceiling
   - first:
       213: 4125449188258710789
-    second: Cave_Tiles-Sheet_4
+    second: Right
   - first:
       213: -8763824409199056912
-    second: Cave_Tiles-Sheet_5
+    second: Right Corner
   - first:
       213: 4817310215732944442
-    second: Cave_Tiles-Sheet_6
+    second: inside corner right
   - first:
       213: 606509149722435747
-    second: Cave_Tiles-Sheet_7
+    second: inside corner left
   - first:
       213: -238010970349324842
-    second: Cave_Tiles-Sheet_8
+    second: ground
   - first:
       213: -392030197566010390
-    second: Cave_Tiles-Sheet_9
+    second: ground ledge right
   - first:
       213: -3031140820653092
-    second: Cave_Tiles-Sheet_10
+    second: ground ledge left
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_0
+      name: Base
       rect:
         serializedVersion: 2
         x: 0
@@ -156,7 +156,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_1
+      name: Left Rock
       rect:
         serializedVersion: 2
         x: 35
@@ -177,7 +177,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_2
+      name: LeftCornerStart
       rect:
         serializedVersion: 2
         x: 70
@@ -198,7 +198,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_3
+      name: Ceiling
       rect:
         serializedVersion: 2
         x: 105
@@ -219,7 +219,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_4
+      name: Right
       rect:
         serializedVersion: 2
         x: 140
@@ -240,7 +240,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_5
+      name: Right Corner
       rect:
         serializedVersion: 2
         x: 175
@@ -261,7 +261,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,7 +274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_6
+      name: inside corner right
       rect:
         serializedVersion: 2
         x: 210
@@ -282,7 +282,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_7
+      name: inside corner left
       rect:
         serializedVersion: 2
         x: 245
@@ -303,7 +303,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -316,7 +316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_8
+      name: ground
       rect:
         serializedVersion: 2
         x: 280
@@ -324,7 +324,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -337,7 +337,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_9
+      name: ground ledge right
       rect:
         serializedVersion: 2
         x: 315
@@ -345,7 +345,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -358,7 +358,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_10
+      name: ground ledge left
       rect:
         serializedVersion: 2
         x: 350
@@ -366,7 +366,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

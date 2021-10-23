@@ -200,31 +200,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &304384312 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 483866068, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-  m_PrefabInstance: {fileID: 4960092050075864071}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &304384318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304384312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 1280
-  m_RefResolutionY: 720
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
-  m_CropFrameX: 1
-  m_CropFrameY: 1
-  m_StretchFill: 1
 --- !u!1 &493271353
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,9 +321,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 217980958}
     - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: blockOffset
-      value: 80
+      propertyPath: mapBlocksMidSection.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
+      propertyPath: mapBlocksMidSection.Array.data[1]
+      value: 
+      objectReference: {fileID: 6372139619522699429, guid: 8d064ea946bab344482698fadd063db6, type: 3}
+    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
+      propertyPath: mapBlocksMidSection.Array.data[2]
+      value: 
+      objectReference: {fileID: 6372139619522699429, guid: 0f8a8befa1e4f2249966319865c89959, type: 3}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
       value: Map Generator
@@ -406,30 +389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 483866072, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: orthographic size
-      value: 6.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 483866072, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 483866072, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 483866072, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 483866073, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591137143, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 6.6
-      objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 1
