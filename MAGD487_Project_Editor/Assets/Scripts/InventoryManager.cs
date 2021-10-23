@@ -33,12 +33,32 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void UseItem(InputAction.CallbackContext context) {
+    public void SelectItem(InputAction.CallbackContext context) {
         if (context.performed) {
-            Debug.Log("I used " + context.ReadValue<float>());
+            Vector2 ctx = context.ReadValue<Vector2>();
+            Debug.Log("I used " + ctx);
+
+
+            if (ctx == new Vector2(-1, 0)) { //left 
+                m_currentItem = 0;
+            }
+            else if (ctx == new Vector2(1, 0)) { //right
+                m_currentItem = 2;
+            }
+            else if (ctx == new Vector2(0, -1)) { //down
+                m_currentItem = 3;
+            }
+            else { //up
+                m_currentItem = 1;
+            }
+
+            ValidateValues();
         }
     }
 
+    /// <summary>
+    /// Ensures that the current slot that is viewed does not go past the list limit. 
+    /// </summary>
     private void ValidateValues() {
         if(m_currentItem < 0) {
             m_currentItem = m_slots.Count - 1;
@@ -48,6 +68,9 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
     }
 
+    /// <summary>
+    /// Updates the UI. Showcases which slot is currently viewed. 
+    /// </summary>
     private void UpdateSlotUI() {
         foreach(Slot slot in m_slots) {
             slot.GetComponent<Image>().color = Color.white;
