@@ -14,8 +14,8 @@ public class MapGenerator : MonoBehaviour
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     [SerializeField] Transform player;
     [SerializeField] GameObject mapBlockTemplate;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         //Generate Map
         GenerateMap();
@@ -24,7 +24,6 @@ public class MapGenerator : MonoBehaviour
         //Spawn Player
         SpawnPlayer();
     }
-
     void GenerateMap()
     {
         for (int i = 0; i < blocksInY; i++)
