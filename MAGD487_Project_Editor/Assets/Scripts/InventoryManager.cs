@@ -9,8 +9,9 @@ public class InventoryManager : MonoBehaviour
 
     public static InventoryManager instance;
 
-    [SerializeField] private List<Slot> m_slots = new List<Slot>();
+    [SerializeField] private List<Slot> m_slots = new List<Slot>(); //4 different slots for items
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
+    [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -25,12 +26,45 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
     }
 
+    /// <summary>
+    /// If there is an empty slot, then add an item to that specific slot. 
+    /// </summary>
+    /// <param name="item"></param>
+
+    public void AddItem(Item item) {
+        for(int i = 0; i < m_slots.Count; i++) {
+            if(m_slots[i].m_item == null) {
+                //if this slot does not have an item in it yet
+                m_slots[i].AddItemToSlot(item);
+                UpdateSlotUI();
+                return; 
+            } else {
+                continue;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes the item from the selected slot.
+    /// </summary>
+    public void RemoveItem() {
+        m_slots[(int)m_currentItem].DeleteItemFromSlot();
+        UpdateSlotUI();
+    }
 
     public void SetCurrentItem(InputAction.CallbackContext context) {
         if (context.performed) {
             m_currentItem += context.ReadValue<float>();
             ValidateValues();
         }
+    }
+
+    public void ScrollThroughSlots(InputAction.CallbackContext context) {
+        if (context.performed) {
+            m_currentItem += context.ReadValue<Vector2>().normalized.y;
+            ValidateValues();
+        }
+        
     }
 
     public void UseItem(InputAction.CallbackContext context) {
