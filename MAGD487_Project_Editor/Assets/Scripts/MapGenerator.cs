@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
             for (int j = 0; j < blocksInX; j++)
             {
                 GameObject block = PickRandomMapBlock();
-                GameObject g = Instantiate(block, new Vector3(i * blockOffset, j * blockOffset) + this.transform.position, Quaternion.identity);
+                GameObject g = Instantiate(block, new Vector3(j * blockOffset, i * -blockOffset) + this.transform.position, Quaternion.identity);
                 mapBlocksSpawned.Add(g.GetComponent<MapBlock>());
                 
             }
@@ -36,7 +36,7 @@ public class MapGenerator : MonoBehaviour
 
     void SpawnPlayer()
     {
-        int rand = Random.Range(0, mapBlocksSpawned.Count);
+        int rand = Random.Range(0, blocksInX);
         player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
     }
     private GameObject PickRandomMapBlock()
