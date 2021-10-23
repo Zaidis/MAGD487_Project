@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] List<GameObject> mapBlocksMidSection, mapBlocksUpDown;
-    [SerializeField] int blocksInX, blocksInY;
+    [SerializeField] List<GameObject> mapBlocksMidSection, mapBlocksDown, mapBlocksUp;
+    [Header("Minimum X = 7")]
+    [SerializeField] int blocksInX = 7;
+    [Header("Minimum Y = 3")]
+    [SerializeField] int blocksInY = 3;
     [SerializeField] int blockOffset;
     public List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     [SerializeField] Transform player;
@@ -49,20 +52,38 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-
+    //To go the block below the upDown block, BlocksInX-2
     void PlaceUpDownBlocks()
     {
-        for (int i = 0; i < mapBlocksSpawned.Count - blocksInX; i += blocksInX-3)
+        List<int> indexs = new List<int>();
+        int previousIndex = -1;
+        for (int i = 0; i < mapBlocksSpawned.Count - blocksInX-2; i += blocksInX-2)
         {
-            int rand = Random.Range(i, i + blocksInX-3);
-            GameObject block = PickRandomUpDownBlock();
+            int rand = PickRandomIndexExcludingOne(i, i + blocksInX-2, previousIndex);
+            indexs.Add(rand);
+            previousIndex = rand + blocksInX - 2;
+            GameObject block = PickRandomDownBlock();
             GameObject g = Instantiate(block, mapBlocksSpawned[rand].transform.position, Quaternion.identity);
             Destroy(mapBlocksSpawned[rand].gameObject);
-            mapBlocksSpawned.RemoveAt(rand);
-            mapBlocksSpawned.Add(g.GetComponent<MapBlock>());
+            mapBlocksSpawned[rand] = g.GetComponent<MapBlock>();
         }
+        for (int i = 0; i < indexs.Count; i++)
+        {
+            Destroy(mapBlocksSpawned[indexs[i] + blocksInX - 2].gameObject);
+            GameObject block = PickRandomUpBlock();
+            GameObject g = Instantiate(block, mapBlocksSpawned[indexs[i] + blocksInX - 2].transform.position, Quaternion.identity);
+            mapBlocksSpawned[indexs[i] + blocksInX - 2] = g.GetComponent<MapBlock>();
+        }
+        
     }
-
+    private int PickRandomIndexExcludingOne(int leftBound, int RightBound, int leaveOut)
+    {
+        int rand = Random.Range(leftBound, RightBound);
+        if (rand == leaveOut)
+            return PickRandomIndexExcludingOne(leftBound, RightBound, leaveOut);
+        else
+            return rand;
+    }
     void SpawnPlayer()
     {
         int rand = Random.Range(0, blocksInX - 1);
@@ -73,8 +94,12 @@ public class MapGenerator : MonoBehaviour
     {
         return mapBlocksMidSection[Random.Range(0, mapBlocksMidSection.Count)];
     }
-    private GameObject PickRandomUpDownBlock()
+    private GameObject PickRandomDownBlock()
     {
-        return mapBlocksUpDown[Random.Range(0, mapBlocksUpDown.Count)];
+        return mapBlocksDown[Random.Range(0, mapBlocksDown.Count)];
+    }
+    private GameObject PickRandomUpBlock()
+    {
+        return mapBlocksUp[Random.Range(0, mapBlocksUp.Count)];
     }
 }
