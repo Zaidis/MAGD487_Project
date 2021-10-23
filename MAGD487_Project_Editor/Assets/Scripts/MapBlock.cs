@@ -6,7 +6,6 @@ public class MapBlock : MonoBehaviour
 {
     [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent;
     public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns;
-    public bool isEndRoom = false;
     private void Awake()
     {
         AddToList(playerSpawnParent, playerSpawns);

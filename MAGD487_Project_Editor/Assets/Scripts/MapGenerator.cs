@@ -30,33 +30,31 @@ public class MapGenerator : MonoBehaviour
             {
                 GameObject block, g;
                 MapBlock mapBlock;
+                bool end = false;
                 if (i == 0 || j == 0 || j == blocksInX - 1 || i == blocksInY - 1)
                 {
                     block = mapBlockTemplate;
-                    g = Instantiate(block, new Vector3(j * blockOffset, i * -blockOffset) + this.transform.position, Quaternion.identity);
-                    mapBlock = g.GetComponent<MapBlock>();
-                    mapBlock.isEndRoom = true;
-                    mapBlocksSpawned.Add(mapBlock);
+                    end = true;
                 }
                 else
                 {
                     block = PickRandomMidSectionMapBlock();
-                    g = Instantiate(block, new Vector3(j * blockOffset, i * -blockOffset) + this.transform.position, Quaternion.identity);
+                }
+                g = Instantiate(block, new Vector3(j * blockOffset, i * -blockOffset) + this.transform.position, Quaternion.identity);
+                if (!end)
+                {
                     mapBlock = g.GetComponent<MapBlock>();
                     mapBlocksSpawned.Add(mapBlock);
                 }
-                
-                
-                
             }
         }
     }
 
     void PlaceUpDownBlocks()
     {
-        for (int i = blocksInX; i < mapBlocksSpawned.Count - (blocksInX-1)*2; i += blocksInX-1)
+        for (int i = 0; i < mapBlocksSpawned.Count - blocksInX; i += blocksInX-3)
         {
-            int rand = Random.Range(i + 1, i + blocksInX-1);
+            int rand = Random.Range(i, i + blocksInX-3);
             GameObject block = PickRandomUpDownBlock();
             GameObject g = Instantiate(block, mapBlocksSpawned[rand].transform.position, Quaternion.identity);
             Destroy(mapBlocksSpawned[rand].gameObject);
@@ -67,7 +65,7 @@ public class MapGenerator : MonoBehaviour
 
     void SpawnPlayer()
     {
-        int rand = Random.Range(0, blocksInX);
+        int rand = Random.Range(0, blocksInX - 1);
         //Picks a random room at the top level of the dungeon to spawn the player
         player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
     }
