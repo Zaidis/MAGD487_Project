@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "eacda05c-22b7-4f87-b1fc-a5c4920b7519",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -300,7 +308,18 @@
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
-                {                    
+                {
+                    "name": "",
+                    "id": "d38aad12-6791-48c4-93aa-4a7041857b84",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
                     "id": "ebef72ce-2ef7-4214-b2ea-370c6a2ae5b5",
                     "path": "1DAxis",
