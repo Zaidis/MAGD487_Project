@@ -698,6 +698,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a912370c-4433-492c-b190-1d7fe17242a2
     m_ActionName: Player/Scroll[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4960092051601091832}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: RollInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a30f37f5-e7fc-4665-bfb7-497f1501bb8e
+    m_ActionName: Player/Roll[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -715,7 +731,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc081bf64f29724ea9a004cb5203823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}
   speed: 5
+  rollForce: 30
+  rollTime: 0.25
 --- !u!114 &9152401118014463180
 MonoBehaviour:
   m_ObjectHideFlags: 0
