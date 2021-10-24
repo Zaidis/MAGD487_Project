@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField]
     float speed;
 
-    [Space][SerializeField] private GroundDetector groundDetector; //roll elements
+    private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     private bool rolling = false;
     [SerializeField] private float rollForce;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour{
 
     void Awake()
     {
+        groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
