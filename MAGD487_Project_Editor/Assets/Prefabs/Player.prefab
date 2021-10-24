@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
-  speed: 10
+  speed: 5
   rollForce: 30
   rollTime: 0.25
 --- !u!114 &9152401118014463180
