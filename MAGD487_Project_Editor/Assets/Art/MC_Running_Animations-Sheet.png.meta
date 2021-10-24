@@ -1,40 +1,34 @@
 fileFormatVersion: 2
-guid: 098963ec2009f474798192cb5c10ee57
+guid: c41140a4167c37d409b137daeed819d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1182142611270319787
-    second: Cave_Tiles-Sheet_0
+      213: 454439583851644489
+    second: MC_Running_Animations-Sheet_0
   - first:
-      213: -4397928025466194649
-    second: Cave_Tiles-Sheet_1
+      213: -6948315507156744436
+    second: MC_Running_Animations-Sheet_1
   - first:
-      213: -2257863241339129804
-    second: Cave_Tiles-Sheet_2
+      213: -2571356966241735043
+    second: MC_Running_Animations-Sheet_2
   - first:
-      213: -1576065608187073558
-    second: Cave_Tiles-Sheet_3
+      213: 1726872353472450122
+    second: MC_Running_Animations-Sheet_3
   - first:
-      213: 4125449188258710789
-    second: Cave_Tiles-Sheet_4
+      213: -3977827942431983355
+    second: MC_Running_Animations-Sheet_4
   - first:
-      213: -8763824409199056912
-    second: Cave_Tiles-Sheet_5
+      213: -4261546140924392908
+    second: MC_Running_Animations-Sheet_5
   - first:
-      213: 4817310215732944442
-    second: Cave_Tiles-Sheet_6
+      213: -2567976367300576800
+    second: MC_Running_Animations-Sheet_6
   - first:
-      213: 606509149722435747
-    second: Cave_Tiles-Sheet_7
+      213: -2783162117356443565
+    second: MC_Running_Animations-Sheet_7
   - first:
-      213: -238010970349324842
-    second: Cave_Tiles-Sheet_8
-  - first:
-      213: -392030197566010390
-    second: ground ledge right
-  - first:
-      213: -3031140820653092
-    second: ground ledge left
+      213: -7235576390338932298
+    second: MC_Running_Animations-Sheet_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,35 +114,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_0
+      name: MC_Running_Animations-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -162,17 +132,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baebe921170d76010800000000000000
-      internalID: 1182142611270319787
+      spriteID: 9468a5fc46e7e4600800000000000000
+      internalID: 454439583851644489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_1
+      name: MC_Running_Animations-Sheet_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -183,17 +153,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7253a5613cb67f2c0800000000000000
-      internalID: -4397928025466194649
+      spriteID: c0785982cdf929f90800000000000000
+      internalID: -6948315507156744436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_2
+      name: MC_Running_Animations-Sheet_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 64
         y: 0
         width: 32
         height: 32
@@ -204,17 +174,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 430b19c38557aa0e0800000000000000
-      internalID: -2257863241339129804
+      spriteID: d7e6f6c7674b05cd0800000000000000
+      internalID: -2571356966241735043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_3
+      name: MC_Running_Animations-Sheet_3
       rect:
         serializedVersion: 2
-        x: 105
+        x: 96
         y: 0
         width: 32
         height: 32
@@ -225,17 +195,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebac410ea0b02ae0800000000000000
-      internalID: -1576065608187073558
+      spriteID: a4e0b21914517f710800000000000000
+      internalID: 1726872353472450122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_4
+      name: MC_Running_Animations-Sheet_4
       rect:
         serializedVersion: 2
-        x: 140
+        x: 128
         y: 0
         width: 32
         height: 32
@@ -246,17 +216,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 505851ddd2a804930800000000000000
-      internalID: 4125449188258710789
+      spriteID: 509f7b1df8aebc8c0800000000000000
+      internalID: -3977827942431983355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_5
+      name: MC_Running_Animations-Sheet_5
       rect:
         serializedVersion: 2
-        x: 175
+        x: 160
         y: 0
         width: 32
         height: 32
@@ -267,17 +237,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f7eacfe124a06680800000000000000
-      internalID: -8763824409199056912
+      spriteID: 43ac34c0d52fbd4c0800000000000000
+      internalID: -4261546140924392908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_6
+      name: MC_Running_Animations-Sheet_6
       rect:
         serializedVersion: 2
-        x: 210
+        x: 192
         y: 0
         width: 32
         height: 32
@@ -288,17 +258,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3e5f953e168ad240800000000000000
-      internalID: 4817310215732944442
+      spriteID: 0e973738917bc5cd0800000000000000
+      internalID: -2567976367300576800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_7
+      name: MC_Running_Animations-Sheet_7
       rect:
         serializedVersion: 2
-        x: 245
+        x: 224
         y: 0
         width: 32
         height: 32
@@ -309,17 +279,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a0ea36bbd0ca6800800000000000000
-      internalID: 606509149722435747
+      spriteID: 35825a2dcc83069d0800000000000000
+      internalID: -2783162117356443565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave_Tiles-Sheet_8
+      name: MC_Running_Animations-Sheet_8
       rect:
         serializedVersion: 2
-        x: 280
+        x: 256
         y: 0
         width: 32
         height: 32
@@ -330,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d5bea3984a62bcf0800000000000000
-      internalID: -238010970349324842
+      spriteID: 6b115a4db91169b90800000000000000
+      internalID: -7235576390338932298
       vertices: []
       indices: 
       edges: []

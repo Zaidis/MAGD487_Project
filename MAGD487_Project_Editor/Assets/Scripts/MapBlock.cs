@@ -6,7 +6,6 @@ public class MapBlock : MonoBehaviour
 {
     [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent;
     public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns;
-
     private void Awake()
     {
         AddToList(playerSpawnParent, playerSpawns);
@@ -14,17 +13,18 @@ public class MapBlock : MonoBehaviour
         AddToList(enemySpawnParent, enemySpawns);
         AddToList(treasureSpawnParent, treasureSpawns);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     void AddToList(Transform parent, List<Transform> list)
     {
         for (int i = 0; i < parent.childCount; i++)
         {
             list.Add(parent.GetChild(i));
         }
+    }
+
+    public Vector2 GetRandomEnemySpawn()
+    {
+        int rand = Random.Range(0, enemySpawns.Count);
+        return enemySpawns[rand].position;
     }
 }
