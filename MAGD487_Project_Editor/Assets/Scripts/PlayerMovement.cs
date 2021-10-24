@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour{
     public Vector2 movement;
     [SerializeField]
     float speed;
-
+    
     private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     private bool rolling = false;
+    [Space]
     [SerializeField] private float rollForce;
     [SerializeField] private float rollTime;
     private float timer = 0;
@@ -65,7 +66,5 @@ public class PlayerMovement : MonoBehaviour{
     {
         if (callbackContext.performed)
             wantToRoll = true;
-        //if (callbackContext.canceled)
-           // wantToRoll = false;
     }
 }
