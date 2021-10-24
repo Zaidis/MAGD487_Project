@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour{
     
     private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
-    private bool rolling = false;
+    public bool rolling = false;
     [Space]
     [SerializeField] private float rollForce;
     [SerializeField] private float rollTime;
