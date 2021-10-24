@@ -8,10 +8,13 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField]
     float speed;
 
-    [Space][SerializeField] GroundDetector groundDetector; //roll elements
+    [Space][SerializeField] private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     private bool rolling = false;
-    [SerializeField] float rollForce;
+    [SerializeField] private float rollForce;
+    [SerializeField] private float rollTime;
+    private float timer = 0;
+    private Vector2 initialRollDirection;
 
     void Awake()
     {
@@ -20,20 +23,37 @@ public class PlayerMovement : MonoBehaviour{
     void Update()
     {
         movement = movement.normalized;
+        if (rolling)
+            timer -= Time.deltaTime;
+
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
-
-        if (groundDetector.grounded && wantToRoll && !rolling)
-        { //add timer, adjust force manually, cancel player input left and right, timer
-            rolling = true;
-            rb.AddForce(new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0), ForceMode2D.Impulse);
-            Debug.Log(rb.velocity.x);
-        }
-        if (Mathf.Abs(rb.velocity.x) <= speed)//change to timer system
-            rolling = false;
+        if (!rolling)
+        {
+            rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
+            if (groundDetector.grounded && wantToRoll)
+            {
+                rolling = true;
+                timer = rollTime;
+                initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+            }
+        }            
+        else
+        {
+            if (timer > 0)
+            {
+                rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
+            }
+            if(rb.velocity.x == 0)
+                timer = 0;
+            if (timer < -rollTime)
+            {                
+                rolling = false;
+                wantToRoll = false;
+            }
+        }  
     }
 
     public void Move(InputAction.CallbackContext callbackContext)
@@ -44,7 +64,7 @@ public class PlayerMovement : MonoBehaviour{
     {
         if (callbackContext.performed)
             wantToRoll = true;
-        if (callbackContext.canceled)
-            wantToRoll = false;
+        //if (callbackContext.canceled)
+           // wantToRoll = false;
     }
 }

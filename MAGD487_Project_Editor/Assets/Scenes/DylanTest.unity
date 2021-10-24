@@ -393,8 +393,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: rollTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: rollForce
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091832, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: groundDetector
