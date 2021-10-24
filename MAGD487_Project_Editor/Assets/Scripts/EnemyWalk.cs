@@ -8,6 +8,8 @@ public class EnemyWalk : MonoBehaviour
     [SerializeField] float jumpStrength = 10f;
     [SerializeField] float walkSpeed;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] float wallDetectionRayDistance = 2;
+    [SerializeField] Vector3 wallDetectionOffset;
     Rigidbody2D rb;
     Transform playerPos;
     GroundDetector groundDetector;
@@ -53,14 +55,21 @@ public class EnemyWalk : MonoBehaviour
     {
         RaycastHit2D hit;
         if (transform.localScale.x > 0)
-            hit = Physics2D.Raycast(this.transform.position, transform.right, 1, groundLayer);
+            hit = Physics2D.Raycast(this.transform.position + wallDetectionOffset, transform.right * wallDetectionRayDistance, 1, groundLayer);
         else
-            hit = Physics2D.Raycast(this.transform.position, -transform.right, 1, groundLayer);
+            hit = Physics2D.Raycast(this.transform.position + wallDetectionOffset, -transform.right * wallDetectionRayDistance, 1, groundLayer);
 
         if (hit.collider != null)
         {
             //Theres a wall so try and jump
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(this.transform.position + wallDetectionOffset, transform.right * wallDetectionRayDistance);
+        Gizmos.DrawRay(this.transform.position + wallDetectionOffset, -transform.right * wallDetectionRayDistance);
     }
 }
