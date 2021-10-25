@@ -8,10 +8,12 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager instance;
-
+    public Text pickUpText;
     [SerializeField] private List<Slot> m_slots = new List<Slot>(); //4 different slots for items
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
+    [SerializeField] private GameObject defaultInteractable;
+    
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -24,6 +26,8 @@ public class InventoryManager : MonoBehaviour
     private void Start() {
         m_currentItem = 0;
         UpdateSlotUI();
+
+       // Physics2D.IgnoreLayerCollision(8, 7);
     }
 
     /// <summary>
@@ -69,6 +73,17 @@ public class InventoryManager : MonoBehaviour
         slot.DeleteItemFromSlot();
         UpdateSlotUI();
     }
+
+    public void DropItem() {
+        Slot slot = m_slots[(int)m_currentItem];
+        GameObject droppedItem = Instantiate(defaultInteractable, FindObjectOfType<PlayerMovement>().gameObject.transform.position, Quaternion.identity);
+        droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
+        
+        RemoveItem();
+
+    }
+
+    
 
     /// <summary>
     /// Allows the user to shuffle through the slots with either mouse or keyboard.
