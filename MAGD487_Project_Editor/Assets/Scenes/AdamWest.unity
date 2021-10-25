@@ -1464,15 +1464,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionId
       value: 608d66c1-f0ff-4059-bd46-4a48bf27eb36
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: bca31c67-ff71-4161-b823-746cdd1dff00
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionName
       value: Player/New action
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: Player/Drop Item[/XInputControllerWindows/buttonEast,/Keyboard/f]
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
@@ -1492,6 +1500,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
@@ -1515,6 +1527,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2117296694}
@@ -1535,6 +1551,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 164066473}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2117296694}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1552,6 +1572,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
@@ -1575,6 +1599,10 @@ PrefabInstance:
       value: PickUpItem
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DropItemContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: InventoryManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1595,6 +1623,10 @@ PrefabInstance:
       value: PickUp, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1612,6 +1644,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []

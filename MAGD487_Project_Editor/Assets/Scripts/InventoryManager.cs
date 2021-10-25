@@ -74,13 +74,19 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
     }
 
-    public void DropItem() {
+    public void DropItemContext(InputAction.CallbackContext context) {
+        if (context.performed) {
+            DropItem();
+        }
+    }
+    private void DropItem() {
         Slot slot = m_slots[(int)m_currentItem];
-        GameObject droppedItem = Instantiate(defaultInteractable, FindObjectOfType<PlayerMovement>().gameObject.transform.position, Quaternion.identity);
-        droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
-        
-        RemoveItem();
+        if(slot.m_item != null) {
+            GameObject droppedItem = Instantiate(defaultInteractable, FindObjectOfType<PlayerMovement>().gameObject.transform.position, Quaternion.identity);
+            droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
 
+            RemoveItem();
+        }
     }
 
     

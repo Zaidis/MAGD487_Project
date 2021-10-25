@@ -5,15 +5,6 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public GameObject currentInteractable;
-
-    public void Update() {
-        if(currentInteractable != null) {
-            InventoryManager.instance.pickUpText.text = "Pick up " + currentInteractable.GetComponent<Interactable>().item.name + "?";
-            InventoryManager.instance.pickUpText.gameObject.SetActive(true);
-        } else {
-            InventoryManager.instance.pickUpText.gameObject.SetActive(false);
-        }
-    }
     public void PickUpItem() {
         if(currentInteractable != null) {
             currentInteractable.GetComponent<Interactable>().ItemPickUp();
@@ -31,12 +22,15 @@ public class PickUp : MonoBehaviour
 
                 currentInteractable = collision.gameObject;
             }
+            InventoryManager.instance.pickUpText.text = "Pick up " + currentInteractable.GetComponent<Interactable>().item.name + "?";
+            InventoryManager.instance.pickUpText.gameObject.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if(collision.gameObject == currentInteractable) {
             currentInteractable = null;
+            InventoryManager.instance.pickUpText.gameObject.SetActive(false);
         }
     }
 }

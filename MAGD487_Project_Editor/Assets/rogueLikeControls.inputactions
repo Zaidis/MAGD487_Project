@@ -62,6 +62,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Pick Up",
+                    "type": "Button",
+                    "id": "608d66c1-f0ff-4059-bd46-4a48bf27eb36",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Scroll",
                     "type": "Value",
                     "id": "a912370c-4433-492c-b190-1d7fe17242a2",
@@ -78,9 +86,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Pick Up",
+                    "name": "Drop Item",
                     "type": "Button",
-                    "id": "608d66c1-f0ff-4059-bd46-4a48bf27eb36",
+                    "id": "bca31c67-ff71-4161-b823-746cdd1dff00",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -568,6 +576,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Pick Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "274c9e1b-7294-4600-a710-23720cf7e1d0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drop Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1a4f37c-6ef8-4b04-98b7-3e4bd3e9479f",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drop Item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
