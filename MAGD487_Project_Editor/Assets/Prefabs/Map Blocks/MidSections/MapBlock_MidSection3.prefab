@@ -20112,7 +20112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414181811600403115, guid: 5f07d84ce86e7024a8eda3ee825256e4, type: 3}
       propertyPath: amountOfParticles
-      value: 200
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6296332641221065870, guid: 5f07d84ce86e7024a8eda3ee825256e4, type: 3}
       propertyPath: m_RootOrder

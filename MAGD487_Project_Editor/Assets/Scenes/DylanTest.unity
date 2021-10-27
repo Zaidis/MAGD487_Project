@@ -331,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 1596622676}
     - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: blocksInY
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
@@ -393,6 +393,10 @@ PrefabInstance:
     - target: {fileID: 228899270639618713, guid: d42e361a1decfb14f98a11821b3e82cb, type: 3}
       propertyPath: m_Name
       value: Water Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 228899270639618716, guid: d42e361a1decfb14f98a11821b3e82cb, type: 3}
+      propertyPath: stationaryThreshold
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 228899270639618719, guid: d42e361a1decfb14f98a11821b3e82cb, type: 3}
       propertyPath: m_RootOrder
