@@ -13,8 +13,10 @@ public class Jump : MonoBehaviour
     [SerializeField] float jumpLength = 2;
     float timer = 0;
     [SerializeField] float gravityMultiplier = 2;
+    PlayerMovement playerMovement;
     private void Awake()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -51,7 +53,7 @@ public class Jump : MonoBehaviour
             jumping = true;
         }
 
-        if (jumping)
+        if (jumping && !playerMovement.rolling)
         {
             wasGrounded = false;
             timer += Time.fixedDeltaTime;

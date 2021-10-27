@@ -135,6 +135,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallDetectionRayDistance: 0.78
+  wallDetectionOffset: {x: 0.06, y: -0.27, z: 0}
 --- !u!50 &133223124488542145
 Rigidbody2D:
   serializedVersion: 4
