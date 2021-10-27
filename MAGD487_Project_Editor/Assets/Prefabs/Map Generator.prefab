@@ -54,6 +54,5 @@ MonoBehaviour:
   blocksInX: 8
   blocksInY: 4
   blockOffset: 50
-  mapBlocksSpawned: []
   player: {fileID: 0}
   mapBlockTemplate: {fileID: 6372139619522699429, guid: 40b552936d0d21e49a9ea206daa786bf, type: 3}
