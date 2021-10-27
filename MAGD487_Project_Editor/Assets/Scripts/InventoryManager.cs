@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
     [SerializeField] private GameObject defaultInteractable;
+    [SerializeField] private Tooltip tooltip;
     
     private void Awake() {
         if (instance == null) {
@@ -28,6 +29,15 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotUI();
 
        // Physics2D.IgnoreLayerCollision(8, 7);
+    }
+
+    public void ActivateTooltip(Item item) {
+        tooltip.gameObject.SetActive(true);
+        tooltip.SetText(item.name);
+    }
+
+    public void DisableToolTip() {
+        tooltip.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -158,6 +168,20 @@ public class InventoryManager : MonoBehaviour
                 RemoveItem();
             }
         }
+    }
+
+    /// <summary>
+    /// Checks all slots to see if a particular item is there. 
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    public bool CheckForItem(Item item) {
+        for(int i = 0; i < m_slots.Count; i++) {
+            if(m_slots[i].m_item == item) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /// <summary>

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Slot : MonoBehaviour
+using UnityEngine.EventSystems;
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Item m_item;
     public Image m_icon;
@@ -25,5 +26,17 @@ public class Slot : MonoBehaviour
         m_icon.sprite = null;
         m_name = "";
         currentStack = 0;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData) {
+        Debug.Log("Hovering!");
+        if(m_item != null)
+            InventoryManager.instance.ActivateTooltip(m_item);
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData) {
+        Debug.Log("No longer hovering!");
+        if (m_item != null)
+            InventoryManager.instance.DisableToolTip();
     }
 }
