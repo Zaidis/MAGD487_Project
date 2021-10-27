@@ -31,13 +31,48 @@ public class InventoryManager : MonoBehaviour
        // Physics2D.IgnoreLayerCollision(8, 7);
     }
 
+    /// <summary>
+    /// Called when enabling the tooltip. 
+    /// </summary>
+    /// <param name="item"></param>
     public void ActivateTooltip(Item item) {
-        tooltip.gameObject.SetActive(true);
-        tooltip.SetText(item.name);
+
+        tooltip.EnableToolTip(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
+        
     }
 
+    /// <summary>
+    /// Grabs the rarity of the item and changes the color of its name for the UI.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    private string ItemRarityColor(Item item) {
+        int level = item.level;
+        tooltip.gameObject.SetActive(true);
+        switch (level) {
+            case 1:
+                return "<color=grey>" + item.name + "</color>";
+            case 2:
+                return "<color=white>" + item.name + "</color>";
+            case 3:
+                return "<color=green>" + item.name + "</color>";
+            case 4:
+                return "<color=blue>" + item.name + "</color>" ;
+            case 5:
+                return "<color=yellow>" + item.name + "</color>";
+            case 6:
+                return "<color=orange>" + item.name + "</color>";
+            default:
+                return "<color=red>" + item.name + "</color>";
+        }
+        return "";
+    }
+
+    /// <summary>
+    /// Called when disabling the tooltip. 
+    /// </summary>
     public void DisableToolTip() {
-        tooltip.gameObject.SetActive(false);
+        tooltip.DisableToolTip();
     }
 
     /// <summary>
