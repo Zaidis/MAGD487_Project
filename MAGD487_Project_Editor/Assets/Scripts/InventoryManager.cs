@@ -36,8 +36,16 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     /// <param name="item"></param>
     public void ActivateTooltip(Item item) {
-
-        tooltip.EnableToolTip(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
+        if (item.type == itemType.weapon) {
+            Weapon w = (Weapon)item;
+            tooltip.EnableToolTip(ItemRarityColor(w) + "\n" + "Level: " + w.level.ToString() + "\n" 
+                + "Damage: " + w.damage.ToString() + "\n" + "Speed: " + w.attackSpeed.ToString() + "\n" + w.description);
+        } else if (item.type == itemType.gear) {
+            
+            
+        } else {
+            //consumable
+        }
         
     }
 

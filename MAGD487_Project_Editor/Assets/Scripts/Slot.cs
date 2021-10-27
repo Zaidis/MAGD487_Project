@@ -17,8 +17,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         m_item = item;
         m_icon.sprite = m_item.icon;
         m_name = m_item.name;
-
-        
     }
 
     public void DeleteItemFromSlot() {
