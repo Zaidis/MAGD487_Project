@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterParticle : MonoBehaviour
@@ -13,7 +11,6 @@ public class WaterParticle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         WaterFlow.instance.AssignParticle(this);
     }
 

@@ -9,8 +9,8 @@ public class WaterFlow : MonoBehaviour
     [SerializeField] List<WaterParticle> waterParticlesDelayed = new List<WaterParticle>();
     [SerializeField] List<WaterParticle> waterParticlesStationary = new List<WaterParticle>();
     [SerializeField] Vector3[] directions;
-    [SerializeField] float updateSpeed, delayedUpdateSpeed, stationaryUpdateSpeed;
-    float timer = 0, timer2 = 0, timer3 = 0;
+    [SerializeField] float updateSpeed, delayedUpdateSpeed;
+    float timer = 0, timer2 = 0;
     public static WaterFlow instance;
     Dictionary<Vector3, WaterParticle> positions = new Dictionary<Vector3, WaterParticle>();
     [SerializeField] int stationaryThreshold = 3;
@@ -27,17 +27,13 @@ public class WaterFlow : MonoBehaviour
     {
         waterParticles.Add(part);
     }
-    // Update is called once per frame
-    void Update()
+   
+    private void FixedUpdate()
     {
-        timer += Time.deltaTime;
-        timer2 += Time.deltaTime;
-       // timer3 += Time.deltaTime;
-
+        timer += Time.fixedDeltaTime;
+        timer2 += Time.fixedDeltaTime;
         timer = UpdateList(waterParticles, waterParticlesDelayed, timer, updateSpeed, false);
         timer2 = UpdateList(waterParticlesDelayed, waterParticlesStationary, timer2, delayedUpdateSpeed, true);
-        //timer3 = UpdateList(waterParticlesStationary, waterParticles, timer3, stationaryUpdateSpeed, true);
-        //UpdateDelayedList();
     }
     float UpdateList(List<WaterParticle> waterParticles, List<WaterParticle> waterParticlesDelayed, float timer, float updateSpeed, bool canSpeedUp)
     {
@@ -46,26 +42,30 @@ public class WaterFlow : MonoBehaviour
 
             for(int i = 0; i < waterParticles.Count; i++)
             {
+                List<Vector3> dir = new List<Vector3>();
                 WaterParticle part = waterParticles[i];
-                
+
                 if (!positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, directions[0], raycastLength).collider == null)
                 {
                     MoveParticleInDirection(directions[0], part.transform, part, waterParticles, canSpeedUp);
                     continue;
-                }
-                if (!positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength).collider == null)
+                }else if(!positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength).collider == null)
                 {
-                    //Go in current direction
                     MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
                     continue;
                 }
+                
                 else
                 {
                     //Follow rules
-                    List<Vector3> dir = new List<Vector3>(directions);
-                    for (int j = 1; j < dir.Count; j++)
+                    dir.Add(directions[1]);
+                    dir.Add(directions[2]);
+                    dir.Add(directions[3]);
+                    dir.Add(directions[4]);
+
+                    for (int j = 0; j < dir.Count; j++)
                     {
-                        int rand = Random.Range(1, dir.Count);
+                        int rand = Random.Range(0, dir.Count);
                         if (!positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, dir[rand], raycastLength).collider == null)
                         {
                             //Open so move to it
@@ -79,7 +79,7 @@ public class WaterFlow : MonoBehaviour
                             {
                                 SwapLists(waterParticlesDelayed, waterParticles, part);
                             }
-                            else if(part.stationaryIteration >= stationaryThreshold)
+                            if(part.stationaryIteration >= stationaryThreshold)
                             {
                                 SwapLists(waterParticlesStationary, waterParticles, part);
                             }
@@ -92,7 +92,7 @@ public class WaterFlow : MonoBehaviour
                         }
                         else
                         {
-                            dir.RemoveAt(j);
+                            dir.RemoveAt(rand);
                             j--;
                         }
                     }
@@ -121,6 +121,13 @@ public class WaterFlow : MonoBehaviour
         particles2.Remove(part);
     }
 
+    public void Explosion()
+    {
+        foreach(WaterParticle part in waterParticlesStationary)
+        {
+            SwapLists(waterParticlesDelayed, waterParticlesStationary, part);
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

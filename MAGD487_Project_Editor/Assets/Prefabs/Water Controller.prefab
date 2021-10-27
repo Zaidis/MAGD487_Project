@@ -95,15 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58e38cf947f69429193c3a042b01d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastLength: 0.5
+  raycastLength: 0.25
   waterParticles: []
   waterParticlesDelayed: []
   waterParticlesStationary: []
   directions:
   - {x: 0, y: -1, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: 1, y: -1, z: 0}
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
   updateSpeed: 0.05
-  delayedUpdateSpeed: 0.25
-  stationaryUpdateSpeed: 10
-  stationaryThreshold: 100
+  delayedUpdateSpeed: 0.07
+  stationaryThreshold: 400
