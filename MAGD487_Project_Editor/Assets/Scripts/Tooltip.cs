@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class Tooltip : MonoBehaviour {
     [SerializeField] private RectTransform canvasTransform;
     [SerializeField] private RectTransform bgRect;
@@ -10,9 +11,21 @@ public class Tooltip : MonoBehaviour {
     private RectTransform rect;
     private void Awake() {
         rect = GetComponent<RectTransform>();
+        DisableToolTip();
     }
 
-    public void SetText(string text) {
+    public void EnableToolTip(string line) {
+        bgRect.GetComponent<Image>().color = new Color32(147, 147, 147, 157);
+        textUI.color = new Color32(255, 255, 255, 255);
+        SetText(line);
+    }
+
+    public void DisableToolTip() {
+        bgRect.GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+        textUI.color = new Color32(0, 0, 0, 0);
+    }
+
+    private void SetText(string text) {
         textUI.SetText(text);
         textUI.ForceMeshUpdate();
         Vector2 textSize = textUI.GetRenderedValues(false);

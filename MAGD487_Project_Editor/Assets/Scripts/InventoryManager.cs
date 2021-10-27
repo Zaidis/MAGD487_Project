@@ -33,8 +33,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ActivateTooltip(Item item) {
 
-        tooltip.gameObject.SetActive(true);
-        tooltip.SetText(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
+        tooltip.EnableToolTip(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
         
     }
 
@@ -65,7 +64,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void DisableToolTip() {
-        tooltip.gameObject.SetActive(false);
+        tooltip.DisableToolTip();
     }
 
     /// <summary>
