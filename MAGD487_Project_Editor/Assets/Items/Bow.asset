@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  icon: {fileID: -5041819254866391950, guid: 42a911a51ee1fad4db2bcd8053802886, type: 3}
   name: Bow
+  description: Pew Pew Pew
+  level: 1
   stackable: 0
   maxStack: 1
+  icon: {fileID: -5041819254866391950, guid: 42a911a51ee1fad4db2bcd8053802886, type: 3}
   type: 0
   damage: 5
   attackSpeed: 5

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
   m_Name: Roho's Hat
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: 
+  name: Roho's Hat
+  description: Oswego ROHO
+  level: 4
   stackable: 0
   maxStack: 1
+  icon: {fileID: -6948315507156744436, guid: c41140a4167c37d409b137daeed819d2, type: 3}
   type: 0
   damage: 69
   attackSpeed: 420

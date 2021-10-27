@@ -32,8 +32,36 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void ActivateTooltip(Item item) {
+
         tooltip.gameObject.SetActive(true);
-        tooltip.SetText(item.name);
+        tooltip.SetText(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
+        
+    }
+
+    /// <summary>
+    /// Grabs the rarity of the item and changes the color of its name for the UI.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    private string ItemRarityColor(Item item) {
+        int level = item.level;
+        tooltip.gameObject.SetActive(true);
+        switch (level) {
+            case 1:
+                return "<color=grey>" + item.name + "</color>";
+            case 2:
+                return "<color=white>" + item.name + "</color>";
+            case 3:
+                return "<color=green>" + item.name + "</color>";
+            case 4:
+                return "<color=blue>" + item.name + "</color>" ;
+            case 5:
+                return "<color=yellow>" + item.name + "</color>";
+            case 6:
+                return "<color=orange>" + item.name + "</color>";
+            default:
+                return "<color=red>" + item.name + "</color>";
+        }
     }
 
     public void DisableToolTip() {
