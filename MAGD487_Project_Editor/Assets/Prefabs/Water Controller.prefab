@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58e38cf947f69429193c3a042b01d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastLength: 0.25
+  raycastLength: 0.5
   waterParticles: []
   waterParticlesDelayed: []
   waterParticlesStationary: []
@@ -103,13 +103,7 @@ MonoBehaviour:
   - {x: 0, y: -1, z: 0}
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
-  updateSpeed: 0.1
-  delayedUpdateSpeed: 0.5
-  stationaryUpdateSpeed: 1.5
-  ignoreMask:
-    serializedVersion: 2
-    m_Bits: 4
-  mainMask:
-    serializedVersion: 2
-    m_Bits: 64
-  stationaryThreshold: 10
+  updateSpeed: 0.05
+  delayedUpdateSpeed: 0.25
+  stationaryUpdateSpeed: 10
+  stationaryThreshold: 100

@@ -59,7 +59,15 @@ public class WaterFlow : MonoBehaviour
                 if (hit.collider == null && !positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x))
                 {
                     //Go in current direction
+                    hit = Physics2D.Raycast(part.transform.position, -part.currentDirection, raycastLength);
                     MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
+                    if(hit.collider != null && positions.TryGetValue(hit.transform.position, out WaterParticle val))
+                    {
+                        if (canSpeedUp)
+                        {
+                            SwapLists(this.waterParticles, waterParticles, val);
+                        }
+                    }
                     continue;
                 }
                 else
