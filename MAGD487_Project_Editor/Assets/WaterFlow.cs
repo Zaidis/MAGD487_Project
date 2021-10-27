@@ -5,15 +5,16 @@ using UnityEngine;
 public class WaterFlow : MonoBehaviour
 {
     [SerializeField] float raycastLength;
-    [SerializeField] List<Transform> waterParticles;
-    List<Transform> waterParticlesDelayed = new List<Transform>();
+    [SerializeField] List<WaterParticle> waterParticles;
+    [SerializeField] List<WaterParticle> waterParticlesDelayed = new List<WaterParticle>();
+    [SerializeField] List<WaterParticle> waterParticlesStationary = new List<WaterParticle>();
     [SerializeField] Vector3[] directions;
     RaycastHit2D hit;
-    [SerializeField] float updateSpeed, delayedUpdateSpeed;
-    float timer = 0, timer2 = 0;
+    [SerializeField] float updateSpeed, delayedUpdateSpeed, stationaryUpdateSpeed;
+    float timer = 0, timer2 = 0, timer3 = 0;
     public static WaterFlow instance;
-    [SerializeField] LayerMask ignoreMask, mainMask;
-    Dictionary<Vector3, Transform> positions = new Dictionary<Vector3, Transform>();
+    Dictionary<Vector3, WaterParticle> positions = new Dictionary<Vector3, WaterParticle>();
+    [SerializeField] int stationaryThreshold = 3;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class WaterFlow : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    public void AssignParticle(Transform part)
+    public void AssignParticle(WaterParticle part)
     {
         waterParticles.Add(part);
     }
@@ -32,25 +33,34 @@ public class WaterFlow : MonoBehaviour
     {
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
+        timer3 += Time.deltaTime;
 
-        UpdateList();
-        UpdateDelayedList();
+        timer = UpdateList(waterParticles, waterParticlesDelayed, timer, updateSpeed, false);
+        timer2 = UpdateList(waterParticlesDelayed, waterParticlesStationary, timer2, delayedUpdateSpeed, true);
+        timer3 = UpdateList(waterParticlesStationary, waterParticles, timer3, stationaryUpdateSpeed, true);
+        //UpdateDelayedList();
     }
-    void UpdateList()
+    float UpdateList(List<WaterParticle> waterParticles, List<WaterParticle> waterParticlesDelayed, float timer, float updateSpeed, bool canSpeedUp)
     {
         if (timer > updateSpeed)
         {
 
             for(int i = 0; i < waterParticles.Count; i++)
             {
-                Transform part = waterParticles[i];
-                part.gameObject.layer = ignoreMask;
-                hit = Physics2D.Raycast(part.position, directions[0], raycastLength, mainMask);
-                if (hit.collider == null && !positions.ContainsKey(part.position + directions[0] * part.localScale.x))
+                WaterParticle part = waterParticles[i];
+                
+                hit = Physics2D.Raycast(part.transform.position, directions[0], raycastLength);
+                if (hit.collider == null && !positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x))
                 {
-                    positions.Remove(part.position);
-                    part.position += directions[0] * part.localScale.x;
-                    positions.Add(part.position, part);
+                    MoveParticleInDirection(directions[0], part.transform, part, waterParticles, canSpeedUp);
+                    continue;
+                }
+                hit = Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength);
+                if (hit.collider == null && !positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x))
+                {
+                    //Go in current direction
+                    MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
+                    continue;
                 }
                 else
                 {
@@ -59,74 +69,57 @@ public class WaterFlow : MonoBehaviour
                     for (int j = 1; j < dir.Count; j++)
                     {
                         int rand = Random.Range(1, dir.Count);
-                        hit = Physics2D.Raycast(part.position, dir[rand], raycastLength, mainMask);
-                        if (hit.collider == null && !positions.ContainsKey(part.position + dir[rand] * part.localScale.x))
+                        hit = Physics2D.Raycast(part.transform.position, dir[rand], raycastLength);
+                        if (hit.collider == null && !positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x))
                         {
                             //Open so move to it
-                            positions.Remove(part.position);
-                            part.position += dir[rand] * part.localScale.x;
-                            positions.Add(part.position, part);
+                            MoveParticleInDirection(dir[rand], part.transform, part, waterParticles, canSpeedUp);
                             break;
                         }
                         else if (j == dir.Count - 1)
                         {
                             //Block must be stuck so put into delayed list
-                            waterParticlesDelayed.Add(part);
-                            waterParticles.Remove(part);
+                            if (!canSpeedUp)
+                            {
+                                SwapLists(waterParticlesDelayed, waterParticles, part);
+                            }
+                            else if(part.stationaryIteration >= stationaryThreshold)
+                            {
+                                SwapLists(waterParticlesStationary, waterParticles, part);
+                            }
+                            else
+                            {
+                                part.stationaryIteration++;
+                            }
+                            
                             break;
                         }
                     }
                 }
 
-                part.gameObject.layer = mainMask;
             }
-            timer = 0;
+            return 0;
         }
+        return timer;
     }
-    void UpdateDelayedList()
+
+    void MoveParticleInDirection(Vector3 dir, Transform part, WaterParticle particle, List<WaterParticle> currentList, bool canSpeedUp)
     {
-        if (timer2 > delayedUpdateSpeed)
-        {
+        positions.Remove(part.transform.position);
+        part.transform.position += dir * part.transform.localScale.x;
+        positions.Add(part.transform.position, particle);
+        particle.currentDirection = dir;
+        particle.stationaryIteration = 0;
 
-            for(int i = 0; i < waterParticlesDelayed.Count; i++)
-            {
-                Transform part = waterParticlesDelayed[i];
-                part.gameObject.layer = ignoreMask;
-                hit = Physics2D.Raycast(part.position, directions[0], raycastLength, mainMask);
-                if (hit.collider == null && !positions.ContainsKey(part.position + directions[0] * part.localScale.x))
-                {
-                    positions.Remove(part.position);
-                    part.position += directions[0] * part.localScale.x;
-                    positions.Add(part.position, part);
-                    waterParticles.Add(part);
-                    waterParticlesDelayed.Remove(part);
-                }
-                else
-                {
-                    //Follow rules
-                    List<Vector3> dir = new List<Vector3>(directions);
-                    for (int j = 1; j < dir.Count; j++)
-                    {
-                        int rand = Random.Range(1, dir.Count);
-                        hit = Physics2D.Raycast(part.position, dir[rand], raycastLength, mainMask);
-                        if (hit.collider == null && !positions.ContainsKey(part.position + dir[rand] * part.localScale.x))
-                        {
-                            //Open so move to it
-                            positions.Remove(part.position);
-                            part.position += dir[rand] * part.localScale.x;
-                            positions.Add(part.position, part);
-                            waterParticles.Add(part);
-                            waterParticlesDelayed.Remove(part);
-                            break;
-                        }
-                    }
-                }
-
-                part.gameObject.layer = mainMask;
-            }
-            timer2 = 0;
-        }
+        if (canSpeedUp)
+            SwapLists(waterParticles, currentList, particle);
     }
+    void SwapLists(List<WaterParticle> particles1, List<WaterParticle> particles2, WaterParticle part)
+    {
+        particles1.Add(part);
+        particles2.Remove(part);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
