@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(fileName = "Weapon", menuName = "New Weapon")]
+public class Weapon : Item
 {
     [Header("Statistics")]
     public float damage;
-    public float speed;
+    public float attackSpeed;
 
-    [Header("Scriptable Object")]
-    public Item item;
+    
+
+   
 }
