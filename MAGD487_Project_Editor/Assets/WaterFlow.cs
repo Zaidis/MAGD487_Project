@@ -9,7 +9,6 @@ public class WaterFlow : MonoBehaviour
     [SerializeField] List<WaterParticle> waterParticlesDelayed = new List<WaterParticle>();
     [SerializeField] List<WaterParticle> waterParticlesStationary = new List<WaterParticle>();
     [SerializeField] Vector3[] directions;
-    RaycastHit2D hit;
     [SerializeField] float updateSpeed, delayedUpdateSpeed, stationaryUpdateSpeed;
     float timer = 0, timer2 = 0, timer3 = 0;
     public static WaterFlow instance;
@@ -33,11 +32,11 @@ public class WaterFlow : MonoBehaviour
     {
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
-        timer3 += Time.deltaTime;
+       // timer3 += Time.deltaTime;
 
         timer = UpdateList(waterParticles, waterParticlesDelayed, timer, updateSpeed, false);
         timer2 = UpdateList(waterParticlesDelayed, waterParticlesStationary, timer2, delayedUpdateSpeed, true);
-        timer3 = UpdateList(waterParticlesStationary, waterParticles, timer3, stationaryUpdateSpeed, true);
+        //timer3 = UpdateList(waterParticlesStationary, waterParticles, timer3, stationaryUpdateSpeed, true);
         //UpdateDelayedList();
     }
     float UpdateList(List<WaterParticle> waterParticles, List<WaterParticle> waterParticlesDelayed, float timer, float updateSpeed, bool canSpeedUp)
@@ -49,25 +48,15 @@ public class WaterFlow : MonoBehaviour
             {
                 WaterParticle part = waterParticles[i];
                 
-                hit = Physics2D.Raycast(part.transform.position, directions[0], raycastLength);
-                if (hit.collider == null && !positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x))
+                if (!positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, directions[0], raycastLength).collider == null)
                 {
                     MoveParticleInDirection(directions[0], part.transform, part, waterParticles, canSpeedUp);
                     continue;
                 }
-                hit = Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength);
-                if (hit.collider == null && !positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x))
+                if (!positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength).collider == null)
                 {
                     //Go in current direction
-                    hit = Physics2D.Raycast(part.transform.position, -part.currentDirection, raycastLength);
                     MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
-                    if(hit.collider != null && positions.TryGetValue(hit.transform.position, out WaterParticle val))
-                    {
-                        if (canSpeedUp)
-                        {
-                            SwapLists(this.waterParticles, waterParticles, val);
-                        }
-                    }
                     continue;
                 }
                 else
@@ -77,8 +66,7 @@ public class WaterFlow : MonoBehaviour
                     for (int j = 1; j < dir.Count; j++)
                     {
                         int rand = Random.Range(1, dir.Count);
-                        hit = Physics2D.Raycast(part.transform.position, dir[rand], raycastLength);
-                        if (hit.collider == null && !positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x))
+                        if (!positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, dir[rand], raycastLength).collider == null)
                         {
                             //Open so move to it
                             MoveParticleInDirection(dir[rand], part.transform, part, waterParticles, canSpeedUp);
@@ -101,6 +89,11 @@ public class WaterFlow : MonoBehaviour
                             }
                             
                             break;
+                        }
+                        else
+                        {
+                            dir.RemoveAt(j);
+                            j--;
                         }
                     }
                 }
