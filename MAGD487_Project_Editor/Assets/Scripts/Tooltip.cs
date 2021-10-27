@@ -15,13 +15,16 @@ public class Tooltip : MonoBehaviour {
     }
 
     public void EnableToolTip(string line) {
-        bgRect.GetComponent<Image>().color = new Color32(147, 147, 147, 157);
+        //bgRect.GetComponent<Image>().color = new Color32(147, 147, 147, 157);
+        bgRect.GetComponent<Image>().color = new Color32(0, 255, 238, 190);
+        bgRect.transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 255);
         textUI.color = new Color32(255, 255, 255, 255);
         SetText(line);
     }
 
     public void DisableToolTip() {
         bgRect.GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+        bgRect.transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 0);
         textUI.color = new Color32(0, 0, 0, 0);
     }
 
