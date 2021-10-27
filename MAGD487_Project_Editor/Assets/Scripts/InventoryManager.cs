@@ -31,6 +31,10 @@ public class InventoryManager : MonoBehaviour
        // Physics2D.IgnoreLayerCollision(8, 7);
     }
 
+    /// <summary>
+    /// Called when enabling the tooltip. 
+    /// </summary>
+    /// <param name="item"></param>
     public void ActivateTooltip(Item item) {
 
         tooltip.EnableToolTip(ItemRarityColor(item) + "\n" + "Level: " + item.level.ToString() + "\n" + item.description);
@@ -61,8 +65,12 @@ public class InventoryManager : MonoBehaviour
             default:
                 return "<color=red>" + item.name + "</color>";
         }
+        return "";
     }
 
+    /// <summary>
+    /// Called when disabling the tooltip. 
+    /// </summary>
     public void DisableToolTip() {
         tooltip.DisableToolTip();
     }
