@@ -14,7 +14,6 @@ public class WaterFlow : MonoBehaviour
     public static WaterFlow instance;
     Dictionary<Vector3, WaterParticle> positions = new Dictionary<Vector3, WaterParticle>();
     [SerializeField] int stationaryThreshold = 3;
-
     private void Awake()
     {
         if (instance == null)
@@ -34,6 +33,7 @@ public class WaterFlow : MonoBehaviour
         timer2 += Time.fixedDeltaTime;
         timer = UpdateList(waterParticles, waterParticlesDelayed, timer, updateSpeed, false);
         timer2 = UpdateList(waterParticlesDelayed, waterParticlesStationary, timer2, delayedUpdateSpeed, true);
+        
     }
     float UpdateList(List<WaterParticle> waterParticles, List<WaterParticle> waterParticlesDelayed, float timer, float updateSpeed, bool canSpeedUp)
     {
@@ -45,13 +45,13 @@ public class WaterFlow : MonoBehaviour
                 List<Vector3> dir = new List<Vector3>();
                 WaterParticle part = waterParticles[i];
 
-                if (!positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, directions[0], raycastLength).collider == null)
+                if (!positions.ContainsKey(part.transform.position + directions[0] * part.transform.localScale.x))
                 {
                     MoveParticleInDirection(directions[0], part.transform, part, waterParticles, canSpeedUp);
                     continue;
-                }else if(!positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, part.currentDirection, raycastLength).collider == null)
+                }else if(!positions.ContainsKey(part.transform.position + part.currentDirection * part.transform.localScale.x))
                 {
-                    MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
+                     MoveParticleInDirection(part.currentDirection, part.transform, part, waterParticles, canSpeedUp);
                     continue;
                 }
                 
@@ -66,10 +66,10 @@ public class WaterFlow : MonoBehaviour
                     for (int j = 0; j < dir.Count; j++)
                     {
                         int rand = Random.Range(0, dir.Count);
-                        if (!positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x) && Physics2D.Raycast(part.transform.position, dir[rand], raycastLength).collider == null)
+                        if (!positions.ContainsKey(part.transform.position + dir[rand] * part.transform.localScale.x))
                         {
                             //Open so move to it
-                            MoveParticleInDirection(dir[rand], part.transform, part, waterParticles, canSpeedUp);
+                             MoveParticleInDirection(dir[rand], part.transform, part, waterParticles, canSpeedUp);
                             break;
                         }
                         else if (j == dir.Count - 1)
@@ -99,6 +99,27 @@ public class WaterFlow : MonoBehaviour
                 }
 
             }
+            /*
+            //Schedule raycast commands
+            var results = new NativeArray<RaycastHit2D>(raycastCommands.Count, Allocator.TempJob);
+            var rays = new NativeArray<RaycastCommand>(raycastCommands.Count, Allocator.TempJob);
+            for (int i = 0; i < raycastCommands.Count; i++)
+            {
+                rays[i] = raycastCommands[i];
+            }
+            JobHandle handle = RaycastCommand.ScheduleBatch(rays, results, 1, default(JobHandle));
+            handle.Complete();
+
+            //Move all successful raycasts
+            for (int i = 0; i < results.Length; i++)
+            {
+                if (results[i].collider == null && !positions.ContainsKey(particlesRaycastCommand[i].transform.position + raycastCommands[i].direction * particlesRaycastCommand[i].transform.localScale.x))
+                    MoveParticleInDirection(raycastCommands[i].direction, particlesRaycastCommand[i].transform, particlesRaycastCommand[i], waterParticles, canSpeedUp);
+            }
+            results.Dispose();
+            rays.Dispose();
+            raycastCommands.Clear();
+            particlesRaycastCommand.Clear();*/
             return 0;
         }
         return timer;
