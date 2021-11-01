@@ -48,6 +48,7 @@ public class EnemyWalk : MonoBehaviour
             transform.localScale = unFlippedScale;
         else if (dir.x < 0)
             transform.localScale = flippedScale;
+
         rb.velocity = new Vector2(dir.x * walkSpeed, rb.velocity.y);
 
     }
@@ -62,8 +63,12 @@ public class EnemyWalk : MonoBehaviour
         if (hit.collider != null)
         {
             //Theres a wall so try and jump
-            rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
+            Jump();
         }
+    }
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
     }
 
     private void OnDrawGizmosSelected()
