@@ -884,6 +884,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a30f37f5-e7fc-4665-bfb7-497f1501bb8e
     m_ActionName: Player/Roll[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 608d66c1-f0ff-4059-bd46-4a48bf27eb36
+    m_ActionName: Player/Pick Up[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bca31c67-ff71-4161-b823-746cdd1dff00
+    m_ActionName: Player/Drop Item[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -903,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
   speed: 5
+  rolling: 0
   rollForce: 30
   rollTime: 0.25
 --- !u!114 &9152401118014463180

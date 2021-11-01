@@ -39,7 +39,7 @@ public class WaterFlow : MonoBehaviour
     {
         if (timer > updateSpeed)
         {
-
+            //TODO: Re-add all the raycasts to the proper if statements
             for(int i = 0; i < waterParticles.Count; i++)
             {
                 List<Vector3> dir = new List<Vector3>();
