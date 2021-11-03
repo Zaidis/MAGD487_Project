@@ -17,8 +17,15 @@ public class PlayerMovement : MonoBehaviour{
     private float timer = 0;
     private Vector2 initialRollDirection;
 
+    public static PlayerMovement instance;
+    public bool canReceiveAttackInput; //Attack elements
+    public bool AttackInputReceived;
+
     void Awake()
     {
+        canReceiveAttackInput = true;
+        AttackInputReceived = false;
+        instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -66,5 +73,25 @@ public class PlayerMovement : MonoBehaviour{
     {
         if (callbackContext.performed)
             wantToRoll = true;
+    }
+    public void Attack(InputAction.CallbackContext callbackContext)
+    {        
+        if(callbackContext.performed) {
+            Debug.Log(canReceiveAttackInput);
+            if(canReceiveAttackInput) {
+                AttackInputReceived = true;
+                canReceiveAttackInput = false;
+            } else {
+                return;
+            }
+        }
+    }
+    public void InputManager()
+    {
+        if(!canReceiveAttackInput) {
+            canReceiveAttackInput = true;
+        } else {
+            canReceiveAttackInput = false;
+        }
     }
 }
