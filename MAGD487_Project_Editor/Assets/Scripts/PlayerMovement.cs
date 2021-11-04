@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour{
     public Vector2 movement;
     [SerializeField]
     float speed;
-    
+    public bool canMove;
+
     private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     public bool rolling = false;
@@ -15,19 +16,10 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] private float rollForce;
     [SerializeField] private float rollTime;
     private float timer = 0;
-    private Vector2 initialRollDirection;
-
-    public static PlayerMovement instance;
-    public bool canReceiveAttackInput; //Attack elements
-    public bool AttackInputReceived;
-    public bool canMove;
-
+    private Vector2 initialRollDirection;   
     void Awake()
     {
-        canReceiveAttackInput = true;
-        AttackInputReceived = false;
         canMove = true;
-        instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -71,25 +63,5 @@ public class PlayerMovement : MonoBehaviour{
     {
         if (callbackContext.performed)
             wantToRoll = true;
-    }
-    public void Attack(InputAction.CallbackContext callbackContext)
-    {        
-        if(callbackContext.performed) {
-            if(canReceiveAttackInput && groundDetector.grounded) {
-                AttackInputReceived = true;
-                canReceiveAttackInput = false;
-                canMove = false; //TODO Move here?
-            } else {
-                return;
-            }
-        }
-    }
-    public void InputManager()
-    {
-        if(!canReceiveAttackInput) {
-            canReceiveAttackInput = true;
-        } else {
-            canReceiveAttackInput = false;
-        }
-    }
+    }    
 }
