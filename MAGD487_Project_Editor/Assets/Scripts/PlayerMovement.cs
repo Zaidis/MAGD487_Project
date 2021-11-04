@@ -16,9 +16,12 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] private float rollForce;
     [SerializeField] private float rollTime;
     private float timer = 0;
-    private Vector2 initialRollDirection;   
+    private Vector2 initialRollDirection;
+
+    public static PlayerMovement instance;
     void Awake()
     {
+        instance = this;
         canMove = true;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
@@ -52,7 +55,9 @@ public class PlayerMovement : MonoBehaviour{
                     wantToRoll = false;
                 }
             }
-        }        
+        } else {
+            rb.velocity = Vector2.zero;
+        }    
     }
 
     public void Move(InputAction.CallbackContext callbackContext)
