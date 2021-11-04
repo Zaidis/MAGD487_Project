@@ -20,11 +20,13 @@ public class PlayerMovement : MonoBehaviour{
     public static PlayerMovement instance;
     public bool canReceiveAttackInput; //Attack elements
     public bool AttackInputReceived;
+    public bool canMove;
 
     void Awake()
     {
         canReceiveAttackInput = true;
         AttackInputReceived = false;
+        canMove = true;
         instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
@@ -39,30 +41,26 @@ public class PlayerMovement : MonoBehaviour{
 
     private void FixedUpdate()
     {
-        if (!rolling)
-        {
-            rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
-            if (groundDetector.grounded && wantToRoll)
-            {
-                rolling = true;
-                timer = rollTime;
-                initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+        if(canMove) { //TODO Disable moving while in animation loop, figure this out
+            if(!rolling) {
+                rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
+                if(groundDetector.grounded && wantToRoll) {
+                    rolling = true;
+                    timer = rollTime;
+                    initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+                }
+            } else {
+                if(timer > 0) {
+                    rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
+                }
+                if(rb.velocity.x == 0)
+                    timer = 0;
+                if(timer < -rollTime) {
+                    rolling = false;
+                    wantToRoll = false;
+                }
             }
-        }            
-        else
-        {
-            if (timer > 0)
-            {
-                rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
-            }
-            if(rb.velocity.x == 0)
-                timer = 0;
-            if (timer < -rollTime)
-            {                
-                rolling = false;
-                wantToRoll = false;
-            }
-        }  
+        }        
     }
 
     public void Move(InputAction.CallbackContext callbackContext)
@@ -77,10 +75,10 @@ public class PlayerMovement : MonoBehaviour{
     public void Attack(InputAction.CallbackContext callbackContext)
     {        
         if(callbackContext.performed) {
-            Debug.Log(canReceiveAttackInput);
-            if(canReceiveAttackInput) {
+            if(canReceiveAttackInput && groundDetector.grounded) {
                 AttackInputReceived = true;
                 canReceiveAttackInput = false;
+                canMove = false; //TODO Move here?
             } else {
                 return;
             }
