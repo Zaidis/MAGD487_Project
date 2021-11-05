@@ -31,10 +31,25 @@ TextureImporter:
     second: Cave_Tiles-Sheet_8
   - first:
       213: -392030197566010390
-    second: ground ledge right
+    second: Cave_Tiles-Sheet_9
   - first:
       213: -3031140820653092
-    second: ground ledge left
+    second: Cave_Tiles-Sheet_10
+  - first:
+      213: 5166252534412199157
+    second: Cave_Tiles-Sheet_11
+  - first:
+      213: -7358048757310690940
+    second: Cave_Tiles-Sheet_12
+  - first:
+      213: -7499469133716683310
+    second: Cave_Tiles-Sheet_13
+  - first:
+      213: 7346135025273923051
+    second: Cave_Tiles-Sheet_14
+  - first:
+      213: -6725315475689997079
+    second: Cave_Tiles-Sheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -332,6 +347,153 @@ TextureImporter:
       bones: []
       spriteID: 6d5bea3984a62bcf0800000000000000
       internalID: -238010970349324842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb0ad4cc9a3f8af0800000000000000
+      internalID: -392030197566010390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbee18813b35fff0800000000000000
+      internalID: -3031140820653092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4c99dde4732b740800000000000000
+      internalID: 5166252534412199157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489ed7cc3a5f2e990800000000000000
+      internalID: -7358048757310690940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d58fc88e888ce790800000000000000
+      internalID: -7499469133716683310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5e18d42e6b2f560800000000000000
+      internalID: 7346135025273923051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave_Tiles-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec7f050531eaa2a0800000000000000
+      internalID: -6725315475689997079
       vertices: []
       indices: 
       edges: []

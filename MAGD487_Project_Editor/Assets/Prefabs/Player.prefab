@@ -719,7 +719,6 @@ GameObject:
   - component: {fileID: 4960092051601091846}
   - component: {fileID: 4960092051601091832}
   - component: {fileID: 9152401118014463180}
-  - component: {fileID: 5050955023008172166}
   - component: {fileID: 4960092051601091833}
   - component: {fileID: 4960092051601091845}
   - component: {fileID: 6275205026502913500}
@@ -888,11 +887,11 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 608d66c1-f0ff-4059-bd46-4a48bf27eb36
-    m_ActionName: Player/Pick Up[/XInputControllerWindows/buttonNorth,/Keyboard/e]
+    m_ActionName: Player/Pick Up[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: bca31c67-ff71-4161-b823-746cdd1dff00
-    m_ActionName: Player/Drop Item[/XInputControllerWindows/buttonEast,/Keyboard/f]
+    m_ActionName: Player/Drop Item[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -915,9 +914,6 @@ MonoBehaviour:
   rolling: 0
   rollForce: 30
   rollTime: 0.25
-  canReceiveAttackInput: 0
-  AttackInputReceived: 0
-  canMove: 0
 --- !u!114 &9152401118014463180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,18 +931,6 @@ MonoBehaviour:
   wasGrounded: 0
   jumpLength: 0.25
   gravityMultiplier: 2
---- !u!114 &5050955023008172166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960092051601091835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ebce012a564547ac9347a0b9c7d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4960092051601091833
 BoxCollider2D:
   m_ObjectHideFlags: 0
