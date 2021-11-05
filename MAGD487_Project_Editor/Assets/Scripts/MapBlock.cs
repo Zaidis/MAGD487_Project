@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Tilemaps;
 public class MapBlock : MonoBehaviour
 {
     [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent;
+    public Tilemap tilemap;
     public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns;
     private void Awake()
     {
