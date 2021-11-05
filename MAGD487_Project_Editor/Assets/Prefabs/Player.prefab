@@ -764,7 +764,6 @@ GameObject:
   - component: {fileID: 4960092051601091834}
   - component: {fileID: 4960092051601091846}
   - component: {fileID: 4960092051601091832}
-  - component: {fileID: 8047251825050663373}
   - component: {fileID: 9152401118014463180}
   - component: {fileID: 4960092051601091833}
   - component: {fileID: 4960092051601091845}
@@ -840,19 +839,7 @@ MonoBehaviour:
     m_ActionId: 051c62c6-ecae-4dc4-8c91-567725a1d7dd
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8047251825050663373}
-        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
-        m_MethodName: AttackInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4c9538d2-de4f-4b1c-b036-5c997e4d0411
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -970,24 +957,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
   speed: 5
-  canMove: 0
   rolling: 0
   rollForce: 30
   rollTime: 0.25
---- !u!114 &8047251825050663373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960092051601091835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ebce012a564547ac9347a0b9c7d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canReceiveAttackInput: 0
-  AttackInputReceived: 0
 --- !u!114 &9152401118014463180
 MonoBehaviour:
   m_ObjectHideFlags: 0
