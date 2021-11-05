@@ -6,6 +6,7 @@ public class Lantern : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
+    [SerializeField] float sizeOfSphere;
    
     // Update is called once per frame
     void Update()
@@ -18,6 +19,6 @@ public class Lantern : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(offset, 0.01f);
+        Gizmos.DrawSphere(offset + target.transform.position, sizeOfSphere);
     }
 }

@@ -71,7 +71,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0.018729925}
   m_ConnectedAnchor: {x: 0, y: -0.17406945}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.07033308
+  m_Distance: 0.07033312
   m_DampingRatio: 1
   m_Frequency: 1000000
 --- !u!1 &483866068
@@ -595,7 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4960092050756392009}
-  offset: {x: 0, y: -0.15, z: 0}
+  offset: {x: 0.02, y: -0.13, z: 0}
+  sizeOfSphere: -0.01
 --- !u!114 &1168462839
 MonoBehaviour:
   m_ObjectHideFlags: 0
