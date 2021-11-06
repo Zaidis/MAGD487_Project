@@ -5,14 +5,13 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     PlayerMovement playerMovement;
-    Jump jumpScript;
+    [SerializeField] GroundDetector groundDetector;
     Animator anim;
     SpriteRenderer sr;
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         playerMovement = GetComponentInParent<PlayerMovement>();
-        jumpScript = GetComponentInParent<Jump>();
         anim = GetComponent<Animator>();
     }
 
@@ -20,6 +19,12 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         anim.SetFloat("MoveX", playerMovement.movement.x);
+
+        if(groundDetector.grounded)
+            anim.SetFloat("MoveY", 0);
+        else
+            anim.SetFloat("MoveY", 1);
+
         float val = playerMovement.movement.x;
         if (val > 0)
             sr.flipX = false;

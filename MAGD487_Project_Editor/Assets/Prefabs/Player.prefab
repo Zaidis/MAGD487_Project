@@ -754,6 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81524ac246b7c04cbd31d1d319fea2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundDetector: {fileID: 990974488448991672}
 --- !u!1 &4960092051601091835
 GameObject:
   m_ObjectHideFlags: 0
