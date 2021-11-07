@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
+    [SerializeField] GameObject exitPrefab;
     [SerializeField] GameObject mapBlockTemplate;
     TileMapMerger mapMerger;
     private void Awake()
@@ -25,6 +26,8 @@ public class MapGenerator : MonoBehaviour
         MergeTiles();
         //Spawn Player
         SpawnPlayer();
+        //Spawn Dungeon Exit
+        SpawnExit();
     }
 
     void MergeTiles()
@@ -108,6 +111,12 @@ public class MapGenerator : MonoBehaviour
         int rand = Random.Range(0, blocksInX - 2);
         //Picks a random room at the top level of the dungeon to spawn the player
         player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
+    }
+    void SpawnExit()
+    {
+        int rand = Random.Range(mapBlocksSpawned.Count - blocksInX - 2, mapBlocksSpawned.Count);
+        //Picks a random room at the top level of the dungeon to spawn the player
+        Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
     }
     private GameObject PickRandomMidSectionMapBlock()
     {
