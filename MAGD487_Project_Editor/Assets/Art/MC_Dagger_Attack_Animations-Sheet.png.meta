@@ -29,6 +29,27 @@ TextureImporter:
   - first:
       213: -6386601136273695403
     second: MC_Dagger_Attack_Animations-Sheet_8
+  - first:
+      213: -8528382590871541785
+    second: MC_Dagger_Attack_Animations-Sheet_9
+  - first:
+      213: 5323826295222342146
+    second: MC_Dagger_Attack_Animations-Sheet_10
+  - first:
+      213: -8879839586292437786
+    second: MC_Dagger_Attack_Animations-Sheet_11
+  - first:
+      213: -1640218991227294066
+    second: MC_Dagger_Attack_Animations-Sheet_12
+  - first:
+      213: -1970936767001067450
+    second: MC_Dagger_Attack_Animations-Sheet_13
+  - first:
+      213: 1297180759613500224
+    second: MC_Dagger_Attack_Animations-Sheet_14
+  - first:
+      213: 6991724467875706023
+    second: MC_Dagger_Attack_Animations-Sheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -302,6 +323,153 @@ TextureImporter:
       bones: []
       spriteID: 55ddc4eaa1c3e57a0800000000000000
       internalID: -6386601136273695403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7e97a083915a980800000000000000
+      internalID: -8528382590871541785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2029c940fc702e940800000000000000
+      internalID: 5323826295222342146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec669491f874c480800000000000000
+      internalID: -8879839586292437786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e2c0a8485cc39e0800000000000000
+      internalID: -1640218991227294066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6400520f373d5a4e0800000000000000
+      internalID: -1970936767001067450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04beb323703800210800000000000000
+      internalID: 1297180759613500224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_Dagger_Attack_Animations-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4732b1c58970160800000000000000
+      internalID: 6991724467875706023
       vertices: []
       indices: 
       edges: []
