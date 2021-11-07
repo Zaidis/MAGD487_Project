@@ -279,8 +279,8 @@ MonoBehaviour:
   - {fileID: 6372139619522699429, guid: 8d431dcec744e4541b5f2bc3b873d5c9, type: 3}
   mapBlocksUp:
   - {fileID: 6372139619522699429, guid: bd9d68bd66a352743871ae0dbb5b6419, type: 3}
-  blocksInX: 8
-  blocksInY: 5
+  blocksInX: 7
+  blocksInY: 4
   blockOffset: 50
   player: {fileID: 0}
   mapBlockTemplate: {fileID: 6372139619522699429, guid: 40b552936d0d21e49a9ea206daa786bf, type: 3}
