@@ -8,6 +8,8 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] GroundDetector groundDetector;
     Animator anim;
     SpriteRenderer sr;
+    [SerializeField]
+    private GameObject dhb;
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -26,9 +28,13 @@ public class PlayerAnimationController : MonoBehaviour
             anim.SetFloat("MoveY", 1);
 
         float val = playerMovement.movement.x;
-        if (val > 0)
+        if (val > 0) {
             sr.flipX = false;
-        else if (val < 0)
+            dhb.transform.localScale = new Vector3(1, 1, 1);
+        }            
+        else if (val < 0) {
             sr.flipX = true;
+            dhb.transform.localScale = new Vector3(-1, 1, 1);
+        }            
     }
 }
