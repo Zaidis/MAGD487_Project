@@ -28,13 +28,14 @@ public class PlayerAnimationController : MonoBehaviour
             anim.SetFloat("MoveY", 1);
 
         float val = playerMovement.movement.x;
-        if (val > 0) {
-            sr.flipX = false;
-            dhb.transform.localScale = new Vector3(1, 1, 1);
-        }            
-        else if (val < 0) {
-            sr.flipX = true;
-            dhb.transform.localScale = new Vector3(-1, 1, 1);
-        }            
+        if(PlayerMovement.instance.canMove) {
+            if(val > 0) {
+                sr.flipX = false;
+                dhb.transform.localScale = new Vector3(1, 1, 1);
+            } else if(val < 0) {
+                sr.flipX = true;
+                dhb.transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }             
     }
 }
