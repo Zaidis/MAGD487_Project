@@ -1,8 +1,6 @@
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] List<GameObject> mapBlocksMidSection, mapBlocksDown, mapBlocksUp;
@@ -12,17 +10,35 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] int blocksInY = 3;
     [SerializeField] int blockOffset;
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
+    List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
     [SerializeField] GameObject mapBlockTemplate;
-
+    TileMapMerger mapMerger;
     private void Awake()
     {
+        mapMerger = GetComponent<TileMapMerger>();
         //Generate Map
         GenerateMap();
         //Place in Up Down Blocks
         PlaceUpDownBlocks();
+        //Merge Tilemaps
+        MergeTiles();
         //Spawn Player
         SpawnPlayer();
+    }
+
+    void MergeTiles()
+    {
+        List<Tilemap> tilemaps = new List<Tilemap>();
+        for (int i = 0; i < mapBlocksSpawned.Count; i++)
+        {
+            tilemaps.Add(mapBlocksSpawned[i].tilemap);
+        }
+        for (int i = 0; i < templateMapBlocks.Count; i++)
+        {
+            tilemaps.Add(templateMapBlocks[i].tilemap);
+        }
+        mapMerger.MergeTilemaps(tilemaps);
     }
     void GenerateMap()
     {
@@ -47,6 +63,10 @@ public class MapGenerator : MonoBehaviour
                 {
                     mapBlock = g.GetComponent<MapBlock>();
                     mapBlocksSpawned.Add(mapBlock);
+                }else
+                {
+                    mapBlock = g.GetComponent<MapBlock>();
+                    templateMapBlocks.Add(mapBlock);
                 }
             }
         }

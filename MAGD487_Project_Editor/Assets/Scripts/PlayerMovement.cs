@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour{
     public Vector2 movement;
     [SerializeField]
     float speed;
-    
+    public bool canMove;
+
     private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     public bool rolling = false;
@@ -17,8 +18,11 @@ public class PlayerMovement : MonoBehaviour{
     private float timer = 0;
     private Vector2 initialRollDirection;
 
+    public static PlayerMovement instance;
     void Awake()
     {
+        instance = this;
+        canMove = true;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -32,30 +36,28 @@ public class PlayerMovement : MonoBehaviour{
 
     private void FixedUpdate()
     {
-        if (!rolling)
-        {
-            rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
-            if (groundDetector.grounded && wantToRoll)
-            {
-                rolling = true;
-                timer = rollTime;
-                initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+        if(canMove) { //TODO Disable moving while in animation loop, figure this out
+            if(!rolling) {
+                rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
+                if(groundDetector.grounded && wantToRoll) {
+                    rolling = true;
+                    timer = rollTime;
+                    initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+                }
+            } else {
+                if(timer > 0) {
+                    rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
+                }
+                if(rb.velocity.x == 0)
+                    timer = 0;
+                if(timer < -rollTime) {
+                    rolling = false;
+                    wantToRoll = false;
+                }
             }
-        }            
-        else
-        {
-            if (timer > 0)
-            {
-                rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
-            }
-            if(rb.velocity.x == 0)
-                timer = 0;
-            if (timer < -rollTime)
-            {                
-                rolling = false;
-                wantToRoll = false;
-            }
-        }  
+        } else {
+            rb.velocity = Vector2.zero;
+        }    
     }
 
     public void Move(InputAction.CallbackContext callbackContext)
@@ -66,5 +68,5 @@ public class PlayerMovement : MonoBehaviour{
     {
         if (callbackContext.performed)
             wantToRoll = true;
-    }
+    }    
 }
