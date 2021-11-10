@@ -8,6 +8,7 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] GroundDetector groundDetector;
     Animator anim;
     SpriteRenderer sr;
+
     [SerializeField]
     private GameObject dhb;
     private void Awake()
@@ -28,6 +29,7 @@ public class PlayerAnimationController : MonoBehaviour
             anim.SetFloat("MoveY", 1);
 
         float val = playerMovement.movement.x;
+
         if(PlayerMovement.instance.canMove) {
             if(val > 0) {
                 sr.flipX = false;

@@ -33,10 +33,9 @@ public class PlayerMovement : MonoBehaviour{
             timer -= Time.deltaTime;
 
     }
-
     private void FixedUpdate()
     {
-        if(canMove) { //TODO Disable moving while in animation loop, figure this out
+        if(canMove) {
             if(!rolling) {
                 rb.velocity = new Vector3(movement.x * speed, rb.velocity.y);
                 if(groundDetector.grounded && wantToRoll) {
@@ -45,9 +44,8 @@ public class PlayerMovement : MonoBehaviour{
                     initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
                 }
             } else {
-                if(timer > 0) {
-                    rb.AddForce(initialRollDirection); //TODO mess with the force addition /over time?
-                }
+                if(timer > 0)
+                    rb.AddForce(initialRollDirection);
                 if(rb.velocity.x == 0)
                     timer = 0;
                 if(timer < -rollTime) {
