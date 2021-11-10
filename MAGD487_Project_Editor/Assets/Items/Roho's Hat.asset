@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Roho's Hat
   description: Oswego ROHO
-  level: 4
+  level: 3
   stackable: 0
   maxStack: 1
   icon: {fileID: -6948315507156744436, guid: c41140a4167c37d409b137daeed819d2, type: 3}
