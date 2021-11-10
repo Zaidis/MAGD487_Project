@@ -14,8 +14,13 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
     [SerializeField] private GameObject defaultInteractable;
     [SerializeField] private Tooltip tooltip;
+
+    [Header("Inventory Menu")]
+    [SerializeField] private GameObject menu;
+
+    private bool inventoryOn;
     
-    private void Awake() {
+    private void Awake() { //singleton
         if (instance == null) {
             instance = this;
         }
@@ -31,6 +36,33 @@ public class InventoryManager : MonoBehaviour
        // Physics2D.IgnoreLayerCollision(8, 7);
     }
 
+    public void ManageInventoryContext(InputAction.CallbackContext context) {
+        if (context.performed) {
+            ManageInventory();
+        }
+    }
+
+    /// <summary>
+    /// Turns on/off the inventory screen.
+    /// </summary>
+    private void ManageInventory() {
+        if (!inventoryOn) {
+            //turn on the inventory menu
+            TurnMenuOn();
+        } else {
+            TurnMenuOff();
+        }
+    }
+
+    private void TurnMenuOn() {
+        inventoryOn = true;
+        menu.SetActive(true);
+    }
+
+    private void TurnMenuOff() {
+        inventoryOn = false;
+        menu.SetActive(false);
+    }
     /// <summary>
     /// Called when enabling the tooltip. 
     /// </summary>
@@ -38,8 +70,11 @@ public class InventoryManager : MonoBehaviour
     public void ActivateTooltip(Item item) {
         if (item.type == itemType.weapon) {
             Weapon w = (Weapon)item;
-            tooltip.EnableToolTip(ItemRarityColor(w) + "\n" + "Level: " + w.level.ToString() + "\n" 
-                + "Damage: " + w.damage.ToString() + "\n" + "Speed: " + w.attackSpeed.ToString() + "\n" + w.description);
+            tooltip.EnableToolTip(ItemRarityColor(w) + "\n" 
+                + "Level: " + w.level.ToString() + "\n" 
+                + "Damage: " + w.damage.ToString() + "\n" 
+                + "Speed: " + w.attackSpeed.ToString() + "\n" 
+                + w.description);
         } else if (item.type == itemType.gear) {
             
             
@@ -202,13 +237,14 @@ public class InventoryManager : MonoBehaviour
     private void UseItem() {
         Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
         Slot slot = m_slots[(int)m_currentItem];
-
-        //first we check to see if the item is a consumable
-        if (slot.m_item.type == itemType.consumable) {
-            print("Test");
-            slot.currentStack--;
-            if(slot.currentStack <= 0) {
-                RemoveItem();
+        if (slot.m_item != null) {
+            //first we check to see if the item is a consumable
+            if (slot.m_item.type == itemType.consumable) {
+                print("Test");
+                slot.currentStack--;
+                if (slot.currentStack <= 0) {
+                    RemoveItem();
+                }
             }
         }
     }
