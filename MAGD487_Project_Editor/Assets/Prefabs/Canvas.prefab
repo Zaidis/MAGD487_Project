@@ -1088,6 +1088,9 @@ MonoBehaviour:
   t_desc: {fileID: 734681761014120136}
   t_stats: {fileID: 8092561683066635295}
   i_statsImage: {fileID: 1010566444405864480}
+  i_icon: {fileID: 827968537523949865}
+  leftLink: {fileID: 3786938831800410124}
+  rightLink: {fileID: 5567188706265206025}
 --- !u!1 &3108322765038186365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1266,9 @@ MonoBehaviour:
   t_desc: {fileID: 1068777197462231675}
   t_stats: {fileID: 8925479008439709655}
   i_statsImage: {fileID: 122801068672198170}
+  i_icon: {fileID: 554062856201825978}
+  leftLink: {fileID: 5567188706265206025}
+  rightLink: {fileID: 3786938831800410124}
 --- !u!1 &3465061510233286408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,7 +2707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eaa00e722b8899c429e61f32b76cd5cf, type: 2}
   m_sharedMaterial: {fileID: -841047412681718046, guid: eaa00e722b8899c429e61f32b76cd5cf, type: 2}
@@ -3550,6 +3556,7 @@ GameObject:
   - component: {fileID: 3597771724476874806}
   - component: {fileID: 3597771724476874805}
   - component: {fileID: 3597771724476874804}
+  - component: {fileID: 7309481649330758759}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3643,6 +3650,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7309481649330758759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597771724476874795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72831809921303a44b3b659c7cbcfc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 3597771724643290089}
+  statistics: {fileID: 0}
+  options: {fileID: 0}
+  slots:
+  - {fileID: 2880449937802256418}
+  - {fileID: 3786938831800410124}
+  - {fileID: 5567188706265206025}
+  - {fileID: 4685632569423688546}
+  currentSlot: {fileID: 2880449937802256418}
 --- !u!1 &3597771724486727487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,6 +5488,9 @@ MonoBehaviour:
   t_desc: {fileID: 1631987727887298599}
   t_stats: {fileID: 4214369475384434339}
   i_statsImage: {fileID: 242661038004726221}
+  i_icon: {fileID: 8928006541809713640}
+  leftLink: {fileID: 4685632569423688546}
+  rightLink: {fileID: 2880449937802256418}
 --- !u!1 &5239680087832624279
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,6 +7256,9 @@ MonoBehaviour:
   t_desc: {fileID: 5974622831155387656}
   t_stats: {fileID: 6949502633531581073}
   i_statsImage: {fileID: 3356352267237102203}
+  i_icon: {fileID: 7894505998986618453}
+  leftLink: {fileID: 2880449937802256418}
+  rightLink: {fileID: 4685632569423688546}
 --- !u!1 &8827506712112569801
 GameObject:
   m_ObjectHideFlags: 0

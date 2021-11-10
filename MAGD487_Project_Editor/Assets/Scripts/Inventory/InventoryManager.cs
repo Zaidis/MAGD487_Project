@@ -8,8 +8,11 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager instance;
+    public MenuManager menuManager;
+    public PlayerMovement player;
     public Text pickUpText;
-    [SerializeField] private List<Slot> m_slots = new List<Slot>(); //4 different slots for items
+    public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
+    
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
     [SerializeField] private GameObject defaultInteractable;
@@ -27,6 +30,9 @@ public class InventoryManager : MonoBehaviour
         else {
             Destroy(this.gameObject);
         }
+
+        menuManager = FindObjectOfType<MenuManager>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     private void Start() {
@@ -57,11 +63,13 @@ public class InventoryManager : MonoBehaviour
     private void TurnMenuOn() {
         inventoryOn = true;
         menu.SetActive(true);
+        player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Menu");
     }
 
     private void TurnMenuOff() {
         inventoryOn = false;
         menu.SetActive(false);
+        player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
     }
     /// <summary>
     /// Called when enabling the tooltip. 
@@ -283,6 +291,14 @@ public class InventoryManager : MonoBehaviour
             slot.GetComponent<Image>().color = Color.white;
         }
         m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
+
+        foreach (Slot slot in m_slots) {
+            if(slot.m_item != null) {
+                menuManager.UpdateInventoryMenuUI(); //update the menu slots
+                return;
+            }
+        }
+        
     }
 
     public float GetCurrentItem() {
