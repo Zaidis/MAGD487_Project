@@ -11,6 +11,14 @@ public class MenuManager : MonoBehaviour
     [Header("Inventory Section")]
     public menu_slot[] slots;
     public menu_slot currentSlot;
+    public Item defaultItem;
+    [SerializeField] private menu_slot swap_initial;
+    [SerializeField] private menu_slot swap_newLocation;
+    
+    private int index;
+    private int swapIndexInitial;
+    private int swapIndexLast;
+    private bool wantsToSwap;
     /// <summary>
     /// Allows the player to shuffle through the menu slots for the inventory.
     /// </summary>
@@ -25,39 +33,47 @@ public class MenuManager : MonoBehaviour
                 //right/down
                 if(ctx == new Vector2(1, 0)) {
                     //move right
-                    currentSlot = slots[1];
+                    index = 1;
+                    currentSlot = slots[index];
                 } else if(ctx == new Vector2(0, -1)) {
-                    currentSlot = slots[2];
+                    index = 3;
+                    currentSlot = slots[index];
                 }
 
             } else if (currentSlot == slots[1]) {
 
                 if (ctx == new Vector2(-1, 0)) {
                     //move right
-                    currentSlot = slots[0];
+                    index = 0;
+                    currentSlot = slots[index];
                 }
                 else if (ctx == new Vector2(0, -1)) {
-                    currentSlot = slots[3];
+                    index = 2;
+                    currentSlot = slots[index];
                 }
 
             } else if (currentSlot == slots[2]) {
 
-                if (ctx == new Vector2(1, 0)) {
+                if (ctx == new Vector2(-1, 0)) {
                     //move right
-                    currentSlot = slots[3];
+                    index = 3;
+                    currentSlot = slots[index];
                 }
                 else if (ctx == new Vector2(0, 1)) {
-                    currentSlot = slots[0];
+                    index = 1;
+                    currentSlot = slots[index];
                 }
 
             } else {
 
-                if (ctx == new Vector2(-1, 0)) {
+                if (ctx == new Vector2(1, 0)) {
                     //move right
-                    currentSlot = slots[2];
+                    index = 2;
+                    currentSlot = slots[index];
                 }
                 else if (ctx == new Vector2(0, 1)) {
-                    currentSlot = slots[1];
+                    index = 0;
+                    currentSlot = slots[index];
                 }
             }
             HoverOverCurrentSlot();
@@ -82,5 +98,36 @@ public class MenuManager : MonoBehaviour
             slot.GetComponent<Image>().color = Color.white;
         }
         currentSlot.GetComponent<Image>().color = Color.green;
+    }
+
+    /// <summary>
+    /// User chooses what item they want to swap to a different place. 
+    /// </summary>
+    public void SelectSwap(InputAction.CallbackContext context) {
+        if (context.performed) {
+            swap_initial = currentSlot;
+            swapIndexInitial = index;
+            wantsToSwap = true;
+        }
+    }   
+
+    public void Swap() {
+
+        //swap items
+        InventoryManager.instance.SwapItems(swapIndexInitial, swapIndexLast);
+
+        wantsToSwap = false;
+    }
+    public void Accept(InputAction.CallbackContext context) {
+        if (context.performed) {
+            if (wantsToSwap) {
+                if (currentSlot != swap_initial) {
+                    swap_newLocation = currentSlot;
+                    swapIndexLast = index;
+                    Swap();
+                }
+
+            }
+        }
     }
 }

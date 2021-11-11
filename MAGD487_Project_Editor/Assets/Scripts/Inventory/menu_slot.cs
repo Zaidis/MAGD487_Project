@@ -6,8 +6,8 @@ using TMPro;
 public class menu_slot : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI t_title, t_desc, t_stats;
-    [SerializeField] private Image i_statsImage, i_icon;
+    public TextMeshProUGUI t_title, t_desc, t_stats;
+    public Image i_statsImage, i_icon;
     public menu_slot leftLink, rightLink;
     public void EmptyThisSlot() {
 

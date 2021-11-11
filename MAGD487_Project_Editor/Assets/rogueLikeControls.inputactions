@@ -1155,6 +1155,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Swap",
+                    "type": "Button",
+                    "id": "69aa0628-2bc0-423c-9e54-b82e35073e82",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Select/Accept",
+                    "type": "Button",
+                    "id": "c27e1ab3-502c-4a78-847f-5bf039f6b64a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -1254,6 +1270,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f1c64a4-c18f-4cd8-9eb1-dd60237c7c13",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f611a9e3-4881-46d9-b61c-798f06d4eda6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Select/Accept",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

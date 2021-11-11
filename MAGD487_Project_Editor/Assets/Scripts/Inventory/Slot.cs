@@ -20,9 +20,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
     public void DeleteItemFromSlot() {
-        m_item = null;
-        m_icon.sprite = null;
-        m_name = "";
+        //m_item = null;
+        //m_icon.sprite = null;
+        //m_name = "";
+        m_item = InventoryManager.instance.menuManager.defaultItem;
         currentStack = 0;
     }
 

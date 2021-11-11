@@ -134,7 +134,7 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item) {
         if (item.stackable) { //first it will check if the item is stackable or not
             for (int i = 0; i < m_slots.Count; i++) {
-                if(m_slots[i].m_item != null) { //if there is an item here
+                if(m_slots[i].m_item != menuManager.defaultItem) { //if there is an item here
                     if(m_slots[i].m_item == item) { //if this item is the same as the one you are adding
                         //you have the item
                         if(m_slots[i].currentStack < m_slots[i].m_item.maxStack) {
@@ -149,7 +149,7 @@ public class InventoryManager : MonoBehaviour
         }
         //if its not stackable or you have too many, just add to another slot
         for(int i = 0; i < m_slots.Count; i++) {
-            if(m_slots[i].m_item == null) {
+            if(m_slots[i].m_item == menuManager.defaultItem) {
                 //if this slot does not have an item in it yet
                 m_slots[i].AddItemToSlot(item);
                 m_slots[i].currentStack = 1;
@@ -303,5 +303,14 @@ public class InventoryManager : MonoBehaviour
 
     public float GetCurrentItem() {
         return m_currentItem;
+    }
+
+    public void SwapItems(int num1, int num2) {
+        Item temp = m_slots[num1].m_item;
+        m_slots[num1].AddItemToSlot(m_slots[num2].m_item);
+        m_slots[num2].AddItemToSlot(temp);
+
+        menuManager.UpdateInventoryMenuUI();
+        UpdateSlotUI();
     }
 }
