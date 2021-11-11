@@ -220,16 +220,16 @@ public class InventoryManager : MonoBehaviour
 
 
             if (ctx == new Vector2(-1, 0)) { //left 
-                m_currentItem = 0;
-            }
-            else if (ctx == new Vector2(1, 0)) { //right
-                m_currentItem = 2;
-            }
-            else if (ctx == new Vector2(0, -1)) { //down
                 m_currentItem = 3;
             }
-            else { //up
+            else if (ctx == new Vector2(1, 0)) { //right
                 m_currentItem = 1;
+            }
+            else if (ctx == new Vector2(0, -1)) { //down
+                m_currentItem = 2;
+            }
+            else { //up
+                m_currentItem = 4;
             }
 
             ValidateValues();
