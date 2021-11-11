@@ -65,6 +65,10 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    public void ClickMenuSlot(int num) {
+        currentSlot = slots[num];
+        HoverOverCurrentSlot();
+    }
     public void UpdateInventoryMenuUI() {
         Debug.Log("I am updating the menu UI");
         for(int i = 0; i < 4; i++) { //4 slots
