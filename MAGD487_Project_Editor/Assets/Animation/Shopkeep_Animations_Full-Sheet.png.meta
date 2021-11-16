@@ -1,0 +1,1767 @@
+fileFormatVersion: 2
+guid: f14ad5281e461014f991a9528c6df9c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2125778025565354044
+    second: Shopkeep_Animations_Full-Sheet_0
+  - first:
+      213: -964727839153014683
+    second: Shopkeep_Animations_Full-Sheet_1
+  - first:
+      213: 2851620994610259360
+    second: Shopkeep_Animations_Full-Sheet_2
+  - first:
+      213: 1526959613675445918
+    second: Shopkeep_Animations_Full-Sheet_3
+  - first:
+      213: 7591697790850859834
+    second: Shopkeep_Animations_Full-Sheet_4
+  - first:
+      213: 4820062801863881127
+    second: Shopkeep_Animations_Full-Sheet_5
+  - first:
+      213: 7185491711711013093
+    second: Shopkeep_Animations_Full-Sheet_6
+  - first:
+      213: 7784118444441620271
+    second: Shopkeep_Animations_Full-Sheet_7
+  - first:
+      213: 8737322041790716535
+    second: Shopkeep_Animations_Full-Sheet_8
+  - first:
+      213: 6440680887484606790
+    second: Shopkeep_Animations_Full-Sheet_9
+  - first:
+      213: 488003965978616613
+    second: Shopkeep_Animations_Full-Sheet_10
+  - first:
+      213: 1452628458883726649
+    second: Shopkeep_Animations_Full-Sheet_11
+  - first:
+      213: 8180674709543175614
+    second: Shopkeep_Animations_Full-Sheet_12
+  - first:
+      213: -7735558225891531069
+    second: Shopkeep_Animations_Full-Sheet_13
+  - first:
+      213: 4261529422187352898
+    second: Shopkeep_Animations_Full-Sheet_14
+  - first:
+      213: 5385404082360483212
+    second: Shopkeep_Animations_Full-Sheet_15
+  - first:
+      213: 868318289037109752
+    second: Shopkeep_Animations_Full-Sheet_16
+  - first:
+      213: -3189070072858783616
+    second: Shopkeep_Animations_Full-Sheet_17
+  - first:
+      213: -8718098307605665717
+    second: Shopkeep_Animations_Full-Sheet_18
+  - first:
+      213: -251410976609942021
+    second: Shopkeep_Animations_Full-Sheet_19
+  - first:
+      213: 5853260321715017561
+    second: Shopkeep_Animations_Full-Sheet_20
+  - first:
+      213: -5080001351968327355
+    second: Shopkeep_Animations_Full-Sheet_21
+  - first:
+      213: 1754829885711286495
+    second: Shopkeep_Animations_Full-Sheet_22
+  - first:
+      213: 4177278225123249617
+    second: Shopkeep_Animations_Full-Sheet_23
+  - first:
+      213: 6256213312408745862
+    second: Shopkeep_Animations_Full-Sheet_24
+  - first:
+      213: -6460757408802143245
+    second: Shopkeep_Animations_Full-Sheet_25
+  - first:
+      213: 2693796286606666613
+    second: Shopkeep_Animations_Full-Sheet_26
+  - first:
+      213: 3118427869551970246
+    second: Shopkeep_Animations_Full-Sheet_27
+  - first:
+      213: 2288351520899837431
+    second: Shopkeep_Animations_Full-Sheet_28
+  - first:
+      213: 5755560303397425223
+    second: Shopkeep_Animations_Full-Sheet_29
+  - first:
+      213: -3073501465474303146
+    second: Shopkeep_Animations_Full-Sheet_30
+  - first:
+      213: -3886526627610625594
+    second: Shopkeep_Animations_Full-Sheet_31
+  - first:
+      213: 6008355477843817961
+    second: Shopkeep_Animations_Full-Sheet_32
+  - first:
+      213: -5604982632311854345
+    second: Shopkeep_Animations_Full-Sheet_33
+  - first:
+      213: -4411337973852561669
+    second: Shopkeep_Animations_Full-Sheet_34
+  - first:
+      213: -8231485883222067719
+    second: Shopkeep_Animations_Full-Sheet_35
+  - first:
+      213: 3141878459108973342
+    second: Shopkeep_Animations_Full-Sheet_36
+  - first:
+      213: -4867078277577272493
+    second: Shopkeep_Animations_Full-Sheet_37
+  - first:
+      213: 556802832965353813
+    second: Shopkeep_Animations_Full-Sheet_38
+  - first:
+      213: -8438102490539713771
+    second: Shopkeep_Animations_Full-Sheet_39
+  - first:
+      213: -6373053587973093559
+    second: Shopkeep_Animations_Full-Sheet_40
+  - first:
+      213: 7786421606082752907
+    second: Shopkeep_Animations_Full-Sheet_41
+  - first:
+      213: -7314117094224122055
+    second: Shopkeep_Animations_Full-Sheet_42
+  - first:
+      213: -167703010428287777
+    second: Shopkeep_Animations_Full-Sheet_43
+  - first:
+      213: -6349295077466305261
+    second: Shopkeep_Animations_Full-Sheet_44
+  - first:
+      213: 990959922032597115
+    second: Shopkeep_Animations_Full-Sheet_45
+  - first:
+      213: 6738194668094273446
+    second: Shopkeep_Animations_Full-Sheet_46
+  - first:
+      213: 3228090932516808174
+    second: Shopkeep_Animations_Full-Sheet_47
+  - first:
+      213: 1832382829794188262
+    second: Shopkeep_Animations_Full-Sheet_48
+  - first:
+      213: -4319713861422284525
+    second: Shopkeep_Animations_Full-Sheet_49
+  - first:
+      213: 565834530899638111
+    second: Shopkeep_Animations_Full-Sheet_50
+  - first:
+      213: -3094120226710540288
+    second: Shopkeep_Animations_Full-Sheet_51
+  - first:
+      213: -7415514570376315599
+    second: Shopkeep_Animations_Full-Sheet_52
+  - first:
+      213: -4319253285530202061
+    second: Shopkeep_Animations_Full-Sheet_53
+  - first:
+      213: -3211861390588360889
+    second: Shopkeep_Animations_Full-Sheet_54
+  - first:
+      213: 5673680043343425131
+    second: Shopkeep_Animations_Full-Sheet_55
+  - first:
+      213: -6577984486809684291
+    second: Shopkeep_Animations_Full-Sheet_56
+  - first:
+      213: 3972161919223840503
+    second: Shopkeep_Animations_Full-Sheet_57
+  - first:
+      213: 6119731195697529887
+    second: Shopkeep_Animations_Full-Sheet_58
+  - first:
+      213: -8594689060830580016
+    second: Shopkeep_Animations_Full-Sheet_59
+  - first:
+      213: 9101922500989732114
+    second: Shopkeep_Animations_Full-Sheet_60
+  - first:
+      213: 5317490305300056726
+    second: Shopkeep_Animations_Full-Sheet_61
+  - first:
+      213: -3039989976984094571
+    second: Shopkeep_Animations_Full-Sheet_62
+  - first:
+      213: 3291189464549001256
+    second: Shopkeep_Animations_Full-Sheet_63
+  - first:
+      213: -6135198961922851186
+    second: Shopkeep_Animations_Full-Sheet_64
+  - first:
+      213: 3065125526144073839
+    second: Shopkeep_Animations_Full-Sheet_65
+  - first:
+      213: -6083348599022743468
+    second: Shopkeep_Animations_Full-Sheet_66
+  - first:
+      213: -2780205857275984505
+    second: Shopkeep_Animations_Full-Sheet_67
+  - first:
+      213: -4092985239710812097
+    second: Shopkeep_Animations_Full-Sheet_68
+  - first:
+      213: -8849963377770894198
+    second: Shopkeep_Animations_Full-Sheet_69
+  - first:
+      213: 4437732486027438106
+    second: Shopkeep_Animations_Full-Sheet_70
+  - first:
+      213: 1543482393216990508
+    second: Shopkeep_Animations_Full-Sheet_71
+  - first:
+      213: 3814992667821964531
+    second: Shopkeep_Animations_Full-Sheet_72
+  - first:
+      213: -5736116336655756379
+    second: Shopkeep_Animations_Full-Sheet_73
+  - first:
+      213: -2721340011097617994
+    second: Shopkeep_Animations_Full-Sheet_74
+  - first:
+      213: 2320846668335969339
+    second: Shopkeep_Animations_Full-Sheet_75
+  - first:
+      213: -7675493497631148070
+    second: Shopkeep_Animations_Full-Sheet_76
+  - first:
+      213: 2298691546218964700
+    second: Shopkeep_Animations_Full-Sheet_77
+  - first:
+      213: 2548139301362252817
+    second: Shopkeep_Animations_Full-Sheet_78
+  - first:
+      213: 3800182282579787570
+    second: Shopkeep_Animations_Full-Sheet_79
+  - first:
+      213: 4289459160556562758
+    second: Shopkeep_Animations_Full-Sheet_80
+  - first:
+      213: -4454560546442460703
+    second: Shopkeep_Animations_Full-Sheet_81
+  - first:
+      213: -9076242963591392240
+    second: Shopkeep_Animations_Full-Sheet_82
+  - first:
+      213: -8493098059272608630
+    second: Shopkeep_Animations_Full-Sheet_83
+  - first:
+      213: 993361086538749985
+    second: Shopkeep_Animations_Full-Sheet_84
+  - first:
+      213: -4647296871907128114
+    second: Shopkeep_Animations_Full-Sheet_85
+  - first:
+      213: 632773770783295005
+    second: Shopkeep_Animations_Full-Sheet_86
+  - first:
+      213: 1477488105680110917
+    second: Shopkeep_Animations_Full-Sheet_87
+  - first:
+      213: -7566587431040747137
+    second: Shopkeep_Animations_Full-Sheet_88
+  - first:
+      213: -8642892440818175495
+    second: Shopkeep_Animations_Full-Sheet_89
+  - first:
+      213: -4347338893370479857
+    second: Shopkeep_Animations_Full-Sheet_90
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c788da0628bf72e0800000000000000
+      internalID: -2125778025565354044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568ba5244299c92f0800000000000000
+      internalID: -964727839153014683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a56ac1af2ef29720800000000000000
+      internalID: 2851620994610259360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e1e7fada9d03510800000000000000
+      internalID: 1526959613675445918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3388c11be02b5960800000000000000
+      internalID: 7591697790850859834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1bb2c949d44e240800000000000000
+      internalID: 4820062801863881127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e86c0534aef7b360800000000000000
+      internalID: 7185491711711013093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f4282bb7eb60c60800000000000000
+      internalID: 7784118444441620271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 224
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a502dca14314970800000000000000
+      internalID: 8737322041790716535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649ea2a9425e16950800000000000000
+      internalID: 6440680887484606790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5232321850db5c600800000000000000
+      internalID: 488003965978616613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d336213e5c82410800000000000000
+      internalID: 1452628458883726649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5c7552e48978170800000000000000
+      internalID: 8180674709543175614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6626e37c6c5a490800000000000000
+      internalID: -7735558225891531069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2435a515e6ef32b30800000000000000
+      internalID: 4261529422187352898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8df805da7cccba40800000000000000
+      internalID: 5385404082360483212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9280222e2ec0c00800000000000000
+      internalID: 868318289037109752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0805c674aa52eb3d0800000000000000
+      internalID: -3189070072858783616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48ea3a97c7130780800000000000000
+      internalID: -8718098307605665717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5c78e7c0fc28cf0800000000000000
+      internalID: -251410976609942021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95756bd2045fa3150800000000000000
+      internalID: 5853260321715017561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5497c657fa53089b0800000000000000
+      internalID: -5080001351968327355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd08f0bcb786a5810800000000000000
+      internalID: 1754829885711286495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd0270e96ca8f930800000000000000
+      internalID: 4177278225123249617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687713d5cd882d650800000000000000
+      internalID: 6256213312408745862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f300640e57c656a0800000000000000
+      internalID: -6460757408802143245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 160
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57be4784379426520800000000000000
+      internalID: 2693796286606666613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7c25e00a1e64b20800000000000000
+      internalID: 3118427869551970246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fda574859bd1cf10800000000000000
+      internalID: 2288351520899837431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740d7570a9bdfdf40800000000000000
+      internalID: 5755560303397425223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bf2c583bab855d0800000000000000
+      internalID: -3073501465474303146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9fb27bf98401ac0800000000000000
+      internalID: -3886526627610625594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e537253977f16350800000000000000
+      internalID: 6008355477843817961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa61dc0ef91732b0800000000000000
+      internalID: -5604982632311854345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe935c2c77c7c2c0800000000000000
+      internalID: -4411337973852561669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5f7e49333e3cd80800000000000000
+      internalID: -8231485883222067719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b54aaefc13a9b20800000000000000
+      internalID: 3141878459108973342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3539cfae71aa47cb0800000000000000
+      internalID: -4867078277577272493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551c4dcf9392ab700800000000000000
+      internalID: 556802832965353813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b9a09ed76d5ea80800000000000000
+      internalID: -8438102490539713771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947c552178d5e87a0800000000000000
+      internalID: -6373053587973093559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b813dfd423dee0c60800000000000000
+      internalID: 7786421606082752907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fa82131490f7a90800000000000000
+      internalID: -7314117094224122055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd488a320033cadf0800000000000000
+      internalID: -167703010428287777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 96
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d0c7d54c5c2e7a0800000000000000
+      internalID: -6349295077466305261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78d66b7cc890cd00800000000000000
+      internalID: 990959922032597115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7b033a950e28d50800000000000000
+      internalID: 6738194668094273446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5e257999b7ccc20800000000000000
+      internalID: 3228090932516808174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb586ea97eed6910800000000000000
+      internalID: 1832382829794188262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311089e312b4d04c0800000000000000
+      internalID: -4319713861422284525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f573ce7028f3ad700800000000000000
+      internalID: 565834530899638111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00031921c0a7f05d0800000000000000
+      internalID: -3094120226710540288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d7cfd89ccc61990800000000000000
+      internalID: -7415514570376315599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330980d650eee04c0800000000000000
+      internalID: -4319253285530202061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747403a151d2d63d0800000000000000
+      internalID: -3211861390588360889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e25b060f5fcbe40800000000000000
+      internalID: 5673680043343425131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6bdadf5fd46b4a0800000000000000
+      internalID: -6577984486809684291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7febba95834ff1730800000000000000
+      internalID: 3972161919223840503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f148d684917ade450800000000000000
+      internalID: 6119731195697529887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2f146f5d789b880800000000000000
+      internalID: -8594689060830580016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215c0a46a46805e70800000000000000
+      internalID: 9101922500989732114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a4ef762458bc940800000000000000
+      internalID: 5317490305300056726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5987d15f839cfc5d0800000000000000
+      internalID: -3039989976984094571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82883fa6167acad20800000000000000
+      internalID: 3291189464549001256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e3e30cc056bdaa0800000000000000
+      internalID: -6135198961922851186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shopkeep_Animations_Full-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60ccc12d63898a20800000000000000
+      internalID: 3065125526144073839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
