@@ -8,8 +8,11 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager instance;
+    public MenuManager menuManager;
+    public PlayerMovement player;
     public Text pickUpText;
-    [SerializeField] private List<Slot> m_slots = new List<Slot>(); //4 different slots for items
+    public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
+    
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
     [SerializeField] private GameObject defaultInteractable;
@@ -27,6 +30,9 @@ public class InventoryManager : MonoBehaviour
         else {
             Destroy(this.gameObject);
         }
+
+        menuManager = FindObjectOfType<MenuManager>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     private void Start() {
@@ -57,11 +63,13 @@ public class InventoryManager : MonoBehaviour
     private void TurnMenuOn() {
         inventoryOn = true;
         menu.SetActive(true);
+        player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Menu");
     }
 
     private void TurnMenuOff() {
         inventoryOn = false;
         menu.SetActive(false);
+        player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
     }
     /// <summary>
     /// Called when enabling the tooltip. 
@@ -126,7 +134,7 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item) {
         if (item.stackable) { //first it will check if the item is stackable or not
             for (int i = 0; i < m_slots.Count; i++) {
-                if(m_slots[i].m_item != null) { //if there is an item here
+                if(m_slots[i].m_item != menuManager.defaultItem) { //if there is an item here
                     if(m_slots[i].m_item == item) { //if this item is the same as the one you are adding
                         //you have the item
                         if(m_slots[i].currentStack < m_slots[i].m_item.maxStack) {
@@ -141,7 +149,7 @@ public class InventoryManager : MonoBehaviour
         }
         //if its not stackable or you have too many, just add to another slot
         for(int i = 0; i < m_slots.Count; i++) {
-            if(m_slots[i].m_item == null) {
+            if(m_slots[i].m_item == menuManager.defaultItem) {
                 //if this slot does not have an item in it yet
                 m_slots[i].AddItemToSlot(item);
                 m_slots[i].currentStack = 1;
@@ -212,16 +220,16 @@ public class InventoryManager : MonoBehaviour
 
 
             if (ctx == new Vector2(-1, 0)) { //left 
-                m_currentItem = 0;
-            }
-            else if (ctx == new Vector2(1, 0)) { //right
-                m_currentItem = 2;
-            }
-            else if (ctx == new Vector2(0, -1)) { //down
                 m_currentItem = 3;
             }
-            else { //up
+            else if (ctx == new Vector2(1, 0)) { //right
                 m_currentItem = 1;
+            }
+            else if (ctx == new Vector2(0, -1)) { //down
+                m_currentItem = 2;
+            }
+            else { //up
+                m_currentItem = 4;
             }
 
             ValidateValues();
@@ -283,9 +291,26 @@ public class InventoryManager : MonoBehaviour
             slot.GetComponent<Image>().color = Color.white;
         }
         m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
+
+        foreach (Slot slot in m_slots) {
+            if(slot.m_item != null) {
+                menuManager.UpdateInventoryMenuUI(); //update the menu slots
+                return;
+            }
+        }
+        
     }
 
     public float GetCurrentItem() {
         return m_currentItem;
+    }
+
+    public void SwapItems(int num1, int num2) {
+        Item temp = m_slots[num1].m_item;
+        m_slots[num1].AddItemToSlot(m_slots[num2].m_item);
+        m_slots[num2].AddItemToSlot(temp);
+
+        menuManager.UpdateInventoryMenuUI();
+        UpdateSlotUI();
     }
 }
