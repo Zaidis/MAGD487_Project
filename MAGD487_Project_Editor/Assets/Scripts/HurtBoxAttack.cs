@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class HurtBoxAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    float DaggerDamage = 5f;
+    [SerializeField]
+    float kbForce = 100f;
+    private void OnTriggerEnter2D(Collider2D collision) //not checking collision, apply kockback, 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //change s scale to -x if facing left
+        if(collision.gameObject.GetComponent<Damageable>() != null) {
+            Debug.Log("Damage Dealt");
+            collision.gameObject.GetComponent<Damageable>().Damage(DaggerDamage);
+            //Vector2 knockback = collision.gameObject.transform.position - PlayerMovement.instance.transform.position; //Make knock back based on attack direction
+            //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(knockback * kbForce);
+        }
     }
 }

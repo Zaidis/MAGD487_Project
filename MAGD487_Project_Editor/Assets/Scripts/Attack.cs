@@ -34,5 +34,5 @@ public class Attack : MonoBehaviour
         } else {
             canReceiveAttackInput = false;
         }
-    }
+    }    
 }
