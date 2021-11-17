@@ -24,6 +24,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //m_icon.sprite = null;
         //m_name = "";
         m_item = InventoryManager.instance.menuManager.defaultItem;
+        m_icon.sprite = null;
+        m_name = m_item.name;
         currentStack = 0;
     }
 
