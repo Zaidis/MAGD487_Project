@@ -25,7 +25,6 @@ public class ItemDatabase : MonoBehaviour
     private List<List<Item>> lists = new List<List<Item>>();
 
     private void Start() {
-        lists.Add(level_one);
         InitializeLargeList();
     }
 
