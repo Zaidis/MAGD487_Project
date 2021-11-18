@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1596622676}
+    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
+      propertyPath: shopKeeperPrefab
+      value: 
+      objectReference: {fileID: 1299709019754092994, guid: 5c43c716bc87dc447ac9d9a883420150, type: 3}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
       value: Map Generator

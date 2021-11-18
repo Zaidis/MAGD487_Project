@@ -12,8 +12,7 @@ public class MapGenerator : MonoBehaviour
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
-    [SerializeField] GameObject exitPrefab;
-    [SerializeField] GameObject mapBlockTemplate;
+    [SerializeField] GameObject exitPrefab, mapBlockTemplate, shopKeeperPrefab;
     TileMapMerger mapMerger;
     private void Awake()
     {
@@ -24,6 +23,8 @@ public class MapGenerator : MonoBehaviour
         PlaceUpDownBlocks();
         //Merge Tilemaps
         MergeTiles();
+        //Spawn ShopKeeper
+        SpawnShopKeeper();
         //Spawn Player
         SpawnPlayer();
         //Spawn Dungeon Exit
@@ -106,6 +107,12 @@ public class MapGenerator : MonoBehaviour
             return PickRandomIndexExcludingOne(leftBound, RightBound, leaveOut);
         else
             return rand;
+    }
+    void SpawnShopKeeper()
+    {
+        int rand = Random.Range(blocksInX-2, mapBlocksSpawned.Count);
+        //Picks a random room of the dungeon to spawn the shopkeep excluding the first level
+        Instantiate(shopKeeperPrefab, mapBlocksSpawned[rand].shopKeepSpawns[Random.Range(0, mapBlocksSpawned[rand].shopKeepSpawns.Count)].position, Quaternion.identity);
     }
     void SpawnPlayer()
     {
