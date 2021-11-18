@@ -32,6 +32,7 @@ public class MapGenerator : MonoBehaviour
 
     void MergeTiles()
     {
+        //One optiization is to create "End blocks" that spawn on the borders of the map. 
         List<Tilemap> tilemaps = new List<Tilemap>();
         for (int i = 0; i < mapBlocksSpawned.Count; i++)
         {
