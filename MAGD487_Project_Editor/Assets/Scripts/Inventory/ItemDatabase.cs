@@ -63,6 +63,11 @@ public class ItemDatabase : MonoBehaviour
     public List<Item> GetList(int num) {
         return lists[num - 1];
     }
+    /// <summary>
+    /// Called when user wants a random item from a specific list. 
+    /// </summary>
+    /// <param name="list"></param>
+    /// <returns></returns>
     public Item GetRandomItemFromList(List<Item> list) {
         int rand = Random.Range(0, list.Count);
         return list[rand];
