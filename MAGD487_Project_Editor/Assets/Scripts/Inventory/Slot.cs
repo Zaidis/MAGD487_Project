@@ -17,26 +17,25 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         m_item = item;
         m_icon.sprite = m_item.icon;
         m_name = m_item.name;
-
-        
     }
 
     public void DeleteItemFromSlot() {
-        m_item = null;
-        m_icon.sprite = null;
-        m_name = "";
+        //m_item = null;
+        //m_icon.sprite = null;
+        //m_name = "";
+        m_item = InventoryManager.instance.menuManager.defaultItem;
         currentStack = 0;
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData) {
         Debug.Log("Hovering!");
-        if(m_item != null)
+        if(m_item != InventoryManager.instance.menuManager.defaultItem)
             InventoryManager.instance.ActivateTooltip(m_item);
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData) {
         Debug.Log("No longer hovering!");
-        if (m_item != null)
+        if (m_item != InventoryManager.instance.menuManager.defaultItem)
             InventoryManager.instance.DisableToolTip();
     }
 }
