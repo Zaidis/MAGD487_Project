@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1596622676}
-    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
-      propertyPath: shopKeeperPrefab
-      value: 
-      objectReference: {fileID: 1299709019754092994, guid: 5c43c716bc87dc447ac9d9a883420150, type: 3}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
       value: Map Generator
@@ -324,10 +320,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960092050756392008, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_SortingOrder
-      value: -3
-      objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -375,10 +367,6 @@ PrefabInstance:
     - target: {fileID: 4960092051601091835, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389874480220384598, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_SortingOrder
-      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
