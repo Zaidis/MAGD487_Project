@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 public class MenuManager : MonoBehaviour
 {
 
@@ -14,7 +15,10 @@ public class MenuManager : MonoBehaviour
     public Item defaultItem;
     [SerializeField] private menu_slot swap_initial;
     [SerializeField] private menu_slot swap_newLocation;
-    
+
+    [Header("Popup Objects")]
+    [SerializeField] private TextMeshProUGUI popup;
+    [SerializeField] private GameObject sectionsParent; //holds the bottom row
     private int index;
     private int swapIndexInitial;
     private int swapIndexLast;
@@ -82,6 +86,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void ClickMenuSlot(int num) {
+        index = num;
         currentSlot = slots[num];
         HoverOverCurrentSlot();
     }
@@ -95,7 +100,7 @@ public class MenuManager : MonoBehaviour
 
     public void HoverOverCurrentSlot() {
         foreach(menu_slot slot in slots) {
-            slot.GetComponent<Image>().color = Color.white;
+            slot.GetComponent<Image>().color = new Color32(219, 147, 3, 255);
         }
         currentSlot.GetComponent<Image>().color = Color.green;
     }
@@ -108,6 +113,7 @@ public class MenuManager : MonoBehaviour
             swap_initial = currentSlot;
             swapIndexInitial = index;
             wantsToSwap = true;
+            ActivatePopup("Select a slot to swap with!");
         }
     }   
 
@@ -115,9 +121,39 @@ public class MenuManager : MonoBehaviour
 
         //swap items
         InventoryManager.instance.SwapItems(swapIndexInitial, swapIndexLast);
-
+        DeactivatePopup();
         wantsToSwap = false;
     }
+
+    private void ActivatePopup(string line) {
+
+        popup.text = line;
+        DeactivateSections();
+        popup.gameObject.SetActive(true);
+        
+    }
+
+    private void DeactivatePopup() {
+
+        popup.gameObject.SetActive(false);
+        ActivateSections();
+        popup.text = "";
+    }
+
+    /// <summary>
+    /// Turns on the bottom row in the menu.
+    /// </summary>
+    private void ActivateSections() {
+        sectionsParent.SetActive(true);
+    }
+
+    /// <summary>
+    /// Turns off the bottom row in the menu. Allows the popup to be seen.
+    /// </summary>
+    private void DeactivateSections() {
+        sectionsParent.SetActive(false);
+    }
+    
     public void Accept(InputAction.CallbackContext context) {
         if (context.performed) {
             if (wantsToSwap) {
