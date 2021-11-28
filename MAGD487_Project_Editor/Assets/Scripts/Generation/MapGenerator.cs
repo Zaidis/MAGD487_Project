@@ -12,7 +12,7 @@ public class MapGenerator : MonoBehaviour
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
-    [SerializeField] GameObject mapBlockTemplate;
+    [SerializeField] GameObject exitPrefab, mapBlockTemplate, shopKeeperPrefab;
     TileMapMerger mapMerger;
     private void Awake()
     {
@@ -23,12 +23,17 @@ public class MapGenerator : MonoBehaviour
         PlaceUpDownBlocks();
         //Merge Tilemaps
         MergeTiles();
+        //Spawn ShopKeeper
+        SpawnShopKeeper();
         //Spawn Player
         SpawnPlayer();
+        //Spawn Dungeon Exit
+        SpawnExit();
     }
 
     void MergeTiles()
     {
+        //One optiization is to create "End blocks" that spawn on the borders of the map. 
         List<Tilemap> tilemaps = new List<Tilemap>();
         for (int i = 0; i < mapBlocksSpawned.Count; i++)
         {
@@ -103,11 +108,23 @@ public class MapGenerator : MonoBehaviour
         else
             return rand;
     }
+    void SpawnShopKeeper()
+    {
+        int rand = Random.Range(blocksInX-2, mapBlocksSpawned.Count);
+        //Picks a random room of the dungeon to spawn the shopkeep excluding the first level
+        Instantiate(shopKeeperPrefab, mapBlocksSpawned[rand].shopKeepSpawns[Random.Range(0, mapBlocksSpawned[rand].shopKeepSpawns.Count)].position, Quaternion.identity);
+    }
     void SpawnPlayer()
     {
         int rand = Random.Range(0, blocksInX - 2);
         //Picks a random room at the top level of the dungeon to spawn the player
         player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
+    }
+    void SpawnExit()
+    {
+        int rand = Random.Range(mapBlocksSpawned.Count - blocksInX - 2, mapBlocksSpawned.Count);
+        //Picks a random room at the top level of the dungeon to spawn the player
+        Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
     }
     private GameObject PickRandomMidSectionMapBlock()
     {

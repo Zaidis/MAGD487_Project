@@ -283,7 +283,9 @@ MonoBehaviour:
   blocksInY: 4
   blockOffset: 50
   player: {fileID: 0}
+  exitPrefab: {fileID: 3143113580531471226, guid: 36b70e5e429f8cb4db23a1a32226b63e, type: 3}
   mapBlockTemplate: {fileID: 6372139619522699429, guid: 40b552936d0d21e49a9ea206daa786bf, type: 3}
+  shopKeeperPrefab: {fileID: 1299709019754092994, guid: 5c43c716bc87dc447ac9d9a883420150, type: 3}
 --- !u!114 &23352888
 MonoBehaviour:
   m_ObjectHideFlags: 0
