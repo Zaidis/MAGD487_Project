@@ -7,8 +7,11 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
 
-    
-    public GameObject inventory, statistics, options;
+    [Header("All Sections")]
+    public List<GameObject> sections = new List<GameObject>();
+    public List<bool> sectionBools = new List<bool>(); //IN ORDER: Inventory, Stats, Options
+    [SerializeField] private int currentSection;
+
     [Header("Inventory Section")]
     public menu_slot[] slots;
     public menu_slot currentSlot;
@@ -23,64 +26,74 @@ public class MenuManager : MonoBehaviour
     private int swapIndexInitial;
     private int swapIndexLast;
     private bool wantsToSwap;
+
+    private void Start() {
+        sectionBools[0] = true; //intialize inventory bool
+    }
     /// <summary>
     /// Allows the player to shuffle through the menu slots for the inventory.
     /// </summary>
     /// <param name="context"></param>
     public void SelectItem(InputAction.CallbackContext context) {
         if (context.performed) {
-            Vector2 ctx = context.ReadValue<Vector2>();
-            //Debug.Log("I used " + ctx);
+            if (sectionBools[0] == true) { //if inventory is active
+                Vector2 ctx = context.ReadValue<Vector2>();
+                //Debug.Log("I used " + ctx);
 
-            if(currentSlot == slots[0]) {
+                if (currentSlot == slots[0]) {
 
-                //right/down
-                if(ctx == new Vector2(1, 0)) {
-                    //move right
-                    index = 1;
-                    currentSlot = slots[index];
-                } else if(ctx == new Vector2(0, -1)) {
-                    index = 3;
-                    currentSlot = slots[index];
+                    //right/down
+                    if (ctx == new Vector2(1, 0)) {
+                        //move right
+                        index = 1;
+                        currentSlot = slots[index];
+                    }
+                    else if (ctx == new Vector2(0, -1)) {
+                        index = 3;
+                        currentSlot = slots[index];
+                    }
+
                 }
+                else if (currentSlot == slots[1]) {
 
-            } else if (currentSlot == slots[1]) {
+                    if (ctx == new Vector2(-1, 0)) {
+                        //move right
+                        index = 0;
+                        currentSlot = slots[index];
+                    }
+                    else if (ctx == new Vector2(0, -1)) {
+                        index = 2;
+                        currentSlot = slots[index];
+                    }
 
-                if (ctx == new Vector2(-1, 0)) {
-                    //move right
-                    index = 0;
-                    currentSlot = slots[index];
                 }
-                else if (ctx == new Vector2(0, -1)) {
-                    index = 2;
-                    currentSlot = slots[index];
-                }
+                else if (currentSlot == slots[2]) {
 
-            } else if (currentSlot == slots[2]) {
+                    if (ctx == new Vector2(-1, 0)) {
+                        //move right
+                        index = 3;
+                        currentSlot = slots[index];
+                    }
+                    else if (ctx == new Vector2(0, 1)) {
+                        index = 1;
+                        currentSlot = slots[index];
+                    }
 
-                if (ctx == new Vector2(-1, 0)) {
-                    //move right
-                    index = 3;
-                    currentSlot = slots[index];
                 }
-                else if (ctx == new Vector2(0, 1)) {
-                    index = 1;
-                    currentSlot = slots[index];
-                }
+                else {
 
-            } else {
-
-                if (ctx == new Vector2(1, 0)) {
-                    //move right
-                    index = 2;
-                    currentSlot = slots[index];
+                    if (ctx == new Vector2(1, 0)) {
+                        //move right
+                        index = 2;
+                        currentSlot = slots[index];
+                    }
+                    else if (ctx == new Vector2(0, 1)) {
+                        index = 0;
+                        currentSlot = slots[index];
+                    }
                 }
-                else if (ctx == new Vector2(0, 1)) {
-                    index = 0;
-                    currentSlot = slots[index];
-                }
+                HoverOverCurrentSlot();
             }
-            HoverOverCurrentSlot();
         }
         
     }
@@ -153,7 +166,34 @@ public class MenuManager : MonoBehaviour
     private void DeactivateSections() {
         sectionsParent.SetActive(false);
     }
-    
+
+    public void ChangeSectionsContext(InputAction.CallbackContext context) {
+        if (context.performed) {
+            currentSection += (int)context.ReadValue<float>();
+            ValidateSection();
+            ChangeSections();
+        }
+    }
+
+    private void ValidateSection() {
+        if(currentSection > sections.Count - 1) {
+            currentSection = 0;
+        } else if (currentSection < 0) {
+            currentSection = sections.Count - 1;
+        }
+    }
+    private void ChangeSections() {
+        for(int i = 0; i < sections.Count; i++) {
+            sections[i].SetActive(false);
+            sectionBools[i] = false;
+        }
+        
+        sections[currentSection].SetActive(true);
+        sectionBools[currentSection] = true;
+    }
+    public void SelectSection() {
+
+    }
     public void Accept(InputAction.CallbackContext context) {
         if (context.performed) {
             if (wantsToSwap) {
@@ -162,7 +202,6 @@ public class MenuManager : MonoBehaviour
                     swapIndexLast = index;
                     Swap();
                 }
-
             }
         }
     }
