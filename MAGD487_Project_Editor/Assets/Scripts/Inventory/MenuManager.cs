@@ -30,11 +30,28 @@ public class MenuManager : MonoBehaviour
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
     }
+
+    /// <summary>
+    /// This allows for the D Pad to be used for multiple sections depending on what section is currently viewed.
+    /// </summary>
+    /// <param name="context"></param>
+    public void DPadSelection(InputAction.CallbackContext context) { //this way only one function is called rather
+                                                                     //than three separate ones. 
+        if (sectionBools[0]) {
+            SelectItem(context);
+        } else if (sectionBools[1]) {
+
+        } else if (sectionBools[2]) {
+
+        }
+    }
+    #region INVENTORY
+
     /// <summary>
     /// Allows the player to shuffle through the menu slots for the inventory.
     /// </summary>
     /// <param name="context"></param>
-    public void SelectItem(InputAction.CallbackContext context) {
+    private void SelectItem(InputAction.CallbackContext context) {
         if (context.performed) {
             if (sectionBools[0] == true) { //if inventory is active
                 Vector2 ctx = context.ReadValue<Vector2>();
@@ -137,7 +154,7 @@ public class MenuManager : MonoBehaviour
         DeactivatePopup();
         wantsToSwap = false;
     }
-
+    #endregion
     private void ActivatePopup(string line) {
 
         popup.text = line;

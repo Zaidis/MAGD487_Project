@@ -1133,7 +1133,7 @@
             "id": "a33195e9-5153-42d5-b75b-28eab030f1f3",
             "actions": [
                 {
-                    "name": "Inventory",
+                    "name": "Selection_Base",
                     "type": "Value",
                     "id": "4f3d653d-5c2f-4017-baf2-e0b7c29010e3",
                     "expectedControlType": "Vector2",
@@ -1181,7 +1181,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -1192,7 +1192,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1203,7 +1203,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1214,7 +1214,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1225,7 +1225,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
