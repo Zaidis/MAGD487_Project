@@ -191,8 +191,9 @@ public class MenuManager : MonoBehaviour
         sections[currentSection].SetActive(true);
         sectionBools[currentSection] = true;
     }
-    public void SelectSection() {
-
+    public void ClickSection(int num) {
+        currentSection = num;
+        ChangeSections();
     }
     public void Accept(InputAction.CallbackContext context) {
         if (context.performed) {
