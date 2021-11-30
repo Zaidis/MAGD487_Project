@@ -264,7 +264,15 @@ public class MenuManager : MonoBehaviour
         settingsMenuOn = true;
     }
 
-    
+    public void DeactivateSettings() {
+        Debug.Log("Exiting Settings Menu...");
+        settingsMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        optionButtons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+        ActivateSections();
+        settingsMenuOn = false;
+    }
 
     public void MainMenu() {
         Debug.Log("Main Menu...");
@@ -312,13 +320,7 @@ public class MenuManager : MonoBehaviour
             } else if (sectionBools[2]) {
                 //options menu
                 if (settingsMenuOn) {
-                    Debug.Log("Exiting Settings Menu...");
-                    settingsMenu.SetActive(false);
-                    EventSystem.current.SetSelectedGameObject(null);
-                    optionButtons.SetActive(true);
-                    EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
-                    ActivateSections();
-                    settingsMenuOn = false;
+                    DeactivateSettings();
                     return;
                 } else {
                     //backing out of the menu
