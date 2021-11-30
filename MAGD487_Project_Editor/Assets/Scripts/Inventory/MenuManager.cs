@@ -257,6 +257,7 @@ public class MenuManager : MonoBehaviour
     public void Settings() {
         Debug.Log("Accessing Settings...");
         optionButtons.SetActive(false);
+        DeactivateSections();
         EventSystem.current.SetSelectedGameObject(null);
         settingsMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstSettings);
@@ -316,6 +317,7 @@ public class MenuManager : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(null);
                     optionButtons.SetActive(true);
                     EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+                    ActivateSections();
                     settingsMenuOn = false;
                     return;
                 } else {

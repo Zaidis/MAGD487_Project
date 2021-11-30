@@ -1401,6 +1401,17 @@
                     "action": "Decline/Back",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d54cb1ef-c17c-46ed-9b8e-cba46097d3cc",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Decline/Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
