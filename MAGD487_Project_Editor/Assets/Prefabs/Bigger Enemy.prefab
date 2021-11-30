@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 0cacb173a8477814bb45eba5bf21901d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -201,13 +201,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engageDistance: 10
-  jumpStrength: 7
+  jumpStrength: 1200
   walkSpeed: 2.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  wallDetectionRayDistance: 1.17
-  wallDetectionOffset: {x: 0.21, y: -0.56, z: 0}
+  wallDetectionRayDistance: 1.1
+  wallDetectionOffset: {x: 0, y: -0.5, z: 0}
+  jumpDelay: 0.75
 --- !u!50 &6667553420478059991
 Rigidbody2D:
   serializedVersion: 4
@@ -220,7 +221,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

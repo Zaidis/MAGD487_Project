@@ -10,6 +10,8 @@ public class EnemyWalk : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float wallDetectionRayDistance = 2;
     [SerializeField] Vector3 wallDetectionOffset;
+    [SerializeField] float jumpDelay = 0.75f;
+    float timer = 0;
     Rigidbody2D rb;
     Transform playerPos;
     GroundDetector groundDetector;
@@ -60,15 +62,18 @@ public class EnemyWalk : MonoBehaviour
         else
             hit = Physics2D.Raycast(this.transform.position + wallDetectionOffset, -transform.right * wallDetectionRayDistance, 1, groundLayer);
 
-        if (hit.collider != null)
+        timer += Time.deltaTime;
+        if (hit.collider != null && timer >= jumpDelay)
         {
             //Theres a wall so try and jump
             Jump();
+            timer = 0;
         }
     }
     void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
+        //rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
+        rb.AddForce(new Vector2(0, jumpStrength));
     }
 
     private void OnDrawGizmosSelected()
