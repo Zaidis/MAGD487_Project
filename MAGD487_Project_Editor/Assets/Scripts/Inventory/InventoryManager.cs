@@ -12,9 +12,10 @@ public class InventoryManager : MonoBehaviour
     public PlayerMovement player;
     public Text pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
-    
+    public int m_goldAmount { get; set; } //the amount of gold the player has
+
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
-    [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
+    
     [SerializeField] private GameObject defaultInteractable;
     [SerializeField] private Tooltip tooltip;
 

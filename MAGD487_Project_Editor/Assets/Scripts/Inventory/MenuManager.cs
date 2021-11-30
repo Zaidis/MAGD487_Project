@@ -34,6 +34,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject optionButtons;//the first selection of buttons outside of the settings. quit game, menu, etc
     private bool settingsMenuOn;
+
+    [Header("Statistics Section")]
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI movementText;
+    [SerializeField] private TextMeshProUGUI goldAmountText;
+    [SerializeField] private TextMeshProUGUI armorText;
+    [SerializeField] private TextMeshProUGUI damageText;
+
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
     }
@@ -227,7 +235,7 @@ public class MenuManager : MonoBehaviour
             sections[i].SetActive(false);
             sectionBools[i] = false;
         }
-        
+        UpdateStatisticsSection();
         sections[currentSection].SetActive(true);
         sectionBools[currentSection] = true;
         if(sectionBools[2] == true) {
@@ -246,7 +254,15 @@ public class MenuManager : MonoBehaviour
 
     #region STATISTICS
 
+    public void UpdateStatisticsSection() {
+        //damage, health, gold amount, movement speed, armor?, 
 
+        goldAmountText.text = "Gold: " + InventoryManager.instance.m_goldAmount.ToString();
+        damageText.text = "Damage: 0";
+        healthText.text = "Health: 0";
+        movementText.text = "MovementSpeed: 0";
+        armorText.text = "Armor: 0";
+    }
 
 
 
