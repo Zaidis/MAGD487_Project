@@ -122,7 +122,7 @@ public class MapGenerator : MonoBehaviour
     }
     void SpawnExit()
     {
-        int rand = Random.Range(mapBlocksSpawned.Count - blocksInX - 2, mapBlocksSpawned.Count);
+        int rand = Random.Range(mapBlocksSpawned.Count - blocksInX + 2, mapBlocksSpawned.Count);
         //Picks a random room at the top level of the dungeon to spawn the player
         Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
     }
