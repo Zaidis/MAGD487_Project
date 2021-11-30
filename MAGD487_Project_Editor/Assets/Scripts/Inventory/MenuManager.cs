@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 public class MenuManager : MonoBehaviour
 {
 
@@ -14,19 +15,25 @@ public class MenuManager : MonoBehaviour
 
     [Header("Inventory Section")]
     public menu_slot[] slots;
-    public menu_slot currentSlot;
-    public Item defaultItem;
-    [SerializeField] private menu_slot swap_initial;
-    [SerializeField] private menu_slot swap_newLocation;
-
-    [Header("Popup Objects")]
-    [SerializeField] private TextMeshProUGUI popup;
-    [SerializeField] private GameObject sectionsParent; //holds the bottom row
+    public menu_slot currentSlot; //the item that is currently selected
+    public Item defaultItem; // <---- IMPORTANT: This is THE empty item!!! <---------
+    [SerializeField] private menu_slot swap_initial; //the item you want to swap
+    [SerializeField] private menu_slot swap_newLocation; //the new place for that item to swap
     private int index;
     private int swapIndexInitial;
     private int swapIndexLast;
     private bool wantsToSwap;
 
+    [Header("Popup Objects")]
+    [SerializeField] private TextMeshProUGUI popup;
+    [SerializeField] private GameObject sectionsParent; //holds the bottom row
+
+    [Header("Options Section")]
+    [SerializeField] private Button firstButton; //so the event system knows where to look first when selected!
+    [SerializeField] private GameObject firstSettings; //the first thing in the settings menu. master slider
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject optionButtons;//the first selection of buttons outside of the settings. quit game, menu, etc
+    private bool settingsMenuOn;
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
     }
@@ -45,6 +52,21 @@ public class MenuManager : MonoBehaviour
 
         }
     }
+    private void ActivatePopup(string line) {
+
+        popup.text = line;
+        DeactivateSections();
+        popup.gameObject.SetActive(true);
+
+    }
+
+    private void DeactivatePopup() {
+
+        popup.gameObject.SetActive(false);
+        ActivateSections();
+        popup.text = "";
+    }
+
     #region INVENTORY
 
     /// <summary>
@@ -140,35 +162,36 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void SelectSwap(InputAction.CallbackContext context) {
         if (context.performed) {
-            swap_initial = currentSlot;
-            swapIndexInitial = index;
-            wantsToSwap = true;
-            ActivatePopup("Select a slot to swap with!");
+            if (sectionBools[0]) {
+                swap_initial = currentSlot;
+                swapIndexInitial = index;
+                wantsToSwap = true;
+                ActivatePopup("Select a slot to swap with!");
+            }
         }
     }   
 
     public void Swap() {
+        if (sectionBools[0]) {
+            //swap items
+            InventoryManager.instance.SwapItems(swapIndexInitial, swapIndexLast);
+            DeactivatePopup();
+            wantsToSwap = false;
+        }
+    }
 
-        //swap items
-        InventoryManager.instance.SwapItems(swapIndexInitial, swapIndexLast);
-        DeactivatePopup();
-        wantsToSwap = false;
+    private void NoLongerSwapping() {
+        if (sectionBools[0]) {
+            swap_initial = null;
+            swapIndexInitial = -1;
+            DeactivatePopup();
+            wantsToSwap = false;
+        }
     }
     #endregion
-    private void ActivatePopup(string line) {
 
-        popup.text = line;
-        DeactivateSections();
-        popup.gameObject.SetActive(true);
-        
-    }
+    #region SECTIONS
 
-    private void DeactivatePopup() {
-
-        popup.gameObject.SetActive(false);
-        ActivateSections();
-        popup.text = "";
-    }
 
     /// <summary>
     /// Turns on the bottom row in the menu.
@@ -207,18 +230,97 @@ public class MenuManager : MonoBehaviour
         
         sections[currentSection].SetActive(true);
         sectionBools[currentSection] = true;
+        if(sectionBools[2] == true) {
+            //options menu
+            EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+        } else {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
     }
     public void ClickSection(int num) {
         currentSection = num;
         ChangeSections();
     }
-    public void Accept(InputAction.CallbackContext context) {
+
+    #endregion
+
+    #region STATISTICS
+
+
+
+
+
+    #endregion
+
+    #region OPTIONS
+
+    public void Settings() {
+        Debug.Log("Accessing Settings...");
+        optionButtons.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        settingsMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstSettings);
+        settingsMenuOn = true;
+    }
+
+    
+
+    public void MainMenu() {
+        Debug.Log("Main Menu...");
+    }
+
+    public void QuitGame() {
+        Debug.Log("Quitting the game...");
+        Application.Quit(); //will make a popup asking are you sure
+    }
+
+
+    #endregion
+    public void Accept(InputAction.CallbackContext context) { //when you press A on the controller
         if (context.performed) {
-            if (wantsToSwap) {
-                if (currentSlot != swap_initial) {
-                    swap_newLocation = currentSlot;
-                    swapIndexLast = index;
-                    Swap();
+            if (sectionBools[0]) {
+                if (wantsToSwap) {
+                    if (currentSlot != swap_initial) {
+                        swap_newLocation = currentSlot;
+                        swapIndexLast = index;
+                        Swap();
+                    }
+                }
+            } else if (sectionBools[1]) {
+
+            } else if (sectionBools[2]) {
+                //OPTIONS MENU
+                
+            }
+        }
+    }
+
+    public void Decline(InputAction.CallbackContext context) { //pressing B on the controller
+        if (context.performed) {
+            if (sectionBools[0]) {
+                if (wantsToSwap) {
+                    //no longer wanting to swap
+                    NoLongerSwapping();
+                } else {
+                    InventoryManager.instance.ManageInventory();
+                }
+            } else if (sectionBools[1]) {
+
+                InventoryManager.instance.ManageInventory();
+
+            } else if (sectionBools[2]) {
+                //options menu
+                if (settingsMenuOn) {
+                    Debug.Log("Exiting Settings Menu...");
+                    settingsMenu.SetActive(false);
+                    EventSystem.current.SetSelectedGameObject(null);
+                    optionButtons.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+                    settingsMenuOn = false;
+                    return;
+                } else {
+                    //backing out of the menu
+                    InventoryManager.instance.ManageInventory();
                 }
             }
         }

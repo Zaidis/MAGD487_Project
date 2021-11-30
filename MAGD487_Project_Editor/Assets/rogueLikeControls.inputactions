@@ -1171,6 +1171,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Decline/Back",
+                    "type": "Button",
+                    "id": "c83b67ae-9538-4fc7-90da-a32d23af271a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -1380,6 +1388,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Select/Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8b470fd-6c3d-40e6-82ad-ade31cc49eb5",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Decline/Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

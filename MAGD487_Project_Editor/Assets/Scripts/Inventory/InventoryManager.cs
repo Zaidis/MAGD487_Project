@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Turns on/off the inventory screen.
     /// </summary>
-    private void ManageInventory() {
+    public void ManageInventory() {
         if (!inventoryOn) {
             //turn on the inventory menu
             TurnMenuOn();
