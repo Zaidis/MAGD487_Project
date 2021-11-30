@@ -1133,7 +1133,7 @@
             "id": "a33195e9-5153-42d5-b75b-28eab030f1f3",
             "actions": [
                 {
-                    "name": "Inventory",
+                    "name": "Selection_Base",
                     "type": "Value",
                     "id": "4f3d653d-5c2f-4017-baf2-e0b7c29010e3",
                     "expectedControlType": "Vector2",
@@ -1181,7 +1181,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -1192,7 +1192,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1203,7 +1203,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1214,7 +1214,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1225,7 +1225,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Inventory",
+                    "action": "Selection_Base",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1263,12 +1263,78 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Keyboard",
+                    "id": "65d2b331-f975-423d-a4e7-d321b989c18a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Options",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "4651da15-c22a-45bf-86e5-bd348871ea47",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Menu Options",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c91363d5-8f3c-41a9-8eb5-b925433d9879",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Menu Options",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "09f4aae9-a2ef-4898-a165-1881c692e67c",
                     "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3b71494-61a3-45be-9139-eb1e14c260d8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "222b5ee4-c2d9-49a7-bad6-37601dcdad9c",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a498aa1c-fb3e-42a7-93e9-25c4210683b6",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "ExitMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1286,11 +1352,33 @@
                 },
                 {
                     "name": "",
+                    "id": "3c50b124-12e9-4223-bfcd-3e7576c89236",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f611a9e3-4881-46d9-b61c-798f06d4eda6",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Select/Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "679e9906-fc53-4a2d-8c42-c8caddb39738",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Select/Accept",
                     "isComposite": false,
                     "isPartOfComposite": false

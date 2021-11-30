@@ -22,6 +22,13 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject menu;
 
     private bool inventoryOn;
+
+    /*
+     * DEVELOPER NOTES
+     * An empty item == menuManager.defaultItem;
+     * Do not check the inventory if a slot item == null, use default item instead.
+     */
+
     
     private void Awake() { //singleton
         if (instance == null) {
@@ -177,7 +184,7 @@ public class InventoryManager : MonoBehaviour
     }
     private void DropItem() {
         Slot slot = m_slots[(int)m_currentItem];
-        if(slot.m_item != null) {
+        if(slot.m_item != menuManager.defaultItem) {
             GameObject droppedItem = Instantiate(defaultInteractable, FindObjectOfType<PlayerMovement>().gameObject.transform.position, Quaternion.identity);
             droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
 
@@ -293,7 +300,7 @@ public class InventoryManager : MonoBehaviour
         m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
 
         foreach (Slot slot in m_slots) {
-            if(slot.m_item != null) {
+            if(slot.m_item != menuManager.defaultItem) {
                 menuManager.UpdateInventoryMenuUI(); //update the menu slots
                 return;
             }
