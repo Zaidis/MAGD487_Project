@@ -11,7 +11,9 @@ public class Item : ScriptableObject
     public string description;
     [Header("Item Level")]
     [Range(1, 15)]
-    public int level = 1; 
+    public int level = 1;
+    [Header("Item Cost")]
+    public int cost;
     public bool stackable;
     public int maxStack = 1;
     public Sprite icon;

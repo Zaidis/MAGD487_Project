@@ -217,9 +217,11 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeSectionsContext(InputAction.CallbackContext context) {
         if (context.performed) {
-            currentSection += (int)context.ReadValue<float>();
-            ValidateSection();
-            ChangeSections();
+            if (!settingsMenuOn) {
+                currentSection += (int)context.ReadValue<float>();
+                ValidateSection();
+                ChangeSections();
+            }
         }
     }
 

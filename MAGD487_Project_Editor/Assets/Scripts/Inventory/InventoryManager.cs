@@ -313,6 +313,18 @@ public class InventoryManager : MonoBehaviour
         return m_currentItem;
     }
 
+    public bool CheckIfOpenSlot() {
+        foreach(Slot slot in m_slots) {
+            if(slot.m_item == menuManager.defaultItem) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void TESTMoneyMaker() {
+        m_goldAmount += 10;
+    }
     public void SwapItems(int num1, int num2) {
         Item temp = m_slots[num1].m_item;
         m_slots[num1].AddItemToSlot(m_slots[num2].m_item);
