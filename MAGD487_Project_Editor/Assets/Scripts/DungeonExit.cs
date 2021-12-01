@@ -8,9 +8,8 @@ public class DungeonExit : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            StateController.dungeonLevel++;
+            StateController.dungeonLevel += 1;
             StateController.SaveGame();
-            print(StateController.dungeonLevel);
             ScenesManager.instance.LoadScene("Camp");
         }
     }

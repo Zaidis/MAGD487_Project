@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1842003818}
+    - target: {fileID: 3377821200708766760, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
+      propertyPath: testingSizes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3377821200708766761, guid: 382311a9361ac954a867663c8efdf25a, type: 3}
       propertyPath: m_Name
       value: Map Generator
