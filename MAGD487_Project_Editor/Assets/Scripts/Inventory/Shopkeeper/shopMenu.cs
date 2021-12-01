@@ -15,7 +15,7 @@ public class shopMenu : MonoBehaviour
     private PlayerMovement player;
     [SerializeField] private GameObject theMenu;
     [SerializeField] private GameObject firstButton;
-
+    [SerializeField] private TextMeshProUGUI gold;
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -34,7 +34,12 @@ public class shopMenu : MonoBehaviour
                 TurnOnMenu();
         }
     }
+
+    public void UpdateGoldUI() {
+        gold.text = "Gold: " + (0 + StatisticsManager.instance.GetGoldAmount()).ToString();
+    }
     public void TurnOnMenu() {
+        UpdateGoldUI();
         theMenu.SetActive(true);
         player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Shop Menu");
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
@@ -42,6 +47,7 @@ public class shopMenu : MonoBehaviour
     }
 
     public void TurnOffMenu() {
+        UpdateGoldUI();
         theMenu.SetActive(false);
         player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
         EventSystem.current.SetSelectedGameObject(null);

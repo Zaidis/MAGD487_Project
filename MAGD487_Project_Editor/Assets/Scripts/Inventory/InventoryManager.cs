@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     public PlayerMovement player;
     public Text pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
-    public int m_goldAmount { get; set; } //the amount of gold the player has
+    //public int m_goldAmount { get; set; } //the amount of gold the player has
 
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     
@@ -320,10 +320,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return false;
-    }
-
-    public void TESTMoneyMaker() {
-        m_goldAmount += 10;
     }
     public void SwapItems(int num1, int num2) {
         Item temp = m_slots[num1].m_item;

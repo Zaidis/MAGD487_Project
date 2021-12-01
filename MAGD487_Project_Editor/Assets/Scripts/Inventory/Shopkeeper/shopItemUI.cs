@@ -11,6 +11,7 @@ public class shopItemUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemDescription;
     [SerializeField] private TextMeshProUGUI itemLevel;
     [SerializeField] private Image icon;
+    [SerializeField] private TextMeshProUGUI cost;
     [SerializeField] private bool isPotionButton;
     private void Start() {
         if(!isPotionButton)
@@ -18,6 +19,7 @@ public class shopItemUI : MonoBehaviour
     }
     public void UpdateIcon(Item item) {
         myItem = item;
+        cost.text = item.cost.ToString();
         itemName.text = myItem.name;
         itemDescription.text = myItem.description;
         itemLevel.text = "Level " + myItem.level.ToString();
