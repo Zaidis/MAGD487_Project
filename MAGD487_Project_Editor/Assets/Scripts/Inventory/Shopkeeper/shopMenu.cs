@@ -13,8 +13,14 @@ public class shopMenu : MonoBehaviour
     public bool canShop; //active if the player is in range of the shopkeeper
 
     private PlayerMovement player;
+    //MENUS
     [SerializeField] private GameObject theMenu;
-    [SerializeField] private GameObject firstButton;
+    [SerializeField] private GameObject sellMenu;
+    [SerializeField] private List<shopItemUI> myInventoryItems = new List<shopItemUI>();
+
+
+    [SerializeField] private GameObject firstButton; //shop menu first button
+    [SerializeField] private GameObject firstSell; //sell menu first button
     [SerializeField] private TextMeshProUGUI gold;
     private void Awake() {
         if(instance == null) {
@@ -54,4 +60,28 @@ public class shopMenu : MonoBehaviour
         player.canMove = true;
     }
 
+    public void TurnOnSell() {
+        UpdateGoldUI();
+        UpdateSellList();
+        theMenu.SetActive(false);
+        sellMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstSell.gameObject);
+
+    }
+
+    public void TurnOffSell() {
+        UpdateGoldUI();
+        theMenu.SetActive(true);
+        sellMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+    }
+    /// <summary>
+    /// Called for when the player wants to sell their items to the shopkeeper. 
+    /// </summary>
+    public void UpdateSellList() {
+        for(int i = 0; i < InventoryManager.instance.m_slots.Count; i++) {
+            Item item = InventoryManager.instance.m_slots[i].m_item;
+            myInventoryItems[i].UpdateSellSlot(item);
+        }
+    }
 }

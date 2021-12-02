@@ -21,7 +21,6 @@ public class StatisticsManager : MonoBehaviour
         }
     }
     
-
     public void AddGoldAmount(int num) {
         m_goldAmount += num;
         if(m_goldAmount < 0) {

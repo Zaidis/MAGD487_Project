@@ -177,6 +177,19 @@ public class InventoryManager : MonoBehaviour
         slot.DeleteItemFromSlot();
         UpdateSlotUI();
     }
+    /// <summary>
+    /// Removes a specific item from one of the slots. 
+    /// </summary>
+    /// <param name="item"></param>
+    public void RemoveSpecificItem(Item item) {
+        foreach(Slot slot in m_slots) {
+            if(slot.m_item == item) {
+                slot.DeleteItemFromSlot();
+                UpdateSlotUI();
+                return;
+            }
+        }
+    }
 
     public void DropItemContext(InputAction.CallbackContext context) {
         if (context.performed) {

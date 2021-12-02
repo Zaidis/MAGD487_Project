@@ -17,6 +17,5 @@ public class shopButton : MonoBehaviour
                 shopMenu.instance.UpdateGoldUI();
             }
         }
-    }
-
+    }    
 }
