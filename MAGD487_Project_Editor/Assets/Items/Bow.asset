@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Bow
   description: Pew Pew Pew
   level: 1
+  cost: 20
   stackable: 0
   maxStack: 1
   icon: {fileID: -5041819254866391950, guid: 42a911a51ee1fad4db2bcd8053802886, type: 3}

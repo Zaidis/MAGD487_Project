@@ -12,9 +12,10 @@ public class InventoryManager : MonoBehaviour
     public PlayerMovement player;
     public Text pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
-    
+    //public int m_goldAmount { get; set; } //the amount of gold the player has
+
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
-    [SerializeField] private int m_goldAmount { get; set; } //the amount of gold the player has
+    
     [SerializeField] private GameObject defaultInteractable;
     [SerializeField] private Tooltip tooltip;
 
@@ -58,7 +59,7 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Turns on/off the inventory screen.
     /// </summary>
-    private void ManageInventory() {
+    public void ManageInventory() {
         if (!inventoryOn) {
             //turn on the inventory menu
             TurnMenuOn();
@@ -175,6 +176,19 @@ public class InventoryManager : MonoBehaviour
         Slot slot = m_slots[(int)m_currentItem];
         slot.DeleteItemFromSlot();
         UpdateSlotUI();
+    }
+    /// <summary>
+    /// Removes a specific item from one of the slots. 
+    /// </summary>
+    /// <param name="item"></param>
+    public void RemoveSpecificItem(Item item) {
+        foreach(Slot slot in m_slots) {
+            if(slot.m_item == item) {
+                slot.DeleteItemFromSlot();
+                UpdateSlotUI();
+                return;
+            }
+        }
     }
 
     public void DropItemContext(InputAction.CallbackContext context) {
@@ -312,6 +326,14 @@ public class InventoryManager : MonoBehaviour
         return m_currentItem;
     }
 
+    public bool CheckIfOpenSlot() {
+        foreach(Slot slot in m_slots) {
+            if(slot.m_item == menuManager.defaultItem) {
+                return true;
+            }
+        }
+        return false;
+    }
     public void SwapItems(int num1, int num2) {
         Item temp = m_slots[num1].m_item;
         m_slots[num1].AddItemToSlot(m_slots[num2].m_item);

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Roho's Hat
   description: Oswego ROHO
   level: 3
+  cost: 30
   stackable: 0
   maxStack: 1
   icon: {fileID: -6948315507156744436, guid: c41140a4167c37d409b137daeed819d2, type: 3}

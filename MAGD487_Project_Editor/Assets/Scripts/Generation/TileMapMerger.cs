@@ -22,9 +22,10 @@ public class TileMapMerger : MonoBehaviour
                 if(tile != null)
                 {
                     mainTiles.SetTile(iterator.Current + offset, tile);
-                    tilemap.SetTile(iterator.Current, null);
+                    //tilemap.SetTile(iterator.Current, null);
                 }
             }
+            tilemap.gameObject.SetActive(false);
         }
     }
 }

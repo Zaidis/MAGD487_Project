@@ -62,7 +62,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Pick Up",
+                    "name": "Pick Up / Talk",
                     "type": "Button",
                     "id": "608d66c1-f0ff-4059-bd46-4a48bf27eb36",
                     "expectedControlType": "Button",
@@ -539,7 +539,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Pick Up",
+                    "action": "Pick Up / Talk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -550,7 +550,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Pick Up",
+                    "action": "Pick Up / Talk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1171,6 +1171,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Decline/Back",
+                    "type": "Button",
+                    "id": "c83b67ae-9538-4fc7-90da-a32d23af271a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -1380,6 +1388,88 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Select/Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8b470fd-6c3d-40e6-82ad-ade31cc49eb5",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Decline/Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d54cb1ef-c17c-46ed-9b8e-cba46097d3cc",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Decline/Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Shop Menu",
+            "id": "86fe8dfb-aad0-4443-9aba-2daed9f5e092",
+            "actions": [
+                {
+                    "name": "ExitMenu",
+                    "type": "Button",
+                    "id": "b6c5f1ce-3ab5-4646-9812-1475c251272e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b3ce898e-3094-4438-bd27-7fe22d30fa43",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff57d9fa-5f00-4351-8112-a651f28b8fd8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "048c2eaa-e025-4448-b854-65646c889e5a",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ExitMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "960a48e2-e02a-4ae2-a802-0b5601b02fcc",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ExitMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
