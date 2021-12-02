@@ -282,6 +282,7 @@ MonoBehaviour:
   blocksInX: 7
   blocksInY: 4
   blockOffset: 50
+  testingSizes: 1
   player: {fileID: 0}
   exitPrefab: {fileID: 3143113580531471226, guid: 36b70e5e429f8cb4db23a1a32226b63e, type: 3}
   mapBlockTemplate: {fileID: 6372139619522699429, guid: 40b552936d0d21e49a9ea206daa786bf, type: 3}

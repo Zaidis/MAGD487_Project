@@ -8,7 +8,9 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] int blocksInX = 7;
     [Header("Minimum Y = 3")]
     [SerializeField] int blocksInY = 3;
+    [SerializeField] int maxBlocksInY = 7;
     [SerializeField] int blockOffset;
+    [SerializeField] bool testingSizes;
     public static List<MapBlock> mapBlocksSpawned = new List<MapBlock>();
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
@@ -17,18 +19,49 @@ public class MapGenerator : MonoBehaviour
     private void Awake()
     {
         mapMerger = GetComponent<TileMapMerger>();
-        //Generate Map
-        GenerateMap();
-        //Place in Up Down Blocks
-        PlaceUpDownBlocks();
-        //Merge Tilemaps
-        MergeTiles();
-        //Spawn ShopKeeper
-        SpawnShopKeeper();
-        //Spawn Player
-        SpawnPlayer();
-        //Spawn Dungeon Exit
-        SpawnExit();
+        mapBlocksSpawned.Clear();
+        if (testingSizes)
+        {
+            //Generate Map
+            GenerateMap();
+            //Place in Up Down Blocks
+            PlaceUpDownBlocks();
+            //Merge Tilemaps
+            MergeTiles();
+
+            if(blocksInY > 3)
+            {
+                //Spawn ShopKeeper
+                SpawnShopKeeper();
+            }
+            //Spawn Player
+            SpawnPlayer();
+            //Spawn Dungeon Exit
+            SpawnExit();
+        }
+        else
+        {
+            blocksInY = StateController.dungeonLevel + 2;
+            if (blocksInY > maxBlocksInY)
+                blocksInY = maxBlocksInY;
+            //Generate Map
+            GenerateMap();
+            //Place in Up Down Blocks
+            PlaceUpDownBlocks();
+            //Merge Tilemaps
+            MergeTiles();
+
+            if (blocksInY > 3)
+            {
+                //Spawn ShopKeeper
+                SpawnShopKeeper();
+            }
+            //Spawn Player
+            SpawnPlayer();
+            //Spawn Dungeon Exit
+            SpawnExit();
+        }
+        
     }
 
     void MergeTiles()
@@ -126,6 +159,7 @@ public class MapGenerator : MonoBehaviour
         //Picks a random room at the top level of the dungeon to spawn the player
         Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
     }
+
     private GameObject PickRandomMidSectionMapBlock()
     {
         return mapBlocksMidSection[Random.Range(0, mapBlocksMidSection.Count)];
