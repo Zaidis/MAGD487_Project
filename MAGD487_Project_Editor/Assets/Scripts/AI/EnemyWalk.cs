@@ -82,4 +82,6 @@ public class EnemyWalk : MonoBehaviour
         Gizmos.DrawRay(this.transform.position + wallDetectionOffset, transform.right * wallDetectionRayDistance);
         Gizmos.DrawRay(this.transform.position + wallDetectionOffset, -transform.right * wallDetectionRayDistance);
     }
+
+    public Rigidbody2D GetRigidbody2D() { return rb; }
 }
