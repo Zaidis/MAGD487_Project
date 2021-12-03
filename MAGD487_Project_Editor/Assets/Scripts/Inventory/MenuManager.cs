@@ -39,9 +39,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI movementText;
     [SerializeField] private TextMeshProUGUI goldAmountText;
-    [SerializeField] private TextMeshProUGUI armorText;
+    //[SerializeField] private TextMeshProUGUI armorText;
     [SerializeField] private TextMeshProUGUI damageText;
-
+    
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
     }
@@ -259,11 +259,10 @@ public class MenuManager : MonoBehaviour
     public void UpdateStatisticsSection() {
         //damage, health, gold amount, movement speed, armor?, 
 
-        goldAmountText.text = "Gold: " + InventoryManager.instance.m_goldAmount.ToString();
-        damageText.text = "Damage: 0";
-        healthText.text = "Health: 0";
-        movementText.text = "MovementSpeed: 0";
-        armorText.text = "Armor: 0";
+        goldAmountText.text = "Gold: " + StatisticsManager.instance.GetGoldAmount().ToString();
+        damageText.text = "Damage: " + StatisticsManager.instance.m_damageAmount.ToString();
+        healthText.text = "Health: " + StatisticsManager.instance.m_healthAmount.ToString();
+        movementText.text = "MovementSpeed: " + StatisticsManager.instance.m_movementSpeedAmount.ToString();
     }
 
 

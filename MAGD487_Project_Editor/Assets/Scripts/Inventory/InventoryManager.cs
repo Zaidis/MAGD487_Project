@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     public PlayerMovement player;
     public Text pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
-    public int m_goldAmount { get; set; } //the amount of gold the player has
+    //public int m_goldAmount { get; set; } //the amount of gold the player has
 
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     
@@ -177,6 +177,19 @@ public class InventoryManager : MonoBehaviour
         slot.DeleteItemFromSlot();
         UpdateSlotUI();
     }
+    /// <summary>
+    /// Removes a specific item from one of the slots. 
+    /// </summary>
+    /// <param name="item"></param>
+    public void RemoveSpecificItem(Item item) {
+        foreach(Slot slot in m_slots) {
+            if(slot.m_item == item) {
+                slot.DeleteItemFromSlot();
+                UpdateSlotUI();
+                return;
+            }
+        }
+    }
 
     public void DropItemContext(InputAction.CallbackContext context) {
         if (context.performed) {
@@ -320,10 +333,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return false;
-    }
-
-    public void TESTMoneyMaker() {
-        m_goldAmount += 10;
     }
     public void SwapItems(int num1, int num2) {
         Item temp = m_slots[num1].m_item;

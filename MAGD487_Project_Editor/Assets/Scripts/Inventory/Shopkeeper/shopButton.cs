@@ -8,14 +8,14 @@ public class shopButton : MonoBehaviour
     public void PurchaseItem() {
         Item item = slot.myItem;
         int goldAmount = item.cost;
-        if(goldAmount <= InventoryManager.instance.m_goldAmount) { //checks that you have enough to purchase the item
+        if(goldAmount <= StatisticsManager.instance.GetGoldAmount()) { //checks that you have enough to purchase the item
             //you have enough money
             if (InventoryManager.instance.CheckIfOpenSlot()) {
                 //you have an open slot
                 InventoryManager.instance.AddItem(item);
-                InventoryManager.instance.m_goldAmount -= goldAmount;
+                StatisticsManager.instance.AddGoldAmount((goldAmount * -1));
+                shopMenu.instance.UpdateGoldUI();
             }
         }
-    }
-
+    }    
 }
