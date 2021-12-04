@@ -9,17 +9,21 @@ public class Attack : MonoBehaviour
     public bool canReceiveAttackInput;
     public bool AttackInputReceived;
     private GroundDetector groundDetector;
+    private InventoryManager im;
     private void Awake()
     {
         canReceiveAttackInput = true;
         AttackInputReceived = false;        
         instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();
+        im = InventoryManager.instance;
     }
     public void AttackInput(InputAction.CallbackContext callbackContext)
     {
         if(callbackContext.performed) {
             if(canReceiveAttackInput && groundDetector.grounded) {
+                weaponType wt = im.CheckCurrentItemForWeaponType();
+                //TODO Change Animation based on weapon type;
                 AttackInputReceived = true;
                 canReceiveAttackInput = false;
             } else {

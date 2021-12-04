@@ -326,6 +326,13 @@ public class InventoryManager : MonoBehaviour
         return m_currentItem;
     }
 
+    public weaponType CheckCurrentItemForWeaponType()
+    {
+        if(m_slots[(int)m_currentItem].m_item is Weapon weapon)
+            return weapon.weapon;
+        return weaponType.none;
+    }
+
     public bool CheckIfOpenSlot() {
         foreach(Slot slot in m_slots) {
             if(slot.m_item == menuManager.defaultItem) {
