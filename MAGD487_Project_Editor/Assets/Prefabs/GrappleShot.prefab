@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1311538487960186579}
   - component: {fileID: 1115827751362821586}
   - component: {fileID: 4569237488008229530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GrappleShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

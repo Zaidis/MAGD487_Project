@@ -9,7 +9,6 @@ public class Attack : MonoBehaviour
     public bool canReceiveAttackInput;
     public bool AttackInputReceived;
     private GroundDetector groundDetector;
-    private InventoryManager im;
     private Camera mainCam;
 
     public GameObject shot;
@@ -20,14 +19,13 @@ public class Attack : MonoBehaviour
         AttackInputReceived = false;        
         instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();
-        im = InventoryManager.instance;
         mainCam = GameObject.Find("Camera").GetComponent<Camera>();
     }
     public void AttackInput(InputAction.CallbackContext callbackContext)
     {
         if(callbackContext.performed) {
             if(canReceiveAttackInput && groundDetector.grounded) {
-                weaponType wt = im.CheckCurrentItemForWeaponType(); //Move to animation handler script?
+                weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType(); //Move to animation handler script?
                 if(wt == weaponType.none) {
                     //no attack animation
                 } if(wt == weaponType.dagger) {
@@ -53,7 +51,7 @@ public class Attack : MonoBehaviour
             canReceiveAttackInput = false;
         }
     }
-    public void Shoot()
+    public void Shoot() //TODO logic bad, shoots wrong direction
     {
         Vector3 direction;
         direction = mainCam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0.0f));

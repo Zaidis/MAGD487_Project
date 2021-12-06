@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDetector: {fileID: 990974488448991672}
-  dhb: {fileID: 0}
+  dhb: {fileID: 8914226404051063420}
 --- !u!1 &4960092051601091835
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +775,6 @@ GameObject:
   - component: {fileID: 5130241219894864104}
   - component: {fileID: 1801000439}
   - component: {fileID: 79619934}
-  - component: {fileID: 722003122832908066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -859,7 +858,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 722003122832908066}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Grapple, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
@@ -1141,6 +1140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canReceiveAttackInput: 0
   AttackInputReceived: 0
+  shot: {fileID: 8070818502698296207, guid: e2df152d0af13084392531953513b6f0, type: 3}
+  speed: 20
 --- !u!114 &79619934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,20 +1155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
---- !u!114 &722003122832908066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960092051601091835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c932e511c351f478cc69dcaa6e17e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 8070818502698296207, guid: e2df152d0af13084392531953513b6f0, type: 3}
-  speed: 0
 --- !u!1 &8914226404051063420
 GameObject:
   m_ObjectHideFlags: 0
