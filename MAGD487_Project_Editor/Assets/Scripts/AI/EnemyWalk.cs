@@ -33,7 +33,7 @@ public class EnemyWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Vector2.Distance(this.transform.position, playerPos.position) < engageDistance)
+       if (playerPos != null && Vector2.Distance(this.transform.position, playerPos.position) < engageDistance)
        {
             //Start Chase
             if(groundDetector.grounded)

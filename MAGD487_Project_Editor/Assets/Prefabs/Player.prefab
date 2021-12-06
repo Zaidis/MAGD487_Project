@@ -1085,6 +1085,7 @@ GameObject:
   - component: {fileID: 4960092050756392008}
   - component: {fileID: 8726388997300076519}
   - component: {fileID: 3751598515230049089}
+  - component: {fileID: 1055609215}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -1190,6 +1191,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDetector: {fileID: 990974488448991672}
+--- !u!114 &1055609215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960092050756392010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0597cd313fd33409b8326a163f3940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCenterPoint: {x: 0.66, y: 0}
+  radius: 0.42
 --- !u!1 &4960092051601091835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,4 +1590,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c996f56904bf23748980d5de2ca30c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1000
