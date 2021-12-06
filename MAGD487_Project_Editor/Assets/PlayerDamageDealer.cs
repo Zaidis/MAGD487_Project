@@ -21,13 +21,10 @@ public class PlayerDamageDealer : MonoBehaviour
             v = -1;
         }
         Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector3(attackCenterPoint.x * v, attackCenterPoint.y) + this.transform.position, radius);
-        print("Hits: " + hits.Length);
         for (int i = 0; i < hits.Length; i++)
         {
             Damageable dam = hits[i].GetComponentInParent<Damageable>();
-            print(dam);
             if (dam != null && !hits[i].CompareTag("Player")){
-                    print("Damaging: " + damage + "\n" + hits[i].name);
                     dam.Damage(damage);
                     break;
             }
