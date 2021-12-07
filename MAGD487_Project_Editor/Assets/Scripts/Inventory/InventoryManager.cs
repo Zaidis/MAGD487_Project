@@ -13,10 +13,9 @@ public class InventoryManager : MonoBehaviour
     public Text pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
     //public int m_goldAmount { get; set; } //the amount of gold the player has
-
+    public GameObject defaultInteractable;
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     
-    [SerializeField] private GameObject defaultInteractable;
     [SerializeField] private Tooltip tooltip;
 
     [Header("Inventory Menu")]
@@ -199,7 +198,7 @@ public class InventoryManager : MonoBehaviour
     private void DropItem() {
         Slot slot = m_slots[(int)m_currentItem];
         if(slot.m_item != menuManager.defaultItem) {
-            GameObject droppedItem = Instantiate(defaultInteractable, FindObjectOfType<PlayerMovement>().gameObject.transform.position, Quaternion.identity);
+            GameObject droppedItem = Instantiate(defaultInteractable, player.gameObject.transform.position, Quaternion.identity);
             droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
 
             RemoveItem();
