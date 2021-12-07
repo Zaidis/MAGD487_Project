@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using Cinemachine;
+using UnityEngine.Experimental.Rendering.Universal;
 public class shopMenu : MonoBehaviour
 {
     //This is for the shopkeeper UI, not the normal menu
     public static shopMenu instance;
-
+    public PixelPerfectCamera cam;
     public bool canShop; //active if the player is in range of the shopkeeper
 
     private PlayerMovement player;
@@ -39,8 +41,9 @@ public class shopMenu : MonoBehaviour
 
     public void CheckIfShop(InputAction.CallbackContext context) {
         if (context.performed) {
-            if (canShop)
-                TurnOnMenu();
+            if (canShop) {
+                BeginTurningOnMenu();
+            }  
         }
     }
 
@@ -57,6 +60,28 @@ public class shopMenu : MonoBehaviour
             else {
                 TurnOffMenu();
             }
+        }
+    }
+
+    private void BeginTurningOnMenu() {
+        FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", true);
+        StopAllCoroutines();
+        StartCoroutine(ZoomIn());
+        player.canMove = false;
+        Invoke("TurnOnMenu", 4);
+    }
+
+    IEnumerator ZoomIn() {
+        while(cam.assetsPPU < 128) {
+            yield return new WaitForSeconds(0.02f);
+            cam.assetsPPU += 2;
+        }
+    }
+
+    IEnumerator ZoomOut() {
+        while (cam.assetsPPU > 64) {
+            yield return new WaitForSeconds(0.02f);
+            cam.assetsPPU -= 2;
         }
     }
 
@@ -77,6 +102,9 @@ public class shopMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         shopActive = false;
         player.canMove = true;
+        StopAllCoroutines();
+        StartCoroutine(ZoomOut());
+        FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", false);
     }
 
     public void TurnOnSell() {

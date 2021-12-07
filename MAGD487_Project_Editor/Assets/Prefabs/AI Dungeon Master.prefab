@@ -48,6 +48,7 @@ MonoBehaviour:
     cost: 100
   - enemy: {fileID: 6667553420478059987, guid: b0ea6d7c9684da94988c6588d2230048, type: 3}
     cost: 300
-  budget: 2000
+  budget: 1000
   spentBudget: 0
   percentageOfEnemyBudget: 1
+  dungeonLevelMultiplier: 100

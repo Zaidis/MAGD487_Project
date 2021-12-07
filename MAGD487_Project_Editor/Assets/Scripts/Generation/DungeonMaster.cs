@@ -8,10 +8,14 @@ public class DungeonMaster : MonoBehaviour
     [SerializeField] float budget = 1000, spentBudget = 0;
     [SerializeField] float percentageOfEnemyBudget = 1;
     List<MapBlock> mapBlocks;
+    [SerializeField] float dungeonLevelMultiplier = 100;
     // Start is called before the first frame update
     void Start()
     {
         mapBlocks = MapGenerator.mapBlocksSpawned;
+
+        //Determine extra budget due to dungeon level
+        budget += StateController.dungeonLevel * dungeonLevelMultiplier;
         //First Spawn Enemies
         SpawnEnemies();
     }
