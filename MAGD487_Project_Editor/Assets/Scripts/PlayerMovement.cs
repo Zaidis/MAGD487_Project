@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour{
         canMove = true;
         groundDetector = GetComponentInChildren<GroundDetector>();
         rb = GetComponent<Rigidbody2D>();
+
+        DontDestroyOnLoad(this.gameObject);
     }
     void Update()
     {

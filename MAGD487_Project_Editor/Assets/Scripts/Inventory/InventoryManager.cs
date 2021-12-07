@@ -68,12 +68,14 @@ public class InventoryManager : MonoBehaviour
     }
 
     private void TurnMenuOn() {
+        menuManager.UpdateStatisticsSection();
         inventoryOn = true;
         menu.SetActive(true);
         player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Menu");
     }
 
     private void TurnMenuOff() {
+        menuManager.UpdateStatisticsSection();
         inventoryOn = false;
         menu.SetActive(false);
         player.GetComponent<PlayerInput>().currentActionMap = player.GetComponent<PlayerInput>().actions.FindActionMap("Player");

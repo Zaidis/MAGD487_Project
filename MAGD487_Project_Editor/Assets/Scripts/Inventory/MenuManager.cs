@@ -41,7 +41,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goldAmountText;
     //[SerializeField] private TextMeshProUGUI armorText;
     [SerializeField] private TextMeshProUGUI damageText;
-    
+
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
     }
