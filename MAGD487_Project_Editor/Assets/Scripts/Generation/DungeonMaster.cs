@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DungeonMaster : MonoBehaviour
 {
-    [SerializeField] List<EnemyCatalogue> enemies;
+    [SerializeField] List<BuyableItems> enemies, chests;
     [SerializeField] float budget = 1000, spentBudget = 0;
-    [SerializeField] float percentageOfEnemyBudget = 1;
+    [SerializeField] float percentageOfEnemyBudget = 1, percentageOfChestBudget = 1;
     List<MapBlock> mapBlocks;
     [SerializeField] float dungeonLevelMultiplier = 100;
     // Start is called before the first frame update
@@ -18,23 +18,42 @@ public class DungeonMaster : MonoBehaviour
         budget += StateController.dungeonLevel * dungeonLevelMultiplier;
         //First Spawn Enemies
         SpawnEnemies();
+        //Spawn Chests
+        SpawnChests();
     }
 
     void SpawnEnemies()
     {
-        while(spentBudget < budget * percentageOfEnemyBudget)
+        float spendableAmount = ((budget - spentBudget) * percentageOfEnemyBudget);
+        float spent = 0;
+        while(spent < spendableAmount)
         {
             int rand = Random.Range(0, enemies.Count);
             int rand2 = Random.Range(0, mapBlocks.Count);
-            Instantiate(enemies[rand].enemy, mapBlocks[rand2].GetRandomEnemySpawn(), Quaternion.identity);
-            spentBudget += enemies[rand].cost;
+            Instantiate(enemies[rand].item, mapBlocks[rand2].GetRandomEnemySpawn(), Quaternion.identity);
+            spent += enemies[rand].cost;
         }
+        spentBudget += spent;
+    }
+
+    void SpawnChests()
+    {
+        float spendableAmount = ((budget - spentBudget) * percentageOfEnemyBudget);
+        float spent = 0;
+        while (spent < spendableAmount)
+        {
+            int rand = Random.Range(0, chests.Count);
+            int rand2 = Random.Range(0, mapBlocks.Count);
+            Instantiate(chests[rand].item, mapBlocks[rand2].GetRandomTreasureSpawn(), Quaternion.identity);
+            spent += chests[rand].cost;
+        }
+        spentBudget += spent;
     }
 }
 
 [System.Serializable]
-public class EnemyCatalogue
+public class BuyableItems
 {
-    public GameObject enemy;
+    public GameObject item;
     public float cost;
 }

@@ -44,11 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemy: {fileID: 133223124488542149, guid: 6c592c596f39f634ca6ca19b4f49a59f, type: 3}
+  - item: {fileID: 133223124488542149, guid: 6c592c596f39f634ca6ca19b4f49a59f, type: 3}
     cost: 100
-  - enemy: {fileID: 6667553420478059987, guid: b0ea6d7c9684da94988c6588d2230048, type: 3}
+  - item: {fileID: 6667553420478059987, guid: b0ea6d7c9684da94988c6588d2230048, type: 3}
     cost: 300
+  chests:
+  - item: {fileID: 1299709019754092994, guid: 5c43c716bc87dc447ac9d9a883420150, type: 3}
+    cost: 150
   budget: 1000
   spentBudget: 0
-  percentageOfEnemyBudget: 1
+  percentageOfEnemyBudget: 0.75
+  percentageOfChestBudget: 0.25
   dungeonLevelMultiplier: 100

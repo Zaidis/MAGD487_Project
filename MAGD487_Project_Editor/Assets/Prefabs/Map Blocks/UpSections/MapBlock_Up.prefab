@@ -434,7 +434,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7750349002613307089}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1276,11 +1276,11 @@ PrefabInstance:
       objectReference: {fileID: -8117354377821081018, guid: 6b3acb4cf66e59049a9b1b52086a1a2d, type: 3}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.x
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284721473695680, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_RootOrder

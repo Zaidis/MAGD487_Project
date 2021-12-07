@@ -29,4 +29,10 @@ public class MapBlock : MonoBehaviour
         int rand = Random.Range(0, enemySpawns.Count);
         return enemySpawns[rand].position;
     }
+
+    public Vector2 GetRandomTreasureSpawn()
+    {
+        int rand = Random.Range(0, treasureSpawns.Count);
+        return treasureSpawns[rand].position;
+    }
 }
