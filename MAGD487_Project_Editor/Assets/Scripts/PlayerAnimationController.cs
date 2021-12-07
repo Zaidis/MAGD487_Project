@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    public static PlayerAnimationController instance;
     PlayerMovement playerMovement;
     [SerializeField] GroundDetector groundDetector;
     Animator anim;
     SpriteRenderer sr;
+    public AnimatorOverrideController sword;
+    public AnimatorOverrideController none;
+    public AnimatorOverrideController dagger;
 
     [SerializeField]
     private GameObject dhb;
     private void Awake()
     {
+        new AnimatorOverrideController(GetComponent<Animator>().runtimeAnimatorController);
         sr = GetComponent<SpriteRenderer>();
         playerMovement = GetComponentInParent<PlayerMovement>();
         anim = GetComponent<Animator>();
@@ -39,5 +44,23 @@ public class PlayerAnimationController : MonoBehaviour
                 dhb.transform.localScale = new Vector3(-1, 1, 1);
             }
         }             
+    }
+    public void ChangedWeapon()
+    {
+        weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType(); //Move to animation handler script?
+        Attack.instance.canReceiveAttackInput = true;
+        if(wt == weaponType.none) {
+            Attack.instance.canReceiveAttackInput = false;
+        }
+        if(wt == weaponType.dagger) {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = dagger;
+        }
+        if(wt == weaponType.grapple) {
+            Attack.instance.canReceiveAttackInput = false;
+            Attack.instance.Shoot();
+        }
+        if(wt == weaponType.sword) {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = sword;
+        }
     }
 }

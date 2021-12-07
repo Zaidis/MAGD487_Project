@@ -6,8 +6,8 @@ public class HurtBoxAttack : MonoBehaviour
 {
     [SerializeField]
     float DaggerDamage = 5f;
-    [SerializeField]
-    float kbForce = 100f;
+    //[SerializeField]
+    //float kbForce = 100f;
     private void OnTriggerEnter2D(Collider2D collision) //not checking collision, apply kockback, 
     {
         if(collision.gameObject.GetComponent<Damageable>() != null) {

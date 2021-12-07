@@ -24,18 +24,7 @@ public class Attack : MonoBehaviour
     public void AttackInput(InputAction.CallbackContext callbackContext)
     {
         if(callbackContext.performed) {
-            if(canReceiveAttackInput && groundDetector.grounded) {
-                weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType(); //Move to animation handler script?
-                if(wt == weaponType.none) {
-                    //no attack animation
-                } if(wt == weaponType.dagger) {
-                    //dagger attack animation
-                } if(wt == weaponType.grapple) {
-                    //no attack animation
-                    Shoot();
-                } if(wt == weaponType.sword) {
-                    //sword attack animation
-                }
+            if(canReceiveAttackInput && groundDetector.grounded) {                
                 AttackInputReceived = true;
                 canReceiveAttackInput = false;
             } else {

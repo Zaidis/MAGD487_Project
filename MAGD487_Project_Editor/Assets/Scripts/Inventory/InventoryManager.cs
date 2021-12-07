@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager instance;
+    public PlayerAnimationController PAC;
     public MenuManager menuManager;
     public PlayerMovement player;
     public Text pickUpText;
@@ -45,6 +46,7 @@ public class InventoryManager : MonoBehaviour
     private void Start() {
         m_currentItem = 0;
         UpdateSlotUI();
+        PAC = GameObject.Find("Graphic").GetComponent<PlayerAnimationController>();
 
        // Physics2D.IgnoreLayerCollision(8, 7);
     }
@@ -125,7 +127,6 @@ public class InventoryManager : MonoBehaviour
             default:
                 return "<color=red>" + item.name + "</color>";
         }
-        return "";
     }
 
     /// <summary>
@@ -296,13 +297,14 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Ensures that the current slot that is viewed does not go past the list limit. 
     /// </summary>
-    private void ValidateValues() {
+    private void ValidateValues() {        
         if(m_currentItem < 0) {
             m_currentItem = m_slots.Count - 1;
         } else if (m_currentItem > m_slots.Count - 1) {
             m_currentItem = 0;
-        }
+        }        
         UpdateSlotUI();
+        PAC.ChangedWeapon();
     }
 
     /// <summary>
