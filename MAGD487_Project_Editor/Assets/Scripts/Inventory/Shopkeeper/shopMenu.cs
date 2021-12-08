@@ -18,6 +18,9 @@ public class shopMenu : MonoBehaviour
     //MENUS
     [SerializeField] private GameObject theMenu;
     [SerializeField] private GameObject sellMenu;
+    [SerializeField] private GameObject itemSlots; //the four item slots in the base game. turn them off when in menu
+    [SerializeField] private GameObject minimap;
+
     [SerializeField] private List<shopItemUI> myShopItems = new List<shopItemUI>();
     [SerializeField] private List<shopItemUI> myInventoryItems = new List<shopItemUI>();
 
@@ -69,6 +72,9 @@ public class shopMenu : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ZoomIn());
         player.canMove = false;
+
+        itemSlots.SetActive(false);
+        minimap.SetActive(false);
         Invoke("TurnOnMenu", 4);
     }
 
@@ -103,6 +109,8 @@ public class shopMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         shopActive = false;
         player.canMove = true;
+        itemSlots.SetActive(true);
+        minimap.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(ZoomOut());
         FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", false);

@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager instance;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject canvas;
     private void Awake()
     {
         if (instance == null)
@@ -16,7 +18,8 @@ public class ScenesManager : MonoBehaviour
     {
         if (levelName == "Quit")
             Application.Quit();
-
+        player.SetActive(true);
+        canvas.SetActive(true);
         SceneManager.LoadScene(levelName);
     }
 }
