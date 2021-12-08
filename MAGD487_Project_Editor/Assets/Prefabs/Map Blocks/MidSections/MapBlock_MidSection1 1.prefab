@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494666095710203226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: -15.42, z: 0}
+  m_LocalPosition: {x: 2.59, y: -15.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2148691572835791106}
@@ -1431,11 +1431,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.x
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284721473695680, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_RootOrder
