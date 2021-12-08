@@ -2548,6 +2548,14 @@ PrefabInstance:
       propertyPath: m_AnimatedTiles.Array.data[27].second.m_AnimatedSprites.Array.data[8]
       value: 
       objectReference: {fileID: -8117354377821081018, guid: 6b3acb4cf66e59049a9b1b52086a1a2d, type: 3}
+    - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3327284721473695680, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -34713,11 +34721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.7
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.81
+      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34775,11 +34783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.65
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.49
+      value: 9.9
       objectReference: {fileID: 0}
     - target: {fileID: 7323002095544614986, guid: 84267a4dab8798848afaf6255f44e799, type: 3}
       propertyPath: m_LocalPosition.z
