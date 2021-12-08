@@ -6,7 +6,7 @@ public class Item : ScriptableObject
 {
 
     [TextArea()]
-    public string name;
+    new public string name;
     [TextArea()]
     public string description;
     [Header("Item Level")]
@@ -17,7 +17,6 @@ public class Item : ScriptableObject
     public bool stackable;
     public int maxStack = 1;
     public Sprite icon;
-    public itemType type = itemType.weapon;
+    public itemType type = itemType.weapon;    
     //statistics will come later
-
 }

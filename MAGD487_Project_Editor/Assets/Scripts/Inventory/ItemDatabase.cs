@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
+    public static ItemDatabase instance;
+
     public List<Item> level_one = new List<Item>();
     public List<Item> level_two = new List<Item>();
     public List<Item> level_three = new List<Item>();
@@ -24,6 +26,13 @@ public class ItemDatabase : MonoBehaviour
     //Holds all of these lists above
     private List<List<Item>> lists = new List<List<Item>>();
 
+    private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start() {
         InitializeLargeList();
     }
@@ -52,6 +61,11 @@ public class ItemDatabase : MonoBehaviour
     /// <returns></returns>
     public List<Item> GetRandomList(int level) { //insert 16 to get any list
         int rand = Random.Range(0, level - 1);
+        return lists[rand];
+    }
+
+    public List<Item> GetChestList(int min, int max) {
+        int rand = Random.Range(min, max - 1);
         return lists[rand];
     }
 

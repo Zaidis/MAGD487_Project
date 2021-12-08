@@ -8,8 +8,5 @@ public class Weapon : Item
     [Header("Statistics")]
     public float damage;
     public float attackSpeed;
-
-    
-
-   
+    public weaponType weapon = weaponType.dagger;
 }

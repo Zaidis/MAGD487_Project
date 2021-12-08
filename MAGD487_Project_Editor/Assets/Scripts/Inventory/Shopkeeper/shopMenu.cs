@@ -5,17 +5,20 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using Cinemachine;
+using UnityEngine.Experimental.Rendering.Universal;
 public class shopMenu : MonoBehaviour
 {
     //This is for the shopkeeper UI, not the normal menu
     public static shopMenu instance;
-
+    public PixelPerfectCamera cam;
     public bool canShop; //active if the player is in range of the shopkeeper
 
     private PlayerMovement player;
     //MENUS
     [SerializeField] private GameObject theMenu;
     [SerializeField] private GameObject sellMenu;
+    [SerializeField] private List<shopItemUI> myShopItems = new List<shopItemUI>();
     [SerializeField] private List<shopItemUI> myInventoryItems = new List<shopItemUI>();
 
     public bool shopActive;
@@ -39,8 +42,9 @@ public class shopMenu : MonoBehaviour
 
     public void CheckIfShop(InputAction.CallbackContext context) {
         if (context.performed) {
-            if (canShop)
-                TurnOnMenu();
+            if (canShop) {
+                BeginTurningOnMenu();
+            }  
         }
     }
 
@@ -57,6 +61,28 @@ public class shopMenu : MonoBehaviour
             else {
                 TurnOffMenu();
             }
+        }
+    }
+
+    private void BeginTurningOnMenu() {
+        FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", true);
+        StopAllCoroutines();
+        StartCoroutine(ZoomIn());
+        player.canMove = false;
+        Invoke("TurnOnMenu", 4);
+    }
+
+    IEnumerator ZoomIn() {
+        while(cam.assetsPPU < 128) {
+            yield return new WaitForSeconds(0.02f);
+            cam.assetsPPU += 2;
+        }
+    }
+
+    IEnumerator ZoomOut() {
+        while (cam.assetsPPU > 64) {
+            yield return new WaitForSeconds(0.02f);
+            cam.assetsPPU -= 2;
         }
     }
 
@@ -77,6 +103,9 @@ public class shopMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         shopActive = false;
         player.canMove = true;
+        StopAllCoroutines();
+        StartCoroutine(ZoomOut());
+        FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", false);
     }
 
     public void TurnOnSell() {
@@ -95,6 +124,24 @@ public class shopMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         sellActive = false;
     }
+
+    public void UpdateShoppingList() {
+        for(int i = 0; i < myShopItems.Count; i++) {
+            Item item;
+            if(i != myShopItems.Count - 1) {
+                //not the middle slot, does not need the list from the dungeon level
+                List<Item> randList = ItemDatabase.instance.GetRandomList(StateController.dungeonLevel);
+                item = ItemDatabase.instance.GetRandomItemFromList(randList);
+                myShopItems[i].UpdateIcon(item);
+            } else {
+                //middle slot, need the list of the dungeon level
+                List<Item> uniqueList = ItemDatabase.instance.GetList(StateController.dungeonLevel);
+                item = ItemDatabase.instance.GetRandomItemFromList(uniqueList);
+                myShopItems[i].UpdateIcon(item);
+            }
+        }
+    }
+
     /// <summary>
     /// Called for when the player wants to sell their items to the shopkeeper. 
     /// </summary>

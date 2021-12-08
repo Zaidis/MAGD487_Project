@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Interactable
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -17,6 +18,7 @@ TagManager:
   - Interactable_Parent
   - Player
   - Interactable
+  - HurtBox
   - Minimap Only
   - 
   - 
