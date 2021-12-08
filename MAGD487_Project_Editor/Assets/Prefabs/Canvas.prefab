@@ -7647,6 +7647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d04ddd8b87376742b4173cf53f81385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PAC: {fileID: 0}
   menuManager: {fileID: 0}
   player: {fileID: 0}
   pickUpText: {fileID: 3597771724824062028}
@@ -7818,9 +7819,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536315e53bbb68346aeb88d31481be77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   canShop: 0
   theMenu: {fileID: 7951913137879454855}
   sellMenu: {fileID: 4663596192301511477}
+  myShopItems:
+  - {fileID: 3233414342866930305}
+  - {fileID: 3422808168423924855}
+  - {fileID: 2774654720634369725}
   myInventoryItems:
   - {fileID: 2945907085348848261}
   - {fileID: 2109188096309908888}

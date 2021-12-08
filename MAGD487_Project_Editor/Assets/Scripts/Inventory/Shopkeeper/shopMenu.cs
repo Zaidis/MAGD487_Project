@@ -18,6 +18,7 @@ public class shopMenu : MonoBehaviour
     //MENUS
     [SerializeField] private GameObject theMenu;
     [SerializeField] private GameObject sellMenu;
+    [SerializeField] private List<shopItemUI> myShopItems = new List<shopItemUI>();
     [SerializeField] private List<shopItemUI> myInventoryItems = new List<shopItemUI>();
 
     public bool shopActive;
@@ -123,6 +124,24 @@ public class shopMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
         sellActive = false;
     }
+
+    public void UpdateShoppingList() {
+        for(int i = 0; i < myShopItems.Count; i++) {
+            Item item;
+            if(i != myShopItems.Count - 1) {
+                //not the middle slot, does not need the list from the dungeon level
+                List<Item> randList = ItemDatabase.instance.GetRandomList(StateController.dungeonLevel);
+                item = ItemDatabase.instance.GetRandomItemFromList(randList);
+                myShopItems[i].UpdateIcon(item);
+            } else {
+                //middle slot, need the list of the dungeon level
+                List<Item> uniqueList = ItemDatabase.instance.GetList(StateController.dungeonLevel);
+                item = ItemDatabase.instance.GetRandomItemFromList(uniqueList);
+                myShopItems[i].UpdateIcon(item);
+            }
+        }
+    }
+
     /// <summary>
     /// Called for when the player wants to sell their items to the shopkeeper. 
     /// </summary>

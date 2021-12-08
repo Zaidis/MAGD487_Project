@@ -19,7 +19,7 @@ public class Chest : MonoBehaviour
 
 
     private void Start() {
-        //ChooseItem();
+        ChooseItem();
     }
 
 
