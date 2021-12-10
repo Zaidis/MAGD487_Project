@@ -49,8 +49,12 @@ MonoBehaviour:
   - item: {fileID: 6667553420478059987, guid: b0ea6d7c9684da94988c6588d2230048, type: 3}
     cost: 300
   chests:
-  - item: {fileID: 1299709019754092994, guid: 5c43c716bc87dc447ac9d9a883420150, type: 3}
-    cost: 150
+  - item: {fileID: 3527544545573918691, guid: 0d8771a5626f0c74480960067879403d, type: 3}
+    cost: 100
+  - item: {fileID: 3323972120673198607, guid: 1cb3906577b691d4881b112f4cdb3ed3, type: 3}
+    cost: 200
+  - item: {fileID: 7450183348647533416, guid: eed43859d8e535141b0ca6c508c40c98, type: 3}
+    cost: 300
   budget: 1000
   spentBudget: 0
   percentageOfEnemyBudget: 0.75

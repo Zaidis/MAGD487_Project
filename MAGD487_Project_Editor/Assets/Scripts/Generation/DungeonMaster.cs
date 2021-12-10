@@ -24,7 +24,7 @@ public class DungeonMaster : MonoBehaviour
 
     void SpawnEnemies()
     {
-        float spendableAmount = ((budget - spentBudget) * percentageOfEnemyBudget);
+        float spendableAmount = (budget * percentageOfEnemyBudget);
         float spent = 0;
         while(spent < spendableAmount)
         {
@@ -38,14 +38,27 @@ public class DungeonMaster : MonoBehaviour
 
     void SpawnChests()
     {
-        float spendableAmount = ((budget - spentBudget) * percentageOfEnemyBudget);
+        float spendableAmount = (budget * percentageOfChestBudget);
         float spent = 0;
+        int attempts = 0;
+        int threshold = 100;
         while (spent < spendableAmount)
         {
             int rand = Random.Range(0, chests.Count);
             int rand2 = Random.Range(0, mapBlocks.Count);
-            Instantiate(chests[rand].item, mapBlocks[rand2].GetRandomTreasureSpawn(), Quaternion.identity);
+            Vector2 spawnPoint = mapBlocks[rand2].GetRandomTreasureSpawn();
+            if(spawnPoint.x == int.MaxValue)
+            {
+                attempts++;
+                if (attempts >= threshold)
+                    break;
+                else
+                    continue;
+            }
+            Instantiate(chests[rand].item, spawnPoint, Quaternion.identity);
             spent += chests[rand].cost;
+
+            
         }
         spentBudget += spent;
     }

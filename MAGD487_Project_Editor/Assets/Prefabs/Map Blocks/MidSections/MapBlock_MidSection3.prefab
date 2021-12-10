@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 6
   m_Name: Player Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 656b4115cd4dc324a94273bced3434fa, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -72,7 +72,7 @@ GameObject:
   m_Layer: 6
   m_Name: Player Spawn (3)
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 656b4115cd4dc324a94273bced3434fa, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -102,7 +102,7 @@ GameObject:
   m_Layer: 6
   m_Name: Treasure Spawn (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 8c800e3cb906c1946ace1f706dd0f3da, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516073810137978337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.25, y: -4.5, z: 0}
+  m_LocalPosition: {x: 15.75, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8953093277367811765}
@@ -224,7 +224,7 @@ GameObject:
   m_Layer: 6
   m_Name: Player Spawn (2)
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 656b4115cd4dc324a94273bced3434fa, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4922375409514737853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.27, y: 19.67, z: 0}
+  m_LocalPosition: {x: 11.77, y: 19.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2148691572835791106}
@@ -524,7 +524,7 @@ GameObject:
   m_Layer: 6
   m_Name: Treasure Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 8c800e3cb906c1946ace1f706dd0f3da, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -536,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8494578688176628587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -4.75, z: 0}
+  m_LocalPosition: {x: 6.75, y: 19.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8953093277367811765}
@@ -554,7 +554,7 @@ GameObject:
   m_Layer: 6
   m_Name: Player Spawn (1)
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 656b4115cd4dc324a94273bced3434fa, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -2204,11 +2204,11 @@ PrefabInstance:
       objectReference: {fileID: -8117354377821081018, guid: 6b3acb4cf66e59049a9b1b52086a1a2d, type: 3}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.x
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284720879884871, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.13999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327284721473695680, guid: b592f9f01107d5041b4086804eff7b3d, type: 3}
       propertyPath: m_RootOrder
