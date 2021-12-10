@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyWalk : MonoBehaviour
 {
-    [SerializeField] float engageDistance = 10f;
     [SerializeField] float jumpStrength = 10f;
     [SerializeField] float walkSpeed;
     [SerializeField] LayerMask groundLayer;
@@ -15,9 +14,11 @@ public class EnemyWalk : MonoBehaviour
     Rigidbody2D rb;
     Transform playerPos;
     GroundDetector groundDetector;
+    PlayerDetector playerDetector;
     Vector2 flippedScale, unFlippedScale;
     private void Awake()
     {
+        playerDetector = GetComponentInChildren<PlayerDetector>();
         rb = GetComponent<Rigidbody2D>();
         groundDetector = GetComponentInChildren<GroundDetector>();
     }
@@ -33,7 +34,7 @@ public class EnemyWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (playerPos != null && Vector2.Distance(this.transform.position, playerPos.position) < engageDistance)
+       if (playerPos != null && playerDetector.detected)
        {
             //Start Chase
             if(groundDetector.grounded)

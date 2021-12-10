@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RangedAttackAI : MonoBehaviour
 {
+    public UnityEvent projectileFire;
     [SerializeField] GameObject projectile;
-    [SerializeField] Vector2 launchPoint;
+    [SerializeField] Transform launchPoint;
     [SerializeField] float coolDownTime;
     [SerializeField] bool requireLineOfSight;
     bool coolDown = false;
     float timer = 0;
     PlayerDetector playerDetector;
-
     private void Awake()
     {
         playerDetector = GetComponentInChildren<PlayerDetector>();
@@ -28,6 +29,11 @@ public class RangedAttackAI : MonoBehaviour
                 coolDown = false;
             }
         }
+
+        if (playerDetector.detected)
+        {
+            LaunchProjectile();
+        }
     }
     public void LaunchProjectile()
     {
@@ -35,17 +41,27 @@ public class RangedAttackAI : MonoBehaviour
         {
             if (requireLineOfSight && CanSeePlayer())
             {
-                Instantiate(projectile, launchPoint, Quaternion.identity);
+                projectileFire.Invoke();
             }
-            else
+            else if(!requireLineOfSight)
             { //Fire anyway
-                Instantiate(projectile, launchPoint, Quaternion.identity);
+                projectileFire.Invoke();
             }
             coolDown = true;
         }
             
     }
 
+    public void SpawnProjectile()
+    {
+        if (this.transform.localScale.x < 0)
+        {
+            GameObject proj = Instantiate(projectile, launchPoint.position, Quaternion.identity);
+            proj.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+            Instantiate(projectile, launchPoint.position, Quaternion.identity);
+    }
     bool CanSeePlayer()
     {
         //Calculate direction to pull player in
@@ -61,10 +77,5 @@ public class RangedAttackAI : MonoBehaviour
             }
         }
         return true;
-    }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(launchPoint, 0.1f);
     }
 }

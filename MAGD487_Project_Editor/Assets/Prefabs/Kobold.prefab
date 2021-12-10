@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &757851725754757135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2385317808618072217}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2385317808618072217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757851725754757135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.375, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6667553420478059988}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936503877389507491
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +123,7 @@ GameObject:
   - component: {fileID: 6667553419048120857}
   - component: {fileID: 6667553419048120858}
   - component: {fileID: 3871733311423353705}
+  - component: {fileID: 7646521530741220312}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -184,6 +215,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7646521530741220312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667553419048120856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61be6c5d21a54f4a97475008f3be832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6667553419929001795
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,8 +310,8 @@ GameObject:
   - component: {fileID: 6667553420478059989}
   - component: {fileID: 6667553420478059991}
   - component: {fileID: 6667553420478059990}
-  - component: {fileID: 6228837259069081289}
   - component: {fileID: 5462186493544125650}
+  - component: {fileID: 8750017208604271408}
   m_Layer: 0
   m_Name: Kobold
   m_TagString: Untagged
@@ -291,6 +334,7 @@ Transform:
   - {fileID: 6667553419929001796}
   - {fileID: 2778281154179492731}
   - {fileID: 5132137875299637079}
+  - {fileID: 2385317808618072217}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -306,7 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae7f97aecce3674ea565bc8a652d6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engageDistance: 10
   jumpStrength: 1200
   walkSpeed: 2.5
   groundLayer:
@@ -362,19 +405,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3309586, y: 0.7882347}
   m_EdgeRadius: 0
---- !u!114 &6228837259069081289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6667553420478059987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f46e87cf0c66ca4449891f890885cd38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
 --- !u!114 &5462186493544125650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,10 +417,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f09ecbaec48344f90396ca016f0031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  launchPoint: {x: 0.69, y: 0.04}
+  projectileFire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7646521530741220312}
+        m_TargetAssemblyTypeName: KoboldAnimationController, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  projectile: {fileID: 8531758294068724545, guid: 2adba0e30494e274297a68ac5df1c35c, type: 3}
+  launchPoint: {fileID: 2385317808618072217}
   coolDownTime: 3
   requireLineOfSight: 1
+--- !u!114 &8750017208604271408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667553420478059987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853434631ae39e141a987d72538b042e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  anim: {fileID: 7646521530741220312}
+  rb: {fileID: 6667553420478059991}
+  hitboxes:
+  - {fileID: 6667553420478059990}
+  - {fileID: 6667553419929001797}
+  minimapIndicator: {fileID: 1936503877389507491}
 --- !u!1 &8682341702725617395
 GameObject:
   m_ObjectHideFlags: 0
