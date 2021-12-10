@@ -451,10 +451,7 @@ MonoBehaviour:
   health: 10
   anim: {fileID: 7646521530741220312}
   rb: {fileID: 6667553420478059991}
-  hitboxes:
-  - {fileID: 6667553420478059990}
-  - {fileID: 6667553419929001797}
-  minimapIndicator: {fileID: 1936503877389507491}
+  deadBody: {fileID: 2687210581908744593, guid: 02661ef94a98f0645a47bce3f6258e1c, type: 3}
 --- !u!1 &8682341702725617395
 GameObject:
   m_ObjectHideFlags: 0

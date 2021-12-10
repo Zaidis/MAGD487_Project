@@ -6,8 +6,7 @@ public class KoboldDamageable : Damageable
 {
     [SerializeField] KoboldAnimationController anim;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Collider2D[] hitboxes;
-    [SerializeField] GameObject minimapIndicator;
+    [SerializeField] GameObject deadBody;
     bool dying = false;
     public override void Death()
     {
@@ -20,13 +19,9 @@ public class KoboldDamageable : Damageable
     {
         if (dying && collision.collider.CompareTag("Ground") && rb.velocity.y < 0.1)
         {
-            for (int i = 0; i < hitboxes.Length; i++)
-            {
-                hitboxes[i].enabled = false;
-            }
-            rb.simulated = false;
-            minimapIndicator.SetActive(false);
-            this.enabled = false;
+            GameObject g = Instantiate(deadBody, this.transform.position, Quaternion.identity);
+            g.transform.localScale = this.transform.localScale;
+            Destroy();
         }
     }
 }
