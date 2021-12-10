@@ -18,6 +18,9 @@ public class ProjectileMovement : MonoBehaviour
         {
             damageable.Damage(damage);
             Destroy(this.gameObject);
+        }else if (collision.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }
