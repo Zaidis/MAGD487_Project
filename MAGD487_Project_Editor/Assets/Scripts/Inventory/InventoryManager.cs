@@ -61,6 +61,7 @@ public class InventoryManager : MonoBehaviour
     /// Turns on/off the inventory screen.
     /// </summary>
     public void ManageInventory() {
+        menuManager.SectionButtonBarSetActive();
         if (!inventoryOn) {
             //turn on the inventory menu
             TurnMenuOn();

@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     [Header("All Sections")]
     public List<GameObject> sections = new List<GameObject>();
     public List<bool> sectionBools = new List<bool>(); //IN ORDER: Inventory, Stats, Options
+
+    
     [SerializeField] private int currentSection;
 
     [Header("Inventory Section")]
@@ -27,6 +29,7 @@ public class MenuManager : MonoBehaviour
     [Header("Popup Objects")]
     [SerializeField] private TextMeshProUGUI popup;
     [SerializeField] private GameObject sectionsParent; //holds the bottom row
+    [SerializeField] private GameObject[] sectionButtons; //the bottom bar buttons
 
     [Header("Options Section")]
     [SerializeField] private Button firstButton; //so the event system knows where to look first when selected!
@@ -239,7 +242,9 @@ public class MenuManager : MonoBehaviour
         for(int i = 0; i < sections.Count; i++) {
             sections[i].SetActive(false);
             sectionBools[i] = false;
+            
         }
+        SectionButtonBarSetActive();
         UpdateStatisticsSection();
         sections[currentSection].SetActive(true);
         sectionBools[currentSection] = true;
@@ -249,6 +254,16 @@ public class MenuManager : MonoBehaviour
         } else {
             EventSystem.current.SetSelectedGameObject(null);
         }
+    }
+
+    /// <summary>
+    /// Orange bar underneath the button on the sections tab. 
+    /// </summary>
+    public void SectionButtonBarSetActive() {
+        for(int i = 0; i < sectionButtons.Length; i++) {
+            sectionButtons[i].GetComponent<sectionButton>().Deactivated();
+        }
+        sectionButtons[currentSection].GetComponent<sectionButton>().Selected();
     }
     public void ClickSection(int num) {
         currentSection = num;
