@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 133223124488542144}
   - component: {fileID: 9179666646514024213}
   - component: {fileID: 7765207373465215673}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Nose Creature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
