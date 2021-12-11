@@ -29,12 +29,12 @@ public class MapGenerator : MonoBehaviour
             PlaceUpDownBlocks();
             //Merge Tilemaps
             MergeTiles();
-
+            /*
             if(blocksInY > 3)
             {
                 //Spawn ShopKeeper
                 SpawnShopKeeper();
-            }
+            }*/
             //Spawn Player
             SpawnPlayer();
             //Spawn Dungeon Exit
@@ -51,12 +51,12 @@ public class MapGenerator : MonoBehaviour
             PlaceUpDownBlocks();
             //Merge Tilemaps
             MergeTiles();
-
+            /*
             if (blocksInY > 3)
             {
                 //Spawn ShopKeeper
                 SpawnShopKeeper();
-            }
+            }*/
             //Spawn Player
             SpawnPlayer();
             //Spawn Dungeon Exit
@@ -155,13 +155,12 @@ public class MapGenerator : MonoBehaviour
         //Picks a random room at the top level of the dungeon to spawn the player
         player = FindObjectOfType<PlayerMovement>().transform;
         player.position = mapBlocksSpawned[rand].playerSpawns[rand2].position;
-        mapBlocksSpawned[rand].playerSpawns.RemoveAt(rand2);
     }
     void SpawnExit()
     {
         int rand = Random.Range(mapBlocksSpawned.Count - blocksInX + 2, mapBlocksSpawned.Count);
         //Picks a random room at the top level of the dungeon to spawn the player
-        Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
+        Instantiate(exitPrefab, mapBlocksSpawned[rand].exitSpawns[Random.Range(0, mapBlocksSpawned[rand].exitSpawns.Count)].position, Quaternion.identity);
     }
 
     private GameObject PickRandomMidSectionMapBlock()
