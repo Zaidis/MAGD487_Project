@@ -28,6 +28,5 @@ public class ScenesManager : MonoBehaviour
         player.SetActive(true);
         canvas.SetActive(true);
         SceneManager.LoadScene(levelToLoad);
-        SceneTransitioner.Transition();
     }
 }

@@ -9,6 +9,7 @@ public class DungeonEntrance : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ScenesManager.instance.LoadScene("Dungeon");
+            this.enabled = false;
         }
     }
 }

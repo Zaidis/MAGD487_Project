@@ -15,6 +15,7 @@ public class MapGenerator : MonoBehaviour
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
     [SerializeField] GameObject exitPrefab, mapBlockTemplate, shopKeeperPrefab;
+    [SerializeField] int dungeonLevelRatio = 2;
     TileMapMerger mapMerger;
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class MapGenerator : MonoBehaviour
         }
         else
         {
-            blocksInY = StateController.dungeonLevel + 2;
+            blocksInY = (StateController.dungeonLevel / dungeonLevelRatio) + 3;
             if (blocksInY > maxBlocksInY)
                 blocksInY = maxBlocksInY;
             //Generate Map
