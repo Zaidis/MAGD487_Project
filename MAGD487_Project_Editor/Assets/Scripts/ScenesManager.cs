@@ -20,7 +20,7 @@ public class ScenesManager : MonoBehaviour
         if (levelName == "Quit")
             Application.Quit();
         levelToLoad = levelName;
-        SceneTransitioner.Transition();
+        SceneTransitioner.instance.Transition();
     }
 
     public void LoadScene()

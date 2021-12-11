@@ -5,7 +5,8 @@ using UnityEngine;
 public class SceneTransitioner : MonoBehaviour
 {
     static Animator anim;
-    static SceneTransitioner instance;
+    public static SceneTransitioner instance;
+    bool transitioning = false;
     private void Awake()
     {
         if (instance == null)
@@ -16,13 +17,19 @@ public class SceneTransitioner : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public static void Transition()
+    public void Transition()
     {
-        anim.SetTrigger("Transition");
+        if (!transitioning)
+        {
+            transitioning = true;
+            anim.SetTrigger("Transition");
+            Invoke("LoadTheScene", 2);
+        }
     }
 
     public void LoadTheScene()
     {
+        transitioning = false;
         ScenesManager.instance.LoadScene();
     }
 }

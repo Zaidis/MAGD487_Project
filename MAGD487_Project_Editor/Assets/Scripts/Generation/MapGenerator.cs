@@ -151,9 +151,11 @@ public class MapGenerator : MonoBehaviour
     void SpawnPlayer()
     {
         int rand = Random.Range(0, blocksInX - 2);
+        int rand2 = Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count);
         //Picks a random room at the top level of the dungeon to spawn the player
         player = FindObjectOfType<PlayerMovement>().transform;
-        player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
+        player.position = mapBlocksSpawned[rand].playerSpawns[rand2].position;
+        mapBlocksSpawned[rand].playerSpawns.RemoveAt(rand2);
     }
     void SpawnExit()
     {

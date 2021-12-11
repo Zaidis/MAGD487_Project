@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae7f97aecce3674ea565bc8a652d6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 1200
+  jumpStrength: 1500
   walkSpeed: 2.5
   groundLayer:
     serializedVersion: 2
@@ -358,6 +358,7 @@ MonoBehaviour:
   wallDetectionRayDistance: 1.1
   wallDetectionOffset: {x: 0, y: -0.5, z: 0}
   jumpDelay: 0.75
+  stopDistance: 2.53
 --- !u!50 &6667553420478059991
 Rigidbody2D:
   serializedVersion: 4
@@ -514,4 +515,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8

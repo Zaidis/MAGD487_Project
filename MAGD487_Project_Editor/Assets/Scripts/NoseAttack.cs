@@ -23,13 +23,13 @@ public class NoseAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attack)
+        if (attack && !doCoolDown)
         {
             Pull();
         }
-        else
+        else if(!doCoolDown)
         {
-            if (playerDetector.detected && !doCoolDown)
+            if (playerDetector.detected)
             {
                 //Calculate direction to pull player in
                 Vector3 dir = (playerDetector.player.position - this.transform.position);
@@ -47,15 +47,14 @@ public class NoseAttack : MonoBehaviour
                 }
                 canSeePlayer = true;
                 attack = true;
-
-            }
-            else
-            {
-                attack = false;
-                Cooldown();
             }
         }
-        
+        else
+        {
+            attack = false;
+            Cooldown();
+        }
+
     }
 
     void Pull()
@@ -82,7 +81,7 @@ public class NoseAttack : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player") && !doCoolDown)
         {
             collision.collider.GetComponent<Damageable>().Damage(damage);
             attack = false;
