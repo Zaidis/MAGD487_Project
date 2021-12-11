@@ -268,7 +268,7 @@ MonoBehaviour:
   wallDetectionRayDistance: 0.78
   wallDetectionOffset: {x: 0.06, y: -0.2, z: 0}
   jumpDelay: 0.75
-  stopDistance: 1.14
+  stopDistance: 0.75
 --- !u!50 &7857860931910389525
 Rigidbody2D:
   serializedVersion: 4
