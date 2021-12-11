@@ -1668,7 +1668,7 @@ MonoBehaviour:
   speed: 5
   canMove: 0
   rolling: 0
-  rollForce: 30
+  rollForce: 15
   rollTime: 0.25
 --- !u!114 &9152401118014463180
 MonoBehaviour:

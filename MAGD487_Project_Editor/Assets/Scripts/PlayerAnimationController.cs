@@ -27,7 +27,7 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         anim.SetFloat("MoveX", playerMovement.movement.x);
-
+        anim.SetBool("Dodging", playerMovement.rolling);
         if(groundDetector.grounded)
             anim.SetFloat("MoveY", 0);
         else

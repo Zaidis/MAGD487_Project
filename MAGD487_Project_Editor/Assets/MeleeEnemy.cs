@@ -13,9 +13,9 @@ public class MeleeEnemy : MonoBehaviour
     EnemyWalk enemyWalk;
     float timer = 0;
     bool coolDown = false;
-    public bool blocking = false;
+    [HideInInspector] public bool blocking = false;
     public bool blockCapable;
-    public bool swinging = false;
+    [HideInInspector] public bool swinging = false;
 
     private void Awake()
     {
