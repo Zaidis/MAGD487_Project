@@ -19,7 +19,7 @@ public class NoseAttacking : StateMachineBehaviour
             //Calculate direction to pull player in
             Vector3 dir = (noseAttack.playerDetector.player.position - animator.transform.position);
             dir.Normalize();
-            noseAttack.playerDetector.playerRB.AddForce(new Vector2(-(dir.x * noseAttack.pullStrength), 0));
+            noseAttack.playerDetector.playerRB.AddForce(new Vector2(-(dir.x * noseAttack.pullStrength) * Time.deltaTime, 0));
         }
     }
 
