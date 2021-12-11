@@ -17,10 +17,11 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] private float rollTime;
     private float timer = 0;
     private Vector2 initialRollDirection;
-
+    SpriteRenderer sr;
     public static PlayerMovement instance;
     void Awake()
     {
+        sr = GetComponentInChildren<SpriteRenderer>();
         instance = this;
         canMove = true;
         groundDetector = GetComponentInChildren<GroundDetector>();
@@ -43,11 +44,11 @@ public class PlayerMovement : MonoBehaviour{
                 if(groundDetector.grounded && wantToRoll) {
                     rolling = true;
                     timer = rollTime;
-                    initialRollDirection = new Vector2(rollForce * (movement.x >= 0 ? 1 : -1), 0);
+                    initialRollDirection = new Vector2(rollForce * (sr.flipX == false ? 1 : -1), rb.velocity.y);
                 }
             } else {
-                if(timer > 0)
-                    rb.AddForce(initialRollDirection);
+                if (timer > 0)
+                    rb.velocity = initialRollDirection;
                 if(rb.velocity.x == 0)
                     timer = 0;
                 if(timer < -rollTime) {
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour{
                 }
             }
         } else {
-            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }    
     }
 

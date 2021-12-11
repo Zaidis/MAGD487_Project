@@ -32,7 +32,12 @@ public class MapBlock : MonoBehaviour
 
     public Vector2 GetRandomTreasureSpawn()
     {
+        if (treasureSpawns.Count <= 0)
+            return new Vector2(int.MaxValue, int.MaxValue);
+
         int rand = Random.Range(0, treasureSpawns.Count);
-        return treasureSpawns[rand].position;
+        Vector2 val = treasureSpawns[rand].position;
+        treasureSpawns.RemoveAt(rand);
+        return val;
     }
 }
