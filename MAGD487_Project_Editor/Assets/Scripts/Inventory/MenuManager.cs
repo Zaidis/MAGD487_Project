@@ -52,6 +52,7 @@ public class MenuManager : MonoBehaviour
     }
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
+        UpdateInventoryMenuUI();
     }
 
     /// <summary>
@@ -225,7 +226,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeSectionsContext(InputAction.CallbackContext context) {
         if (context.performed) {
-            if (!settingsMenuOn) {
+            if (!settingsMenuOn && !wantsToSwap) {
                 currentSection += (int)context.ReadValue<float>();
                 ValidateSection();
                 ChangeSections();
