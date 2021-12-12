@@ -305,7 +305,6 @@ public class InventoryManager : MonoBehaviour
             m_currentItem = 0;
         }        
         UpdateSlotUI();
-        PAC.ChangedWeapon();
     }
 
     /// <summary>
@@ -315,15 +314,14 @@ public class InventoryManager : MonoBehaviour
         foreach(Slot slot in m_slots) {
             slot.GetComponent<Image>().color = Color.white;
         }
-        m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
-
+        m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;        
         foreach (Slot slot in m_slots) {
             if(slot.m_item != menuManager.defaultItem) {
                 menuManager.UpdateInventoryMenuUI(); //update the menu slots
+                PAC.ChangedWeapon();
                 return;
             }
-        }
-        
+        }        
     }
 
     public float GetCurrentItem() {

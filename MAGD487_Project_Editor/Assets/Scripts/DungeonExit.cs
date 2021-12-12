@@ -11,6 +11,7 @@ public class DungeonExit : MonoBehaviour
             StateController.dungeonLevel += 1;
             StateController.SaveGame();
             ScenesManager.instance.LoadScene("Camp");
+            this.enabled = false;
         }
     }
 }

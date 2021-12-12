@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
     public float speed;
     private void Awake()
     {
-        canReceiveAttackInput = true;
+        canReceiveAttackInput = false;
         AttackInputReceived = false;        
         instance = this;
         groundDetector = GetComponentInChildren<GroundDetector>();

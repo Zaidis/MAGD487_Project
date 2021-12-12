@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1936503877389507491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 6667553420478059988}
   m_RootOrder: 2
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 6667553420478059990}
   - component: {fileID: 5462186493544125650}
   - component: {fileID: 8750017208604271408}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Kobold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae7f97aecce3674ea565bc8a652d6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 1200
+  jumpStrength: 1500
   walkSpeed: 2.5
   groundLayer:
     serializedVersion: 2
@@ -358,6 +358,7 @@ MonoBehaviour:
   wallDetectionRayDistance: 1.1
   wallDetectionOffset: {x: 0, y: -0.5, z: 0}
   jumpDelay: 0.75
+  stopDistance: 2.53
 --- !u!50 &6667553420478059991
 Rigidbody2D:
   serializedVersion: 4
@@ -514,4 +515,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8
