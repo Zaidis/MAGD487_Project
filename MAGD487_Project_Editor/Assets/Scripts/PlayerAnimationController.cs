@@ -10,7 +10,6 @@ public class PlayerAnimationController : MonoBehaviour
     Animator anim;
     SpriteRenderer sr;
     public AnimatorOverrideController sword;
-    public AnimatorOverrideController none;
     public AnimatorOverrideController dagger;
 
     [SerializeField]
