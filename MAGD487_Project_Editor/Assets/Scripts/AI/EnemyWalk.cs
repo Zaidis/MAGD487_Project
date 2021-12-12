@@ -10,9 +10,9 @@ public class EnemyWalk : MonoBehaviour
     [SerializeField] float wallDetectionRayDistance = 2;
     [SerializeField] Vector3 wallDetectionOffset;
     [SerializeField] float jumpDelay = 0.75f;
+    [SerializeField] float stopDistance = 1;
     float timer = 0;
     Rigidbody2D rb;
-    Transform playerPos;
     GroundDetector groundDetector;
     PlayerDetector playerDetector;
     Vector2 flippedScale, unFlippedScale;
@@ -27,25 +27,30 @@ public class EnemyWalk : MonoBehaviour
     {
         unFlippedScale = transform.localScale;
         flippedScale = new Vector2(-unFlippedScale.x, unFlippedScale.y);
-        //TODO OPTIMISE THIS TO FIND GAME MANAGER INSTEAD
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (playerPos != null && playerDetector.detected)
+       if (playerDetector.player != null && playerDetector.detected)
        {
             //Start Chase
             if(groundDetector.grounded)
                 CheckForWall();
-            Chase();
+            if(Vector2.Distance(this.transform.position, playerDetector.player.position) > stopDistance)
+            {
+                Chase();
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
        }
     }
 
     void Chase()
     {
-        Vector2 dir = playerPos.position - this.transform.position;
+        Vector2 dir = playerDetector.player.position - this.transform.position;
         dir.Normalize();
         if (dir.x > 0)
             transform.localScale = unFlippedScale;
@@ -73,7 +78,6 @@ public class EnemyWalk : MonoBehaviour
     }
     void Jump()
     {
-        //rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
         rb.AddForce(new Vector2(0, jumpStrength));
     }
 
@@ -82,6 +86,8 @@ public class EnemyWalk : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(this.transform.position + wallDetectionOffset, transform.right * wallDetectionRayDistance);
         Gizmos.DrawRay(this.transform.position + wallDetectionOffset, -transform.right * wallDetectionRayDistance);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(this.transform.position, stopDistance);
     }
 
     public Rigidbody2D GetRigidbody2D() { return rb; }

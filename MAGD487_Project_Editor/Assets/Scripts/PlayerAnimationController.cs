@@ -7,11 +7,11 @@ public class PlayerAnimationController : MonoBehaviour
     public static PlayerAnimationController instance;
     PlayerMovement playerMovement;
     [SerializeField] GroundDetector groundDetector;
-    Animator anim;
+    public Animator anim;
     SpriteRenderer sr;
     public AnimatorOverrideController sword;
-    public AnimatorOverrideController none;
     public AnimatorOverrideController dagger;
+    public weaponType wt = weaponType.none;
 
     [SerializeField]
     private GameObject dhb;
@@ -47,7 +47,7 @@ public class PlayerAnimationController : MonoBehaviour
     }
     public void ChangedWeapon()
     {
-        weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType(); //Move to animation handler script?
+        wt = InventoryManager.instance.CheckCurrentItemForWeaponType();
         Attack.instance.canReceiveAttackInput = true;
         if(wt == weaponType.none) {
             Attack.instance.canReceiveAttackInput = false;

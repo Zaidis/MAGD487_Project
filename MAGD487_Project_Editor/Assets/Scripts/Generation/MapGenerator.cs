@@ -15,6 +15,7 @@ public class MapGenerator : MonoBehaviour
     List<MapBlock> templateMapBlocks = new List<MapBlock>();
     [SerializeField] Transform player;
     [SerializeField] GameObject exitPrefab, mapBlockTemplate, shopKeeperPrefab;
+    [SerializeField] int dungeonLevelRatio = 2;
     TileMapMerger mapMerger;
     private void Awake()
     {
@@ -28,12 +29,12 @@ public class MapGenerator : MonoBehaviour
             PlaceUpDownBlocks();
             //Merge Tilemaps
             MergeTiles();
-
+            /*
             if(blocksInY > 3)
             {
                 //Spawn ShopKeeper
                 SpawnShopKeeper();
-            }
+            }*/
             //Spawn Player
             SpawnPlayer();
             //Spawn Dungeon Exit
@@ -41,7 +42,7 @@ public class MapGenerator : MonoBehaviour
         }
         else
         {
-            blocksInY = StateController.dungeonLevel + 2;
+            blocksInY = (StateController.dungeonLevel / dungeonLevelRatio) + 3;
             if (blocksInY > maxBlocksInY)
                 blocksInY = maxBlocksInY;
             //Generate Map
@@ -50,12 +51,12 @@ public class MapGenerator : MonoBehaviour
             PlaceUpDownBlocks();
             //Merge Tilemaps
             MergeTiles();
-
+            /*
             if (blocksInY > 3)
             {
                 //Spawn ShopKeeper
                 SpawnShopKeeper();
-            }
+            }*/
             //Spawn Player
             SpawnPlayer();
             //Spawn Dungeon Exit
@@ -150,15 +151,16 @@ public class MapGenerator : MonoBehaviour
     void SpawnPlayer()
     {
         int rand = Random.Range(0, blocksInX - 2);
+        int rand2 = Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count);
         //Picks a random room at the top level of the dungeon to spawn the player
         player = FindObjectOfType<PlayerMovement>().transform;
-        player.position = mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position;
+        player.position = mapBlocksSpawned[rand].playerSpawns[rand2].position;
     }
     void SpawnExit()
     {
         int rand = Random.Range(mapBlocksSpawned.Count - blocksInX + 2, mapBlocksSpawned.Count);
         //Picks a random room at the top level of the dungeon to spawn the player
-        Instantiate(exitPrefab, mapBlocksSpawned[rand].playerSpawns[Random.Range(0, mapBlocksSpawned[rand].playerSpawns.Count)].position, Quaternion.identity);
+        Instantiate(exitPrefab, mapBlocksSpawned[rand].exitSpawns[Random.Range(0, mapBlocksSpawned[rand].exitSpawns.Count)].position, Quaternion.identity);
     }
 
     private GameObject PickRandomMidSectionMapBlock()

@@ -62,7 +62,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.7
+  m_Radius: 8
 --- !u!1 &2897586613839616299
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 7857860931910389524}
   - component: {fileID: 8151742576363637999}
   - component: {fileID: 1567432536777562751}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,6 +268,7 @@ MonoBehaviour:
   wallDetectionRayDistance: 0.78
   wallDetectionOffset: {x: 0.06, y: -0.2, z: 0}
   jumpDelay: 0.75
+  stopDistance: 0.75
 --- !u!50 &7857860931910389525
 Rigidbody2D:
   serializedVersion: 4

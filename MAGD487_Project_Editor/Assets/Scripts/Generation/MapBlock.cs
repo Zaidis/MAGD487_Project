@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 public class MapBlock : MonoBehaviour
 {
-    [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent, shopKeepSpawnPointParent;
+    [SerializeField] Transform playerSpawnParent, trapSpawnParent, enemySpawnParent, treasureSpawnParent, shopKeepSpawnPointParent, exitSpawnParent;
     public Tilemap tilemap;
-    public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns, shopKeepSpawns;
+    public List<Transform> playerSpawns, trapSpawns, enemySpawns, treasureSpawns, shopKeepSpawns, exitSpawns;
     private void Awake()
     {
         AddToList(playerSpawnParent, playerSpawns);
@@ -14,6 +14,7 @@ public class MapBlock : MonoBehaviour
         AddToList(enemySpawnParent, enemySpawns);
         AddToList(treasureSpawnParent, treasureSpawns);
         AddToList(shopKeepSpawnPointParent, shopKeepSpawns);
+        AddToList(exitSpawnParent, exitSpawns);
     }
     
     void AddToList(Transform parent, List<Transform> list)
