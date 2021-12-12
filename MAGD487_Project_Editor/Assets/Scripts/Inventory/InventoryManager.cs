@@ -312,9 +312,10 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     private void UpdateSlotUI() {
         foreach(Slot slot in m_slots) {
-            slot.GetComponent<Image>().color = Color.white;
+            slot.transform.parent.GetComponent<Image>().color = new Color32(77,77,77,255);
         }
-        m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;        
+        //m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
+        m_slots[(int)m_currentItem].gameObject.transform.parent.GetComponent<Image>().color = new Color32(70, 29, 0, 255); //brown
         foreach (Slot slot in m_slots) {
             if(slot.m_item != menuManager.defaultItem) {
                 menuManager.UpdateInventoryMenuUI(); //update the menu slots

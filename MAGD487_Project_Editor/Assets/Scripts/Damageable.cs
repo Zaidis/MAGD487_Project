@@ -23,6 +23,7 @@ public class Damageable : MonoBehaviour
         if (health > 0)
         {
             health -= amt;
+            StatisticsManager.instance.m_healthAmount -= amt;
             if (health <= 0)
             {
                 Death();
@@ -37,7 +38,8 @@ public class Damageable : MonoBehaviour
     public virtual void Heal(float amt)
     {
         health += amt;
-        if(health > maxHealth)
+        StatisticsManager.instance.m_healthAmount += amt;
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
