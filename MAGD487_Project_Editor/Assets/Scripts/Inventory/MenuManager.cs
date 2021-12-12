@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 public class MenuManager : MonoBehaviour
 {
 
     [Header("All Sections")]
     public List<GameObject> sections = new List<GameObject>();
     public List<bool> sectionBools = new List<bool>(); //IN ORDER: Inventory, Stats, Options
+
+    public AudioMixer mixer; //holds the audio mixer
+    public AudioSource source;
     [SerializeField] private int currentSection;
 
     [Header("Inventory Section")]
@@ -27,6 +31,7 @@ public class MenuManager : MonoBehaviour
     [Header("Popup Objects")]
     [SerializeField] private TextMeshProUGUI popup;
     [SerializeField] private GameObject sectionsParent; //holds the bottom row
+    [SerializeField] private GameObject[] sectionButtons; //the bottom bar buttons
 
     [Header("Options Section")]
     [SerializeField] private Button firstButton; //so the event system knows where to look first when selected!
@@ -47,6 +52,7 @@ public class MenuManager : MonoBehaviour
     }
     private void Start() {
         sectionBools[0] = true; //intialize inventory bool
+        UpdateInventoryMenuUI();
     }
 
     /// <summary>
@@ -220,7 +226,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeSectionsContext(InputAction.CallbackContext context) {
         if (context.performed) {
-            if (!settingsMenuOn) {
+            if (!settingsMenuOn && !wantsToSwap) {
                 currentSection += (int)context.ReadValue<float>();
                 ValidateSection();
                 ChangeSections();
@@ -239,7 +245,9 @@ public class MenuManager : MonoBehaviour
         for(int i = 0; i < sections.Count; i++) {
             sections[i].SetActive(false);
             sectionBools[i] = false;
+            
         }
+        SectionButtonBarSetActive();
         UpdateStatisticsSection();
         sections[currentSection].SetActive(true);
         sectionBools[currentSection] = true;
@@ -249,6 +257,16 @@ public class MenuManager : MonoBehaviour
         } else {
             EventSystem.current.SetSelectedGameObject(null);
         }
+    }
+
+    /// <summary>
+    /// Orange bar underneath the button on the sections tab. 
+    /// </summary>
+    public void SectionButtonBarSetActive() {
+        for(int i = 0; i < sectionButtons.Length; i++) {
+            sectionButtons[i].GetComponent<sectionButton>().Deactivated();
+        }
+        sectionButtons[currentSection].GetComponent<sectionButton>().Selected();
     }
     public void ClickSection(int num) {
         currentSection = num;
@@ -348,5 +366,21 @@ public class MenuManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MasterVolume(float num) {
+        mixer.SetFloat("MasterVolume", num);
+    }
+
+    public void MusicVolume(float num) {
+        mixer.SetFloat("MusicVolume", num);
+    }
+
+    public void SoundEffectsVolume(float num) {
+        mixer.SetFloat("SoundEffectsVolume", num);
+    }
+
+    public void TestSound() {
+        source.Play();
     }
 }

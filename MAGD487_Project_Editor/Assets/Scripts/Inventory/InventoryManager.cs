@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
     //public int m_goldAmount { get; set; } //the amount of gold the player has
     public GameObject defaultInteractable;
+
+
+
     [SerializeField] private float m_currentItem; //what item the player is using on the UI
     
     [SerializeField] private Tooltip tooltip;
@@ -61,6 +64,7 @@ public class InventoryManager : MonoBehaviour
     /// Turns on/off the inventory screen.
     /// </summary>
     public void ManageInventory() {
+        menuManager.SectionButtonBarSetActive();
         if (!inventoryOn) {
             //turn on the inventory menu
             TurnMenuOn();
@@ -311,9 +315,10 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     private void UpdateSlotUI() {
         foreach(Slot slot in m_slots) {
-            slot.GetComponent<Image>().color = Color.white;
+            slot.transform.parent.GetComponent<Image>().color = new Color32(77,77,77,255);
         }
-        m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;        
+        //m_slots[(int)m_currentItem].GetComponent<Image>().color = Color.yellow;
+        m_slots[(int)m_currentItem].gameObject.transform.parent.GetComponent<Image>().color = new Color32(70, 29, 0, 255); //brown
         foreach (Slot slot in m_slots) {
             if(slot.m_item != menuManager.defaultItem) {
                 menuManager.UpdateInventoryMenuUI(); //update the menu slots

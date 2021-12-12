@@ -5,7 +5,7 @@ using UnityEngine;
 public class shopkeeper : MonoBehaviour
 {
     private void Start() {
-        NewShopList();
+        //NewShopList();
     }
 
     private void NewShopList() {
