@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51213703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.04, y: -0.222, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 3136774508753968504}
-  m_Father: {fileID: 4960092050756392009}
-  m_RootOrder: 0
+  m_Father: {fileID: 4960092051601091834}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &51213706
 Rigidbody2D:
@@ -1104,7 +1104,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 51213704}
   - {fileID: 4924192668268545242}
   m_Father: {fileID: 4960092051601091834}
   m_RootOrder: 0
@@ -1193,7 +1192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundDetector: {fileID: 990974488448991672}
   sword: {fileID: 0}
-  none: {fileID: 0}
   dagger: {fileID: 0}
   dhb: {fileID: 8914226404051063420}
 --- !u!114 &1055609215
@@ -1251,6 +1249,7 @@ Transform:
   - {fileID: 591137144}
   - {fileID: 1871854447}
   - {fileID: 1459801659}
+  - {fileID: 51213704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1909,7 +1908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4960092050756392009}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4275103566574948847
 BoxCollider2D:

@@ -46,7 +46,7 @@ public class PlayerAnimationController : MonoBehaviour
     }
     public void ChangedWeapon()
     {
-        weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType(); //Move to animation handler script?
+        weaponType wt = InventoryManager.instance.CheckCurrentItemForWeaponType();
         Attack.instance.canReceiveAttackInput = true;
         if(wt == weaponType.none) {
             Attack.instance.canReceiveAttackInput = false;
