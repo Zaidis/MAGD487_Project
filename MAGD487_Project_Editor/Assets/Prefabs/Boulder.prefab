@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5980678129584527640}
   - component: {fileID: 8100224125915032210}
   - component: {fileID: 6160398679035129819}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Boulder
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForce: 10
   damage: 10
+  lifeTime: 10
+  remainAfterContactTillLifeTime: 1
+  deadColliderThreshold: 3

@@ -8,6 +8,9 @@ public class BoulderMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float damage;
     [SerializeField] float lifeTime = 10;
+    public bool remainAfterContactTillLifeTime;
+    bool deadCollider = false;
+    [SerializeField] float deadColliderThreshold;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,12 +25,22 @@ public class BoulderMovement : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
     }
 
+    private void Update()
+    {
+        if(rb.velocity.magnitude < deadColliderThreshold)
+        {
+            deadCollider = true;
+            print("Killing collider");
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.collider.CompareTag("Enemy") && collision.collider.TryGetComponent<Damageable>(out Damageable damageable))
+        if (!deadCollider && !collision.collider.CompareTag("Enemy") && collision.collider.TryGetComponent<Damageable>(out Damageable damageable))
         {
             damageable.Damage(damage);
-            Destroy(this.gameObject);
+            if(!remainAfterContactTillLifeTime)
+                Destroy(this.gameObject);
+            deadCollider = true;
         }
     }
 }
