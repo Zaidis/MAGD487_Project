@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 5980678129584527640}
   - component: {fileID: 8100224125915032210}
   - component: {fileID: 6160398679035129819}
+  - component: {fileID: 8221834958835263342}
+  - component: {fileID: 6213133503817288791}
+  - component: {fileID: 844567120602536974}
+  - component: {fileID: 4838943634569297235}
   m_Layer: 12
   m_Name: Boulder
   m_TagString: Ground
@@ -98,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03, y: 0.06}
   serializedVersion: 2
-  m_Radius: 0.68
+  m_Radius: 0.59
 --- !u!50 &8100224125915032210
 Rigidbody2D:
   serializedVersion: 4
@@ -139,3 +143,67 @@ MonoBehaviour:
   lifeTime: 10
   remainAfterContactTillLifeTime: 1
   deadColliderThreshold: 3
+--- !u!58 &8221834958835263342
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520883730882667292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.37, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.38
+--- !u!58 &6213133503817288791
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520883730882667292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.36, y: -0.34}
+  serializedVersion: 2
+  m_Radius: 0.28
+--- !u!58 &844567120602536974
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520883730882667292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03, y: -0.14}
+  serializedVersion: 2
+  m_Radius: 0.54
+--- !u!58 &4838943634569297235
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520883730882667292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.28, y: -0.11}
+  serializedVersion: 2
+  m_Radius: 0.38
