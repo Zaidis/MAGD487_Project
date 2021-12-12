@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6395846fea96b1c4f88f396f7b81d7f7, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: EMPTY
+  description: This is an Empty Slot
   level: 1
+  cost: 0
   stackable: 0
   maxStack: 1
   icon: {fileID: 0}
   type: 0
+  healAmount: 0

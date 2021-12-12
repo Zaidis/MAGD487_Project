@@ -13,7 +13,7 @@ public class shopMenu : MonoBehaviour
     public static shopMenu instance;
     public PixelPerfectCamera cam;
     public bool canShop; //active if the player is in range of the shopkeeper
-
+    public shopButton[] buttons; //the shop buttons
     private PlayerMovement player;
     //MENUS
     [SerializeField] private GameObject theMenu;
@@ -31,6 +31,21 @@ public class shopMenu : MonoBehaviour
     [SerializeField] private GameObject firstSell; //sell menu first button
     [SerializeField] private TextMeshProUGUI gold1;
     [SerializeField] private TextMeshProUGUI gold2;
+    #region colors
+    //ENABLED COLORS ---> Default
+    private Color32 normalColor = new Color32(7, 118, 0, 255);
+    private Color32 pressedColor = new Color32(135, 236, 114, 255);
+    private Color32 selectedColor = new Color32(89, 250, 74, 255);
+    private Color32 highlightedColor = new Color32(33, 154, 0, 255);
+    private Color32 disabledColor = new Color32(200, 200, 200, 132);
+    private ColorBlock normalBlock;
+    //DEACTIVATED COLORS ---> Cannot purchase from
+    private Color32 d_normalColor = new Color32(154, 18, 0, 255);
+    private Color32 d_pressedColor = new Color32(236, 102, 74, 255);
+    private Color32 d_selectedColor = new Color32(250, 94, 74, 255);
+    private Color32 d_highlightedColor = new Color32(176, 50, 0, 255);
+    private ColorBlock d_block;
+    #endregion
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -41,6 +56,19 @@ public class shopMenu : MonoBehaviour
 
     private void Start() {
         player = InventoryManager.instance.player;
+        //handles button colors 
+        normalBlock.normalColor = normalColor;
+        normalBlock.pressedColor = pressedColor;
+        normalBlock.selectedColor = selectedColor;
+        normalBlock.highlightedColor = highlightedColor;
+        normalBlock.disabledColor = disabledColor;
+        normalBlock.colorMultiplier = 1;
+        d_block.normalColor = d_normalColor;
+        d_block.pressedColor = d_pressedColor;
+        d_block.selectedColor = d_selectedColor;
+        d_block.highlightedColor = d_highlightedColor;
+        d_block.disabledColor = disabledColor;
+        d_block.colorMultiplier = 1;
     }
 
     public void CheckIfShop(InputAction.CallbackContext context) {
@@ -52,6 +80,7 @@ public class shopMenu : MonoBehaviour
     }
 
     public void UpdateGoldUI() {
+        CheckIfItemsArePurchasable();
         gold1.text = "Gold: " + (0 + StatisticsManager.instance.GetGoldAmount()).ToString();
         gold2.text = "Gold: " + (0 + StatisticsManager.instance.GetGoldAmount()).ToString();
     }
@@ -68,6 +97,7 @@ public class shopMenu : MonoBehaviour
     }
 
     private void BeginTurningOnMenu() {
+        CheckIfItemsArePurchasable();
         FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", true);
         StopAllCoroutines();
         StartCoroutine(ZoomIn());
@@ -148,6 +178,38 @@ public class shopMenu : MonoBehaviour
                 myShopItems[i].UpdateIcon(item);
             }
         }
+    }
+
+    /// <summary>
+    /// Checks each item if the player can currently buy it or not. 
+    /// </summary>
+    public void CheckIfItemsArePurchasable() {
+        Debug.Log("Checking!");
+        for(int i = 0; i < buttons.Length; i++) {
+            Item item = myShopItems[i].myItem;
+            if(item.cost <= StatisticsManager.instance.GetGoldAmount()) {
+                //enough money
+                if (InventoryManager.instance.CheckIfOpenSlot()) {
+                    //enough room
+                    //dont need to do anything here
+                    ActivateButton(buttons[i]);
+                } else {
+                    DisableButton(buttons[i]);
+                }
+            } else {
+                DisableButton(buttons[i]);
+            }
+        }
+    }
+
+    public void ActivateButton(shopButton button) {
+        button.purchasable = true;
+        button.GetComponent<Button>().colors = normalBlock;
+    }
+
+    public void DisableButton(shopButton button) {
+        button.purchasable = false;
+        button.GetComponent<Button>().colors = d_block;
     }
 
     /// <summary>
