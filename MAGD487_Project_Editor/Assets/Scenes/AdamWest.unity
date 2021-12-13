@@ -234,30 +234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 79619934, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: health
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 759714289, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 109.30591
-      objectReference: {fileID: 0}
-    - target: {fileID: 3751598515230049089, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: none
-      value: 
-      objectReference: {fileID: 22100000, guid: dee48f6b26897234698acf6e98b6bb3e, type: 2}
-    - target: {fileID: 3751598515230049089, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: sword
-      value: 
-      objectReference: {fileID: 22100000, guid: d0966c1a4ee620145bdfbd06e4661425, type: 2}
-    - target: {fileID: 3751598515230049089, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: dagger
-      value: 
-      objectReference: {fileID: 22100000, guid: 705e500780fd03b498a9e91a1cee66d3, type: 2}
-    - target: {fileID: 4363318748185783984, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.4711914
-      objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -305,14 +281,6 @@ PrefabInstance:
     - target: {fileID: 4960092051601091835, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[29].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target

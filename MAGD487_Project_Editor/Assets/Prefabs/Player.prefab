@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 990974488448991672}
   m_Layer: 8
   m_Name: Ground Detector
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 1055609215}
   m_Layer: 8
   m_Name: Graphic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,8 +1191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDetector: {fileID: 990974488448991672}
-  sword: {fileID: 0}
-  dagger: {fileID: 0}
+  anim: {fileID: 0}
+  sword: {fileID: 22100000, guid: d0966c1a4ee620145bdfbd06e4661425, type: 2}
+  dagger: {fileID: 22100000, guid: 705e500780fd03b498a9e91a1cee66d3, type: 2}
+  wt: 0
   dhb: {fileID: 8914226404051063420}
 --- !u!114 &1055609215
 MonoBehaviour:
@@ -1801,7 +1803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c996f56904bf23748980d5de2ca30c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 656.37
+  health: 1000
 --- !u!1 &5185488191549311202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8485209, y: 0}
   m_AnchorMax: {x: 1, y: 0.27400002}
-  m_AnchoredPosition: {x: -0.47113037, y: -0.44873047}
+  m_AnchoredPosition: {x: -0.4711914, y: -0.44873047}
   m_SizeDelta: {x: -0.14790344, y: -1.0775986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7502782652151212139
