@@ -67,13 +67,20 @@ public class MeleeEnemy : MonoBehaviour
         coolDown = true;
         blocking = false;
         StopMoving();
+        Invoke("SwingSound", 0.8f);
     }
     public void Damage()
     {
+        
+
         if (swingZone.detected)
         {
             swingZone.player.GetComponent<Damageable>().Damage(damage);
         }
+    }
+
+    public void SwingSound() {
+        GetComponent<AudioSource>().Play();
     }
     public void Block()
     {
