@@ -9,6 +9,7 @@ public class Damageable : MonoBehaviour
     {
         maxHealth = health;
     }
+
     /// <summary>
     /// Damage the entity
     /// </summary>
@@ -23,7 +24,6 @@ public class Damageable : MonoBehaviour
         if (health > 0)
         {
             health -= amt;
-            StatisticsManager.instance.m_healthAmount -= amt;
             if (health <= 0)
             {
                 Death();
@@ -38,7 +38,6 @@ public class Damageable : MonoBehaviour
     public virtual void Heal(float amt)
     {
         health += amt;
-        StatisticsManager.instance.m_healthAmount += amt;
         if (health > maxHealth)
         {
             health = maxHealth;
