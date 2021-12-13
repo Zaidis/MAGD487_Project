@@ -97,6 +97,7 @@ public class shopMenu : MonoBehaviour
     }
 
     private void BeginTurningOnMenu() {
+        player = InventoryManager.instance.player;
         CheckIfItemsArePurchasable();
         FindObjectOfType<shopkeeper>().GetComponent<Animator>().SetBool("useShop", true);
         StopAllCoroutines();

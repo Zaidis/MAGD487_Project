@@ -6448,6 +6448,7 @@ MonoBehaviour:
   itemName: {fileID: 3984342430416957263}
   itemDescription: {fileID: 0}
   itemLevel: {fileID: 1003624879451108609}
+  itemStats: {fileID: 0}
   icon: {fileID: 7132510334192800112}
   cost: {fileID: 1410124430673923022}
   isPotionButton: 0
@@ -8351,7 +8352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4cd46aed10fa04287aeed0b83cd45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_item: {fileID: 11400000, guid: a8a576424e67107479fe95fea22034d5, type: 2}
+  m_item: {fileID: 11400000, guid: f3efe994f7daca2478e7ef26403784d0, type: 2}
   m_icon: {fileID: 0}
   m_name: Fire Bow
   currentStack: 0
@@ -10664,7 +10665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3597771725077025455
 Transform:
   m_ObjectHideFlags: 0
@@ -13585,6 +13586,7 @@ MonoBehaviour:
   itemName: {fileID: 2083432566720472664}
   itemDescription: {fileID: 0}
   itemLevel: {fileID: 3589222738354193363}
+  itemStats: {fileID: 0}
   icon: {fileID: 8598001751971831376}
   cost: {fileID: 2365588242271971154}
   isPotionButton: 0
@@ -15322,6 +15324,7 @@ MonoBehaviour:
   itemName: {fileID: 2698943101151727687}
   itemDescription: {fileID: 0}
   itemLevel: {fileID: 8638399640031885970}
+  itemStats: {fileID: 0}
   icon: {fileID: 8474621344796310391}
   cost: {fileID: 3267772841901507852}
   isPotionButton: 0
@@ -16056,6 +16059,7 @@ MonoBehaviour:
   itemName: {fileID: 4564747196629129123}
   itemDescription: {fileID: 0}
   itemLevel: {fileID: 7360133569215507007}
+  itemStats: {fileID: 0}
   icon: {fileID: 4526763070807119203}
   cost: {fileID: 8785623661102507981}
   isPotionButton: 0
@@ -23851,6 +23855,7 @@ MonoBehaviour:
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}
   itemLevel: {fileID: 0}
+  itemStats: {fileID: 0}
   icon: {fileID: 0}
   cost: {fileID: 0}
   isPotionButton: 1
@@ -24146,38 +24151,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7110896161473187173}
     m_Modifications:
-    - target: {fileID: 2355749323353574761, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.13934326
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355749323353574761, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.3206787
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026666583892222796, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.29803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 3129736907380672074, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.47583008
-      objectReference: {fileID: 0}
-    - target: {fileID: 5188765595304541235, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.018188477
-      objectReference: {fileID: 0}
-    - target: {fileID: 5541480676091338756, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.6000061
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063551161701017292, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.13409424
-      objectReference: {fileID: 0}
-    - target: {fileID: 6086301599548962914, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.59607846
-      objectReference: {fileID: 0}
     - target: {fileID: 6113996608895785020, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
       propertyPath: m_Name
       value: Item Slot
@@ -24265,10 +24238,6 @@ PrefabInstance:
     - target: {fileID: 7340929762225530366, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8715970558704685565, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e067d628c857bbc45aa26f2d25720f5e, type: 3}
