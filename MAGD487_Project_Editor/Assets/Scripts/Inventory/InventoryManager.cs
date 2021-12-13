@@ -43,15 +43,24 @@ public class InventoryManager : MonoBehaviour
         }
 
         menuManager = FindObjectOfType<MenuManager>();
-        player = FindObjectOfType<PlayerMovement>();
+        
     }
 
     private void Start() {
+        player = FindObjectOfType<PlayerMovement>();
         m_currentItem = 0;
-        UpdateSlotUI();
+        
         PAC = GameObject.Find("Graphic").GetComponent<PlayerAnimationController>();
+        InitialWeapon();
+        UpdateSlotUI();
+        // Physics2D.IgnoreLayerCollision(8, 7);
+    }
 
-       // Physics2D.IgnoreLayerCollision(8, 7);
+    /// <summary>
+    /// Rusty Dagger
+    /// </summary>
+    public void InitialWeapon() {
+        m_slots[0].AddItemToSlot(m_slots[0].m_item);
     }
 
     public void ManageInventoryContext(InputAction.CallbackContext context) {

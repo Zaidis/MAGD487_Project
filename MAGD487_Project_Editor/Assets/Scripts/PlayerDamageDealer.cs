@@ -20,16 +20,22 @@ public class PlayerDamageDealer : MonoBehaviour
         {
             v = -1;
         }
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector3(attackCenterPoint.x * v, attackCenterPoint.y) + this.transform.position, radius);
         for (int i = 0; i < hits.Length; i++)
         {
             
             Damageable dam = hits[i].GetComponentInParent<Damageable>();
             if (dam != null && !dam.gameObject.CompareTag("Player")){
-                    dam.Damage(damage);
+                Weapon item = (Weapon)InventoryManager.instance.m_slots[(int)InventoryManager.instance.GetCurrentItem()].m_item;
+                    dam.Damage(item.damage);
                     break;
             }
         }
+    }
+
+    public void PlaySound() {
+        
     }
 
     private void OnDrawGizmosSelected()

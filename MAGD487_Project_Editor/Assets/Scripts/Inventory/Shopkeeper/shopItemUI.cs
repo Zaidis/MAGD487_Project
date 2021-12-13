@@ -10,6 +10,7 @@ public class shopItemUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI itemDescription;
     [SerializeField] private TextMeshProUGUI itemLevel;
+    [SerializeField] private TextMeshProUGUI itemStats;
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI cost;
     [SerializeField] private bool isPotionButton;
@@ -30,6 +31,19 @@ public class shopItemUI : MonoBehaviour
         itemName.text = myItem.name;
         itemDescription.text = myItem.description;
         itemLevel.text = "Level " + myItem.level.ToString();
+
+        if (item.type == itemType.weapon) {
+            Weapon tempItem = (Weapon)item;
+            itemStats.text = "Damage: " + tempItem.damage + " - Speed: " + tempItem.attackSpeed;
+        }
+        else if (item.type == itemType.consumable) {
+            Consumable tempItem = (Consumable)item;
+            itemStats.text = "Heal Amount: " + tempItem.healAmount;
+        }
+        else {
+            itemStats.text = "";
+        }
+
         icon.sprite = myItem.icon;
     }
 

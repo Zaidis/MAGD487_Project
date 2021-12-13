@@ -20,5 +20,5 @@ MonoBehaviour:
   stackable: 0
   maxStack: 1
   icon: {fileID: 4459106695427104273, guid: 691bc959ad64f8a4c867148a608f6394, type: 3}
-  type: 0
-  healAmount: 0
+  type: 2
+  healAmount: 13

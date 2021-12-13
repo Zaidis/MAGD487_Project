@@ -17,5 +17,14 @@ public class menu_slot : MonoBehaviour
         t_title.text = item.name;
         t_desc.text = item.description;
         i_icon.sprite = item.icon;
+        if(item.type == itemType.weapon) {
+            Weapon tempItem = (Weapon)item;
+            t_stats.text = "Damage: " + tempItem.damage + " - Speed: " + tempItem.attackSpeed;
+        } else if(item.type == itemType.consumable) {
+            Consumable tempItem = (Consumable)item;
+            t_stats.text = "Heal Amount: " + tempItem.healAmount;
+        } else {
+            t_stats.text = "";
+        }
     }
 }

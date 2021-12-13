@@ -19,7 +19,7 @@ public class Item : ScriptableObject
     public int maxStack = 1;
     public Sprite icon;
     public itemType type = itemType.weapon;
-
+    public AudioClip clip;
     
     //statistics will come later
 }
