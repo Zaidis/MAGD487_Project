@@ -428,7 +428,7 @@ MonoBehaviour:
   projectile: {fileID: 520883730882667292, guid: 4185bb50eb7dce943a9a4808bcc7cc89, type: 3}
   launchPoint: {fileID: 792625765027520479}
   coolDownTime: 5
-  requireLineOfSight: 1
+  requireLineOfSight: 0
 --- !u!114 &5948110847237149814
 MonoBehaviour:
   m_ObjectHideFlags: 0
