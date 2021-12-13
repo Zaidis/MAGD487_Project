@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
-  m_Name: Roho's Hat
+  m_Name: Heavy Dagger
   m_EditorClassIdentifier: 
-  id: 100
-  name: Roho's Hat
-  description: The legendary "hat" of Oswego ROHO
-  level: 3
-  cost: 30
+  id: 2
+  name: Heavy Dagger
+  description: Too heavy for comfort...
+  level: 1
+  cost: 5
   stackable: 0
   maxStack: 1
-  icon: {fileID: -6948315507156744436, guid: c41140a4167c37d409b137daeed819d2, type: 3}
+  icon: {fileID: 4459106695427104273, guid: 691bc959ad64f8a4c867148a608f6394, type: 3}
   type: 0
-  damage: 3
-  attackSpeed: 3
+  damage: 2
+  attackSpeed: 0.2
   weapon: 1
