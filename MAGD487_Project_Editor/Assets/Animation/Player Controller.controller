@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7c6539979b14c40b15bf389f651011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PAC: {fileID: 0}
   animNum: 0
 --- !u!1102 &-1605942514729044203
 AnimatorState:
@@ -1025,6 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7c6539979b14c40b15bf389f651011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PAC: {fileID: 0}
   animNum: 2
 --- !u!1107 &4209006961803668525
 AnimatorStateMachine:
@@ -1093,6 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7c6539979b14c40b15bf389f651011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PAC: {fileID: 0}
   animNum: 1
 --- !u!1101 &5969412316616326448
 AnimatorStateTransition:
