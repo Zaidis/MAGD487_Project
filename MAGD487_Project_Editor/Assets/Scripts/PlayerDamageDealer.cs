@@ -20,6 +20,7 @@ public class PlayerDamageDealer : MonoBehaviour
         {
             v = -1;
         }
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector3(attackCenterPoint.x * v, attackCenterPoint.y) + this.transform.position, radius);
         for (int i = 0; i < hits.Length; i++)
         {
@@ -31,6 +32,10 @@ public class PlayerDamageDealer : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void PlaySound() {
+        
     }
 
     private void OnDrawGizmosSelected()
