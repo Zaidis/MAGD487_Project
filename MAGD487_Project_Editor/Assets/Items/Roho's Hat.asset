@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
   m_Name: Roho's Hat
   m_EditorClassIdentifier: 
+  id: 4
   name: Roho's Hat
   description: Oswego ROHO
   level: 3
@@ -22,3 +23,4 @@ MonoBehaviour:
   type: 0
   damage: 69
   attackSpeed: 420
+  weapon: 1

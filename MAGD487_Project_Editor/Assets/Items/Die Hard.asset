@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6395846fea96b1c4f88f396f7b81d7f7, type: 3}
   m_Name: Die Hard
   m_EditorClassIdentifier: 
+  id: 2
   name: Die Hard
   description: Best damn Christmas movie of all time
   level: 15

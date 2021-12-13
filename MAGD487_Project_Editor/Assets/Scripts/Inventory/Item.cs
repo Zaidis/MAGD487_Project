@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-
+    [Header("Item ID")]
+    public int id;
     [TextArea()]
     new public string name;
     [TextArea()]
@@ -17,6 +18,8 @@ public class Item : ScriptableObject
     public bool stackable;
     public int maxStack = 1;
     public Sprite icon;
-    public itemType type = itemType.weapon;    
+    public itemType type = itemType.weapon;
+
+    
     //statistics will come later
 }

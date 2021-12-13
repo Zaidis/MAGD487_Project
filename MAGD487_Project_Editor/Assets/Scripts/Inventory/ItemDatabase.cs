@@ -87,4 +87,19 @@ public class ItemDatabase : MonoBehaviour
         return list[rand];
     }
 
+    public Item GetItem(int id) {
+        for(int i = 0; i < lists.Count; i++) {
+            for(int j = 0; j < lists[i].Count;j++) {
+                Item item = lists[i][j];
+                if(item.id == id) {
+                    return item;
+                } else {
+                    continue;
+                }
+            }
+        }
+        //really should never reach this
+        return null;
+    }
+
 }

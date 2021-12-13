@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  id: 1
   name: Bow
   description: Pew Pew Pew
   level: 1
@@ -22,3 +23,4 @@ MonoBehaviour:
   type: 0
   damage: 5
   attackSpeed: 5
+  weapon: 1
