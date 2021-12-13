@@ -26,7 +26,8 @@ public class PlayerDamageDealer : MonoBehaviour
             
             Damageable dam = hits[i].GetComponentInParent<Damageable>();
             if (dam != null && !dam.gameObject.CompareTag("Player")){
-                    dam.Damage(damage);
+                Weapon item = (Weapon)InventoryManager.instance.m_slots[(int)InventoryManager.instance.GetCurrentItem()].m_item;
+                    dam.Damage(item.damage);
                     break;
             }
         }
