@@ -9,6 +9,7 @@ public class DungeonEntrance : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            print("Dungeon level: " + StateController.dungeonLevel + " | " + StateController.dungeonLevel % bossTick);
             if(StateController.dungeonLevel % bossTick == 0)
                 ScenesManager.instance.LoadScene("Boss Room");
             else

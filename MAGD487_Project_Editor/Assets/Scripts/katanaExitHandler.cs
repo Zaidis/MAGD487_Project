@@ -26,11 +26,11 @@ public class katanaExitHandler : StateMachineBehaviour
         {
             if(!SR.flipX)
             {
-                PlayerMovement.instance.transform.position = new Vector2(PlayerMovement.instance.transform.position.x + 2.5f, PlayerMovement.instance.transform.position.y);
+                PlayerMovement.instance.transform.position = new Vector2(PlayerMovement.instance.transform.position.x + 2.25f, PlayerMovement.instance.transform.position.y);
             }
             else
             {
-                PlayerMovement.instance.transform.position = new Vector2(PlayerMovement.instance.transform.position.x - 2.5f, PlayerMovement.instance.transform.position.y);
+                PlayerMovement.instance.transform.position = new Vector2(PlayerMovement.instance.transform.position.x - 2.25f, PlayerMovement.instance.transform.position.y);
             }
             //move player correct distance based on attack direction
         }

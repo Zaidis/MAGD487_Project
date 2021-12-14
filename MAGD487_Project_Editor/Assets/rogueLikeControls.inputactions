@@ -100,6 +100,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Controller Look",
+                    "type": "Value",
+                    "id": "3008dd9b-125d-4ceb-a9b3-3615c40e1d31",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Look",
+                    "type": "Value",
+                    "id": "6141321f-77dc-4769-9ee5-10b7f352a4ac",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -249,7 +265,7 @@
                 {
                     "name": "",
                     "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
-                    "path": "<Pointer>/delta",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Touch",
@@ -617,6 +633,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Manage Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4cf7eb5c-5bae-4e84-a185-cd043cd2665e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Controller Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5af19f2-e9c3-4f91-8d94-dfedfb66a514",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch;Keyboard&Mouse",
+                    "action": "Mouse Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

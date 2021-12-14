@@ -1103,17 +1103,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4101385230046265571, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -22.91
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.76
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1150,10 +1154,6 @@ PrefabInstance:
     - target: {fileID: 4960092051601091835, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091835, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1211,66 +1211,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[28].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1884504212}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetCurrentItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UseItemContext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ScrollThroughSlots
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CheckIfShop
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DropItemContext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ManageInventoryContext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[22].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DPadSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSectionsContext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[24].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ManageInventoryContext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[25].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSwap
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Accept
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[27].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Decline
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[28].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960092051601091846, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
-      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
 --- !u!114 &795527877 stripped
@@ -1914,10 +1854,10 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 10
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 30711
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
