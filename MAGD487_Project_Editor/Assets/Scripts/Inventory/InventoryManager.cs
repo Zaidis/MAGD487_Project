@@ -216,7 +216,7 @@ public class InventoryManager : MonoBehaviour
         if(slot.m_item != menuManager.defaultItem) {
             GameObject droppedItem = Instantiate(defaultInteractable, player.gameObject.transform.position, Quaternion.identity);
             droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = slot.m_item;
-
+            droppedItem.GetComponent<SpriteRenderer>().sprite = droppedItem.transform.GetChild(0).GetComponent<Interactable>().item.icon;
             RemoveItem();
         }
     }
