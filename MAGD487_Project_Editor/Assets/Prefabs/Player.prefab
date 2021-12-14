@@ -71,7 +71,7 @@ SpringJoint2D:
   m_Anchor: {x: -0.008098826, y: -0.06765747}
   m_ConnectedAnchor: {x: -0.04311084, y: -0.07452822}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19823763
+  m_Distance: 0.19823703
   m_DampingRatio: 1
   m_Frequency: 1000000
 --- !u!1 &280518706
@@ -2211,7 +2211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -4
   m_Sprite: {fileID: -7057029787858152998, guid: 704b6d64ee665f340b7806a9b888b8bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
