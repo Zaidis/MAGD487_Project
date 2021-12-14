@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 701f87fdd08a0064e946f480ddfc51a4, type: 3}
-  m_Name: Gold Dagger
+  m_Name: Shiny Dagger
   m_EditorClassIdentifier: 
-  id: 13
-  name: Gold Dagger
-  description: 'Sharp, but soft. '
-  level: 5
-  cost: 20
+  id: 32
+  name: 'Shiny Dagger
+
+'
+  description: 'It glows...but so does everything else. '
+  level: 10
+  cost: 45
   stackable: 0
   maxStack: 1
-  icon: {fileID: -1042039686183718268, guid: 34ebb0242873c5f4faaa98c836d53102, type: 3}
+  icon: {fileID: 4918007221660304696, guid: 691bc959ad64f8a4c867148a608f6394, type: 3}
   type: 0
   clip: {fileID: 8300000, guid: 88dbc222935ae264db054a546a273256, type: 3}
-  damage: 4
-  attackSpeed: 3
+  damage: 9
+  attackSpeed: 8
   weapon: 1

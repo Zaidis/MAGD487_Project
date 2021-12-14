@@ -21,6 +21,7 @@ MonoBehaviour:
   maxStack: 1
   icon: {fileID: 4459106695427104273, guid: 691bc959ad64f8a4c867148a608f6394, type: 3}
   type: 0
+  clip: {fileID: 8300000, guid: 88dbc222935ae264db054a546a273256, type: 3}
   damage: 5
   attackSpeed: 1
   weapon: 1
