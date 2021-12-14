@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853434631ae39e141a987d72538b042e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 100
   anim: {fileID: 4753628391279334558}
   rb: {fileID: 8602519077096219281}
   deadBody: {fileID: 6740050713232554779, guid: c3d0d30c3bd9e28419aaaca474422b06, type: 3}
