@@ -13467,7 +13467,7 @@ MonoBehaviour:
   m_fontSizeBase: 35.97
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 9
+  m_fontSizeMin: 1
   m_fontSizeMax: 14
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -15473,6 +15473,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee2362847b6ce2042a6914499a73e1cf, type: 2}
   - {fileID: 11400000, guid: 37929bfcd0a6ff94a8520d5950749bc0, type: 2}
   - {fileID: 11400000, guid: f3efe994f7daca2478e7ef26403784d0, type: 2}
+  - {fileID: 11400000, guid: a8a576424e67107479fe95fea22034d5, type: 2}
   level_two:
   - {fileID: 11400000, guid: 2ca32471bcdf50648a2ed90e410db095, type: 2}
   - {fileID: 11400000, guid: 2b6e8f4d758f2504494361f592f3dec3, type: 2}

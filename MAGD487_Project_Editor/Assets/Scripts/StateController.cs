@@ -41,10 +41,10 @@ public class StateController : MonoBehaviour
     }
 
     public static void LoadInventory() {
-        InventoryManager.instance.m_slots[0].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 1"));
-        InventoryManager.instance.m_slots[1].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 2"));
-        InventoryManager.instance.m_slots[2].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 3"));
-        InventoryManager.instance.m_slots[3].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 4"));
+        InventoryManager.instance.m_slots[0].m_item = ItemDatabase.instance.GetItem(0 + PlayerPrefs.GetInt("Slot 1"));
+        InventoryManager.instance.m_slots[1].m_item = ItemDatabase.instance.GetItem(0 + PlayerPrefs.GetInt("Slot 2"));
+        InventoryManager.instance.m_slots[2].m_item = ItemDatabase.instance.GetItem(0 + PlayerPrefs.GetInt("Slot 3"));
+        InventoryManager.instance.m_slots[3].m_item = ItemDatabase.instance.GetItem(0 + PlayerPrefs.GetInt("Slot 4"));
     }
 
 

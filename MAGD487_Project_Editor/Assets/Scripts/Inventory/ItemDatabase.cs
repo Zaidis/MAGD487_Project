@@ -99,6 +99,7 @@ public class ItemDatabase : MonoBehaviour
             }
         }
         //really should never reach this
+        Debug.Log("Could not get an item!");
         return null;
     }
 

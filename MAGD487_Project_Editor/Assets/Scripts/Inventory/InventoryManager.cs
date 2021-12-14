@@ -229,8 +229,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    
-
     /// <summary>
     /// Allows the user to shuffle through the slots with either mouse or keyboard.
     /// </summary>

@@ -45,9 +45,10 @@ public class Chest : MonoBehaviour
 
             GameObject droppedItem = Instantiate(InventoryManager.instance.defaultInteractable, transform.position, Quaternion.identity);
             droppedItem.transform.GetChild(0).GetComponent<Interactable>().item = item;
-
+            droppedItem.GetComponent<SpriteRenderer>().sprite = droppedItem.transform.GetChild(0).GetComponent<Interactable>().item.icon;
             opened = true;
             InventoryManager.instance.player.GetComponent<PickUp>().nearChest = false;
+            //this.enabled = false;
             Destroy(this);
         }
     }
