@@ -10,9 +10,13 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] bool attachedParticles = false;
     [SerializeField] bool stickToWalls = false;
     bool deactivated = false;
+    bool moveRightVector = false;
     private void Start()
     {
-        rb.velocity = speed * transform.right;
+        if(moveRightVector)
+            rb.velocity = speed * transform.right;
+        else
+            rb.velocity = new Vector2(speed * this.transform.localScale.x, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

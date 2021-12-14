@@ -11,9 +11,10 @@ public class mainMenuCanvas : MonoBehaviour
     private void Awake() {
         listener = GetComponent<AudioListener>();
     }
+
     public void EnableCanvas() {
         Destroy(listener);
-        canvas.SetActive(true);
+        //canvas.SetActive(true);
         player.SetActive(true);
     }
 

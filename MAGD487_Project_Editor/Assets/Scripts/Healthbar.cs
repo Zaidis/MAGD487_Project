@@ -6,6 +6,10 @@ using TMPro;
 public class Healthbar : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
+    private void Start()
+    {
+        UpdateHealthbar();
+    }
     public void UpdateHealthbar() {
         GetComponent<Image>().fillAmount = (StatisticsManager.instance.m_healthAmount / StatisticsManager.instance.m_maxHealthAmount);
         healthText.text = StatisticsManager.instance.m_healthAmount.ToString() + " / " + StatisticsManager.instance.m_maxHealthAmount.ToString();

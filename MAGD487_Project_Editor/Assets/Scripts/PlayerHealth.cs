@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerHealth : Damageable
 {
-    
     public override void Damage(float amt) {
 
         if(StatisticsManager.instance.m_healthAmount > 0) {

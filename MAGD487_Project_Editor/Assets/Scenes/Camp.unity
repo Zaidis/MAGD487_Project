@@ -27287,6 +27287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56fae4534b1f9c49963c207c9642a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossTick: 5
 --- !u!1001 &3801212291985000475
 PrefabInstance:
   m_ObjectHideFlags: 0

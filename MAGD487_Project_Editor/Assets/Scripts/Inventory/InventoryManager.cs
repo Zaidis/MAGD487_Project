@@ -49,8 +49,8 @@ public class InventoryManager : MonoBehaviour
     private void Start() {
         player = FindObjectOfType<PlayerMovement>();
         m_currentItem = 0;
-        
-        PAC = GameObject.Find("Graphic").GetComponent<PlayerAnimationController>();
+
+        PAC = GameObject.FindObjectOfType<PlayerAnimationController>();
         InitialWeapon();
         UpdateSlotUI();
         // Physics2D.IgnoreLayerCollision(8, 7);
@@ -100,20 +100,27 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     /// <param name="item"></param>
     public void ActivateTooltip(Item item) {
-        if (item.type == itemType.weapon) {
-            Weapon w = (Weapon)item;
-            tooltip.EnableToolTip(ItemRarityColor(w) + "\n" 
-                + "Level: " + w.level.ToString() + "\n" 
-                + "Damage: " + w.damage.ToString() + "\n" 
-                + "Speed: " + w.attackSpeed.ToString() + "\n" 
-                + w.description);
-        } else if (item.type == itemType.gear) {
-            
-            
-        } else {
-            //consumable
+        if(item != null)
+        {
+            if (item.type == itemType.weapon)
+            {
+                Weapon w = (Weapon)item;
+                tooltip.EnableToolTip(ItemRarityColor(w) + "\n"
+                    + "Level: " + w.level.ToString() + "\n"
+                    + "Damage: " + w.damage.ToString() + "\n"
+                    + "Speed: " + w.attackSpeed.ToString() + "\n"
+                    + w.description);
+            }
+            else if (item.type == itemType.gear)
+            {
+
+
+            }
+            else
+            {
+                //consumable
+            }
         }
-        
     }
 
     /// <summary>

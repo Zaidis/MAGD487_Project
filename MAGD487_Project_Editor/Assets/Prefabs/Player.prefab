@@ -71,7 +71,7 @@ SpringJoint2D:
   m_Anchor: {x: -0.008098826, y: -0.06765747}
   m_ConnectedAnchor: {x: -0.04311084, y: -0.07452822}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19823763
+  m_Distance: 0.19823703
   m_DampingRatio: 1
   m_Frequency: 1000000
 --- !u!1 &280518706
@@ -2258,5 +2258,4 @@ MonoBehaviour:
   shotCoolDown: 1
   arrow: {fileID: 357967736419940095, guid: b25918dd96427a34585037ac7523e69e, type: 3}
   firePoint: {fileID: 3420915026120782566}
-  rotationSpeed: 50
   cam: {fileID: 483866072}

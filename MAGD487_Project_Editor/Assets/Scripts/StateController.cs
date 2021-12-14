@@ -6,7 +6,7 @@ public class StateController : MonoBehaviour
 {
     public static int dungeonLevel;
 
-    public void NewGame()
+    public static void NewGame()
     {
         dungeonLevel = 1;
         SaveGame();
@@ -17,10 +17,18 @@ public class StateController : MonoBehaviour
         PlayerPrefs.DeleteKey("Dungeon Level");
     }
 
-    public void LoadGame()
+    public static void LoadGame()
     {
-        dungeonLevel = PlayerPrefs.GetInt("Dungeon Level");
-        LoadInventory();
+        if(PlayerPrefs.HasKey("Dungeon Level"))
+        {
+            dungeonLevel = PlayerPrefs.GetInt("Dungeon Level");
+            LoadInventory();
+        }
+        else
+        {
+            NewGame();
+        }
+        
     }
 
     public static void SaveGame()
@@ -32,7 +40,7 @@ public class StateController : MonoBehaviour
         PlayerPrefs.SetInt("Slot 4", InventoryManager.instance.m_slots[3].m_item.id);
     }
 
-    public void LoadInventory() {
+    public static void LoadInventory() {
         InventoryManager.instance.m_slots[0].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 1"));
         InventoryManager.instance.m_slots[1].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 2"));
         InventoryManager.instance.m_slots[2].m_item = ItemDatabase.instance.GetItem(PlayerPrefs.GetInt("Slot 3"));

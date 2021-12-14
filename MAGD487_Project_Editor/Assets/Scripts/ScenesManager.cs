@@ -5,6 +5,7 @@ public class ScenesManager : MonoBehaviour
     public static ScenesManager instance;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject canvas;
+    public static string fromMenuLoad;
     string levelToLoad;
     private void Awake()
     {
@@ -22,11 +23,12 @@ public class ScenesManager : MonoBehaviour
         levelToLoad = levelName;
         SceneTransitioner.instance.Transition();
     }
-
+    public static void SetMenuLoad(string s)
+    {
+        fromMenuLoad = s;
+    }
     public void LoadScene()
     {
-        player.SetActive(true);
-        canvas.SetActive(true);
         SceneManager.LoadScene(levelToLoad);
     }
 }

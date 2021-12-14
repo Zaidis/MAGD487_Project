@@ -23,7 +23,7 @@ public class StatisticsManager : MonoBehaviour
     }
 
     private void Start() {
-        m_maxHealthAmount = 5;
+        m_maxHealthAmount = GameObject.FindObjectOfType<PlayerHealth>().GetCurrentHealth();
         m_healthAmount = m_maxHealthAmount;
     }
     public void AddGoldAmount(int num) {
