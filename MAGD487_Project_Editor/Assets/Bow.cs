@@ -12,7 +12,6 @@ public class Bow : MonoBehaviour
     [SerializeField] float shotCoolDown = 1;
     [SerializeField] GameObject arrow;
     [SerializeField] Transform firePoint;
-    [SerializeField] float rotationSpeed = 50;
     [SerializeField] Camera cam;
     private void Awake()
     {
