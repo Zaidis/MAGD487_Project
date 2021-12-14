@@ -133,6 +133,7 @@ MonoBehaviour:
   damage: 5
   attachedParticles: 0
   stickToWalls: 1
+  moveRightVector: 1
 --- !u!50 &357967736419940081
 Rigidbody2D:
   serializedVersion: 4

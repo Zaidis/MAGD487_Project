@@ -10,7 +10,7 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] bool attachedParticles = false;
     [SerializeField] bool stickToWalls = false;
     bool deactivated = false;
-    bool moveRightVector = false;
+    [SerializeField] bool moveRightVector = false;
     private void Start()
     {
         if(moveRightVector)
