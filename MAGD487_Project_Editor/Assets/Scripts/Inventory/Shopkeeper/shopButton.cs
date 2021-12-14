@@ -34,14 +34,14 @@ public class shopButton : MonoBehaviour
         if (purchasable) {
             Item item = slot.myItem;
             goldAmount = item.cost;
-            if (CheckIfPurchasable()) {  //checks that you have enough to purchase the item
+            //if (CheckIfPurchasable()) {  //checks that you have enough to purchase the item
                                          //you have enough money
                                          //you have an open slot. you purchase the item
                 this.GetComponent<AudioSource>().Play(); // buy sound
                 InventoryManager.instance.AddItem(item);
                 StatisticsManager.instance.AddGoldAmount((goldAmount * -1));
                 shopMenu.instance.UpdateGoldUI();
-            }
+           // }
         }
     }
     
