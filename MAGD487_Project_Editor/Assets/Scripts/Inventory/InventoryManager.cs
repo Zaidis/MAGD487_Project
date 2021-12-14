@@ -281,10 +281,12 @@ public class InventoryManager : MonoBehaviour
     private void UseItem() {
         Debug.Log("I used " + m_slots[(int)m_currentItem].m_name);
         Slot slot = m_slots[(int)m_currentItem];
-        if (slot.m_item != null) {
+        if (slot.m_item != menuManager.defaultItem) {
             //first we check to see if the item is a consumable
             if (slot.m_item.type == itemType.consumable) {
                 print("Test");
+                Consumable tempItem = (Consumable)slot.m_item;
+                player.GetComponent<PlayerHealth>().Heal(tempItem.healAmount);
                 slot.currentStack--;
                 if (slot.currentStack <= 0) {
                     RemoveItem();

@@ -21,6 +21,7 @@ MonoBehaviour:
   cost: 0
   stackable: 1
   maxStack: 3
-  icon: {fileID: -6538261590497373000, guid: 6b3acb4cf66e59049a9b1b52086a1a2d, type: 3}
+  icon: {fileID: -2485987127325757122, guid: f7e6645077641bb4682ee8bbc2055e4c, type: 3}
   type: 2
+  clip: {fileID: 0}
   healAmount: 5
