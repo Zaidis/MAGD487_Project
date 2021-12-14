@@ -517,6 +517,17 @@
                 },
                 {
                     "name": "",
+                    "id": "15f3ecaa-e718-4451-8583-18386ed198da",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Use Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fb9b5758-2805-40ef-87df-f7513ad9c4a9",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
