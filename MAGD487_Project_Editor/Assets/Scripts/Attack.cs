@@ -40,13 +40,4 @@ public class Attack : MonoBehaviour
             canReceiveAttackInput = false;
         }
     }
-    public void Shoot() //TODO logic bad, shoots wrong direction
-    {
-        Vector3 direction;
-        direction = mainCam.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0.0f));
-        direction = mainCam.ScreenToWorldPoint(direction);
-        direction = direction - transform.position;
-        GameObject grappleShot = Instantiate(shot, transform.position, Quaternion.Euler(Vector3.zero));
-        grappleShot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * speed, direction.y * speed);
-    }
 }

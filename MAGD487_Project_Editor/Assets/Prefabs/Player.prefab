@@ -687,7 +687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1459801659
 Transform:
   m_ObjectHideFlags: 0
@@ -2254,8 +2254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bad84d63c30a942ba20800ea0fdf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PAC: {fileID: 0}
   input: {x: 0, y: 0}
   shotCoolDown: 1
   arrow: {fileID: 357967736419940095, guid: b25918dd96427a34585037ac7523e69e, type: 3}
+  grapple: {fileID: 0}
   firePoint: {fileID: 3420915026120782566}
   cam: {fileID: 483866072}
