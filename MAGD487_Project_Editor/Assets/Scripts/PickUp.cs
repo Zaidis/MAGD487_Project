@@ -34,7 +34,7 @@ public class PickUp : MonoBehaviour
 
                 currentInteractable = collision.gameObject;
             }
-            InventoryManager.instance.pickUpText.text = "Pick up " + currentInteractable.GetComponent<Interactable>().item.name + "?";
+            InventoryManager.instance.pickUpText.text = "Pick up " + currentInteractable.GetComponent<Interactable>().item.name + " ?";
             InventoryManager.instance.pickUpText.gameObject.SetActive(true);
         } else if (collision.gameObject.CompareTag("Chest")) {
             //near a chest object
