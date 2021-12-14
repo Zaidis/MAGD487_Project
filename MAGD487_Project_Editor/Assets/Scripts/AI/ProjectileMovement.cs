@@ -19,8 +19,9 @@ public class ProjectileMovement : MonoBehaviour
     {
         if(!deactivated && collision.TryGetComponent<Damageable>(out Damageable damageable))
         {
-            damageable.Damage(damage);
-
+            Weapon bow = (Weapon)InventoryManager.instance.m_slots[(int)InventoryManager.instance.GetCurrentItem()].m_item;
+            damageable.Damage(bow.damage);
+            
             if (attachedParticles)
                 DestroyParticles();
 

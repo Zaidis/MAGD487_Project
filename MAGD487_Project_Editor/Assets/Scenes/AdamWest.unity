@@ -234,6 +234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 51213705, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_Distance
+      value: 0.19823703
+      objectReference: {fileID: 0}
     - target: {fileID: 4960092051601091834, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -592,6 +596,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3233414342866930305, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
+      propertyPath: myItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fbf36d593ad9b04c83012e9e823e701, type: 2}
     - target: {fileID: 3501550133049648004, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
