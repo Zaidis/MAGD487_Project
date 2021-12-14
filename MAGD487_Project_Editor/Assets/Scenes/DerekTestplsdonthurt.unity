@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: health
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 483866072, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 95223
+      objectReference: {fileID: 0}
     - target: {fileID: 483866073, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -382,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 1740589648}
     - target: {fileID: 9152401118014463180, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
       propertyPath: climbSpeed
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1f318d86ffe284eb7b470eff235655, type: 3}
