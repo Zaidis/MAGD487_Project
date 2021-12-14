@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8416776240487708762}
   - component: {fileID: 8416776240487708763}
   - component: {fileID: 8416776240487708758}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RopePiece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8416776241096163001}
   - component: {fileID: 8416776241096162998}
   - component: {fileID: 8416776241096162997}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RopePiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 8416776241550044943}
   - component: {fileID: 8416776241550044940}
   - component: {fileID: 8416776241550044939}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RopePiece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 8416776241656688786}
   - component: {fileID: 8416776241656688789}
   - component: {fileID: 8416776241656688787}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 8416776241982468983}
   - component: {fileID: 8416776241982468982}
   - component: {fileID: 8416776241982468981}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RopePiece (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
