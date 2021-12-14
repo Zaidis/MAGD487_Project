@@ -6,7 +6,7 @@ public class ProjectileMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float speed;
-    [SerializeField] float damage;
+    public float damage;
     [SerializeField] bool attachedParticles = false;
     [SerializeField] bool stickToWalls = false;
     bool deactivated = false;
