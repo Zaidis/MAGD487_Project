@@ -91,9 +91,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357967736419940083}
-  - component: {fileID: 357967736419940080}
   - component: {fileID: 357967736419940081}
   - component: {fileID: 357967736419940094}
+  - component: {fileID: 3179713105745318831}
   m_Layer: 14
   m_Name: Grapple
   m_TagString: Untagged
@@ -116,24 +116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &357967736419940080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357967736419940095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c903dc0547b997649825237f72724fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 357967736419940081}
-  speed: 20
-  damage: 5
-  attachedParticles: 0
-  stickToWalls: 1
-  moveRightVector: 1
 --- !u!50 &357967736419940081
 Rigidbody2D:
   serializedVersion: 4
@@ -181,3 +163,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09022331, y: 0.08144653}
   m_EdgeRadius: 0
+--- !u!114 &3179713105745318831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357967736419940095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f6686b11a4d2e47b5e528a42e5ce31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 357967736419940081}
+  speed: 20
+  moveRightVector: 1
+  rope: {fileID: 8416776241656688788, guid: 21cb581c9801c7d46bf07207ad2ebf5e, type: 3}
