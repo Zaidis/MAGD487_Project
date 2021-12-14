@@ -26,7 +26,7 @@ public class GrappleMovement : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
             rb.interpolation = RigidbodyInterpolation2D.None;
-            GameObject.Instantiate(rope, gameObject.transform);
+            GameObject ropeR = GameObject.Instantiate(rope, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + .2f), Quaternion.identity);
             return;
         }
     }
