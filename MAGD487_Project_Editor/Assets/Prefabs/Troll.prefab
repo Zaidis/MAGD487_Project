@@ -444,7 +444,7 @@ MonoBehaviour:
   health: 40
   anim: {fileID: 4753628391279334558}
   rb: {fileID: 8602519077096219281}
-  deadBody: {fileID: 2687210581908744593, guid: 02661ef94a98f0645a47bce3f6258e1c, type: 3}
+  deadBody: {fileID: 6740050713232554779, guid: c3d0d30c3bd9e28419aaaca474422b06, type: 3}
 --- !u!1 &8602519077645281285
 GameObject:
   m_ObjectHideFlags: 0
