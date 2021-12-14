@@ -34,10 +34,6 @@ public class PlayerDamageDealer : MonoBehaviour
         }
     }
 
-    public void PlaySound() {
-        
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

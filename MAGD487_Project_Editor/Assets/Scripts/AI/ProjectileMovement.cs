@@ -8,14 +8,16 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float damage;
     [SerializeField] bool attachedParticles = false;
+    [SerializeField] bool stickToWalls = false;
+    bool deactivated = false;
     private void Start()
     {
-        rb.velocity = new Vector2(speed * this.transform.localScale.x, 0);
+        rb.velocity = speed * transform.right;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<Damageable>(out Damageable damageable))
+        if(!deactivated && collision.TryGetComponent<Damageable>(out Damageable damageable))
         {
             damageable.Damage(damage);
 
@@ -27,7 +29,14 @@ public class ProjectileMovement : MonoBehaviour
         {
             if (attachedParticles)
                 DestroyParticles();
-
+            if (stickToWalls)
+            {
+                deactivated = true;
+                rb.velocity = Vector3.zero;
+                rb.simulated = false;
+                Destroy(this.gameObject, 10);
+                return;
+            }
             Destroy(this.gameObject);
         }
     }

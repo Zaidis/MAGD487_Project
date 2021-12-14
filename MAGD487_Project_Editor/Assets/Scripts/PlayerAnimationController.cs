@@ -12,6 +12,7 @@ public class PlayerAnimationController : MonoBehaviour
     public AnimatorOverrideController sword;
     public AnimatorOverrideController dagger;
     public weaponType wt = weaponType.none;
+    public GameObject bowObj;
 
     [SerializeField]
     private GameObject dhb;
@@ -52,15 +53,22 @@ public class PlayerAnimationController : MonoBehaviour
         if(wt == weaponType.none) {
             Attack.instance.canReceiveAttackInput = false;
         }
-        if(wt == weaponType.dagger) {
+        else if(wt == weaponType.dagger) {
             gameObject.GetComponent<Animator>().runtimeAnimatorController = dagger;
         }
-        if(wt == weaponType.grapple) {
+        else if(wt == weaponType.grapple) {
             Attack.instance.canReceiveAttackInput = false;
             Attack.instance.Shoot();
         }
-        if(wt == weaponType.sword) {
+        else if(wt == weaponType.sword) {
             gameObject.GetComponent<Animator>().runtimeAnimatorController = sword;
         }
+        else if(wt == weaponType.bow)
+        {
+            Attack.instance.canReceiveAttackInput = false;
+            bowObj.SetActive(true);
+            return;
+        }
+        bowObj.SetActive(false);
     }
 }
