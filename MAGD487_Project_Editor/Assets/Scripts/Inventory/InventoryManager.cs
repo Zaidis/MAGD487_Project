@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     public PlayerAnimationController PAC;
     public MenuManager menuManager;
     public PlayerMovement player;
-    public Text pickUpText;
+    public TextMeshProUGUI pickUpText;
     public List<Slot> m_slots = new List<Slot>(); //4 different slots for items
     //public int m_goldAmount { get; set; } //the amount of gold the player has
     public GameObject defaultInteractable;

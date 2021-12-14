@@ -13,7 +13,7 @@ public class StatisticsManager : MonoBehaviour
     public float m_damageAmount { get; set; }
     public float m_healthAmount { get; set; }
     public float m_maxHealthAmount { get; set; }
-    public int m_movementSpeedAmount { get; set; }
+    public float m_movementSpeedAmount { get; set; }
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -24,6 +24,7 @@ public class StatisticsManager : MonoBehaviour
 
     private void Start() {
         m_maxHealthAmount = GameObject.FindObjectOfType<PlayerHealth>().GetCurrentHealth();
+        m_movementSpeedAmount = GameObject.FindObjectOfType<PlayerMovement>().speed;
         m_healthAmount = m_maxHealthAmount;
     }
     public void AddGoldAmount(int num) {

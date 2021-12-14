@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour{
     Rigidbody2D rb;
     public Vector2 movement;
     [SerializeField]
-    float speed;
+    public float speed;
     public bool canMove;
 
     private GroundDetector groundDetector; //roll elements

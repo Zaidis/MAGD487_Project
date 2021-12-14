@@ -548,62 +548,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 121200148, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689035611138371554, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689035611138371554, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689035611138371554, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2013386421181874968, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2013386421181874968, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2013386421181874968, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485030042249134015, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804331411000806964, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804331411000806964, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804331411000806964, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3233414342866930305, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: myItem
-      value: 
-      objectReference: {fileID: 11400000, guid: 7fbf36d593ad9b04c83012e9e823e701, type: 2}
-    - target: {fileID: 3501550133049648004, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501550133049648004, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3597771724476874795, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -692,14 +636,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4947488414428172147, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4947488414428172147, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5439375056718253416, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
       propertyPath: cam
       value: 
@@ -708,54 +644,10 @@ PrefabInstance:
       propertyPath: minimap
       value: 
       objectReference: {fileID: 986130238}
-    - target: {fileID: 7213940906138940246, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7213940906138940246, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7951913137879454855, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 133736358}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Damage
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerHealth, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8255786244185648538, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454533622536588320, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8862816167828250166, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423c5c34957b5b341a095523dd715d88, type: 3}
 --- !u!1001 &4344431723698900937

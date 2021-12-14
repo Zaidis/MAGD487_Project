@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   name: Novice Katana
-  description: Just your basic dagger
+  description: The first Katana
   level: 2
   cost: 10
   stackable: 0
   maxStack: 1
   icon: {fileID: 1572352256821145685, guid: 691bc959ad64f8a4c867148a608f6394, type: 3}
   type: 0
+  clip: {fileID: 0}
   damage: 3
   attackSpeed: 0.5
   weapon: 2
