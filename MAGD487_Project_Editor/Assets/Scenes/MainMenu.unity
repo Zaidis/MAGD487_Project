@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faldhir
+  m_text: Faldihr
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eaa00e722b8899c429e61f32b76cd5cf, type: 2}
   m_sharedMaterial: {fileID: -841047412681718046, guid: eaa00e722b8899c429e61f32b76cd5cf, type: 2}
