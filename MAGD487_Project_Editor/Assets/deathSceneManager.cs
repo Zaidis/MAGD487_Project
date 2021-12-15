@@ -5,27 +5,42 @@ using UnityEngine.SceneManagement;
 public class deathSceneManager : MonoBehaviour
 {
     public GameObject[] objects;
+    public GameObject[] newObjects;
     private void Awake() {
         //deletes player and main canvas
-        Destroy(FindObjectOfType<PlayerMovement>().gameObject);
-        Destroy(FindObjectOfType<InventoryManager>().transform.parent.gameObject);
+       // Destroy(FindObjectOfType<PlayerMovement>().gameObject);
+       // Destroy(FindObjectOfType<InventoryManager>().transform.parent.gameObject);
     }
     private void Start() {
-        GameObject[] newObjects = FindObjectsOfType<GameObject>();
+        newObjects = FindObjectsOfType<GameObject>();
         int num = 0;
-        while(newObjects.Length != objects.Length) {
-            bool noBueno = false;
+        /*while(newObjects.Length != objects.Length) {
+            bool bueno = false;
             for (int j = 0; j < objects.Length; j++) {
-                if (newObjects[num] != objects[j]) {
-                    noBueno = true;
-                }
-                else {
-                    noBueno = false;
-                    num++;
+                if (newObjects[num] == objects[j]) {
+                    bueno = true;
+                    break;
                 }
             }
-            if (noBueno) {
+            if (!bueno) {
                 Destroy(newObjects[num].gameObject);
+            } else {
+                num++;
+            }
+        } */
+
+        foreach(GameObject temp in newObjects) {
+            bool bueno = false;
+            for (int j = 0; j < objects.Length; j++) {
+                if (temp == objects[j]) {
+                    bueno = true;
+                    break;
+                }
+            }
+            if (!bueno) {
+                Destroy(temp.gameObject);
+            } else {
+                continue;
             }
         }
     }

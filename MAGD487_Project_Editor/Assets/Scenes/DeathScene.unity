@@ -462,6 +462,10 @@ MonoBehaviour:
   - {fileID: 2045470332}
   - {fileID: 1843915033}
   - {fileID: 347562113}
+  - {fileID: 1293496720}
+  - {fileID: 882496927}
+  - {fileID: 817232190}
+  newObjects: []
 --- !u!1 &817232190
 GameObject:
   m_ObjectHideFlags: 0
