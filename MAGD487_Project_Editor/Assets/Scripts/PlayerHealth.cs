@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : Damageable
 {
     public override void Damage(float amt) {
@@ -12,7 +12,7 @@ public class PlayerHealth : Damageable
 
         if(StatisticsManager.instance.m_healthAmount <= 0) {
             //player is dead
-            Death();
+            this.Death();
         }
         StatisticsManager.instance.healthbar.UpdateHealthbar();
     }
@@ -26,4 +26,8 @@ public class PlayerHealth : Damageable
         StatisticsManager.instance.healthbar.UpdateHealthbar();
     }
 
+    public override void Death() {
+        print(gameObject.name + " is Dead");
+        SceneManager.LoadScene(5); //death scene
+    }
 }
