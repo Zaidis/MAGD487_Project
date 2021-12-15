@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour{
     private GroundDetector groundDetector; //roll elements
     private bool wantToRoll = false;
     public bool rolling = false;
+    public bool inRope = false;
     [Space]
     [SerializeField] private float rollForce;
     [SerializeField] private float rollTime;
@@ -60,7 +61,16 @@ public class PlayerMovement : MonoBehaviour{
             rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
         }    
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 16)
+            inRope = true;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 16)
+            inRope = false;
+    }
     public void Move(InputAction.CallbackContext callbackContext)
     {
         movement = new Vector2(callbackContext.ReadValue<Vector2>().x, callbackContext.ReadValue<Vector2>().y);

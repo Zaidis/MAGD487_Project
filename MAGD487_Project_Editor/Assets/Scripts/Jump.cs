@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Jump : MonoBehaviour
     float timer = 0;
     [SerializeField] float gravityMultiplier = 2;
     PlayerMovement playerMovement;
+    [SerializeField] private float climbSpeed;
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -31,7 +33,22 @@ public class Jump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        JumpCharacter();
+        if (PlayerMovement.instance.inRope)
+            ClimbCharacter();
+        else
+            JumpCharacter();
+    }
+
+    private void ClimbCharacter()
+    {
+        if (wantToJump)
+        {
+            rb.transform.position += Vector3.up / climbSpeed;
+        }
+        else
+        {
+            rb.transform.position += Vector3.down / climbSpeed;
+        }
     }
 
     public void OnJump(InputAction.CallbackContext callbackContext)

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class Bow : MonoBehaviour
 {
+    public PlayerAnimationController PAC;
     public Vector2 input;
     Animator anim;
     bool coolDown = false;
@@ -11,10 +12,12 @@ public class Bow : MonoBehaviour
     bool controller = false;
     [SerializeField] float shotCoolDown = 1;
     [SerializeField] GameObject arrow;
+    [SerializeField] GameObject grapple;
     [SerializeField] Transform firePoint;
     [SerializeField] Camera cam;
     private void Awake()
     {
+        PAC = GameObject.Find("Graphic").GetComponent<PlayerAnimationController>();
         anim = GetComponent<Animator>();
     }
     private void Update()
@@ -53,7 +56,11 @@ public class Bow : MonoBehaviour
         {
             anim.SetTrigger("Fire");
             coolDown = true;
-            GameObject g = Instantiate(arrow, firePoint.position, Quaternion.identity);
+            GameObject g;
+            if(PAC.wt == weaponType.bow)
+                g = Instantiate(arrow, firePoint.position, Quaternion.identity);
+            else
+                g = Instantiate(grapple, firePoint.position, Quaternion.identity);      
             g.transform.rotation = this.transform.rotation;
         }
     }

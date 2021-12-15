@@ -58,7 +58,8 @@ public class PlayerAnimationController : MonoBehaviour
         }
         else if(wt == weaponType.grapple) {
             Attack.instance.canReceiveAttackInput = false;
-            Attack.instance.Shoot();
+            bowObj.SetActive(true);
+            return;
         }
         else if(wt == weaponType.sword) {
             gameObject.GetComponent<Animator>().runtimeAnimatorController = sword;
